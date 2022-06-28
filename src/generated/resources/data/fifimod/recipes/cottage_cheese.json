@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smoking",
+  "ingredient": {
+    "item": "minecraft:milk_bucket"
+  },
+  "result": "fifimod:cottage_cheese",
+  "experience": 2.0,
+  "cookingtime": 200
+}

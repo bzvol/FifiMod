@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fifimod:block/burpbox"
+    },
+    "facing=south": {
+      "model": "fifimod:block/burpbox",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fifimod:block/burpbox",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "fifimod:block/burpbox",
+      "y": 90
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:poppy_seeds"
+    ]
+  },
+  "criteria": {
+    "has_poppy": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:poppy"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:poppy_seeds"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_poppy",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "item.fifimod.bismuth": "Bizmut",
+  "item.fifimod.poppy_seeds": "Mák",
+  "item.fifimod.cottage_cheese": "Túró",
+  "item.fifimod.bowl_of_ccmps": "Túrósgombásmákos",
+
+  "block.fifimod.bismuth_ore": "Bizmutérc",
+  "block.fifimod.deepslate_bismuth_ore": "Mélykövi Bizmutérc",
+  "block.fifimod.bismuth_block": "Bizmutblokk",
+  "block.fifimod.burpbox": "Böfigép",
+
+  "itemGroup.fifi_tab": "Fifi Tárgyak",
+
+  "sounds.fifimod.burp": "Böfögés Hang"
+}

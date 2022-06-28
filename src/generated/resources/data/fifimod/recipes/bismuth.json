@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:bismuth_block"
+    }
+  ],
+  "result": {
+    "item": "fifimod:bismuth",
+    "count": 4
+  }
+}

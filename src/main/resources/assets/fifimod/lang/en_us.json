@@ -1,0 +1,15 @@
+{
+  "item.fifimod.bismuth": "Bismuth",
+  "item.fifimod.poppy_seeds": "Poppy Seeds",
+  "item.fifimod.cottage_cheese": "Cottage Cheese",
+  "item.fifimod.bowl_of_ccmps": "Bowl of CCMPS",
+
+  "block.fifimod.bismuth_ore": "Bismuth Ore",
+  "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
+  "block.fifimod.bismuth_block": "Bismuth Block",
+  "block.fifimod.burpbox": "Burpbox",
+
+  "itemGroup.fifi_tab": "Fifi Tab",
+
+  "sounds.fifimod.burp": "Burp Sound"
+}

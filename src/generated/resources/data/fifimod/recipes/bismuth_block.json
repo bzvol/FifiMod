@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBG",
+    "BB "
+  ],
+  "key": {
+    "B": {
+      "item": "fifimod:bismuth"
+    },
+    "G": {
+      "item": "minecraft:gold_nugget"
+    }
+  },
+  "result": {
+    "item": "fifimod:bismuth_block"
+  }
+}
