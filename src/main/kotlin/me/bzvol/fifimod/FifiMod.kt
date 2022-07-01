@@ -6,6 +6,8 @@ import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.sound.ModSounds
 import net.minecraft.client.Minecraft
+import net.minecraft.client.renderer.ItemBlockRenderTypes
+import net.minecraft.client.renderer.RenderType
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
@@ -39,6 +41,8 @@ object FifiMod {
 
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
+
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
     }
 
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {

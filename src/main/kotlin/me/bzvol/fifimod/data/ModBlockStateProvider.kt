@@ -6,9 +6,10 @@ import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
+import net.minecraftforge.client.model.generators.ModelFile
 import net.minecraftforge.common.data.ExistingFileHelper
 
-class ModBlockStateProvider(generator: DataGenerator, existingFileHelper: ExistingFileHelper) :
+class ModBlockStateProvider(generator: DataGenerator, private val existingFileHelper: ExistingFileHelper) :
     BlockStateProvider(generator, FifiMod.MOD_ID, existingFileHelper) {
     override fun registerStatesAndModels() {
         simpleBlock(ModBlocks.BISMUTH_ORE)
@@ -22,6 +23,10 @@ class ModBlockStateProvider(generator: DataGenerator, existingFileHelper: Existi
             ResourceLocation(FifiMod.MOD_ID, "block/burpbox_front"),
             ResourceLocation(FifiMod.MOD_ID, "block/burpbox_side")
         )
+
+        horizontalBlock(ModBlocks.FIFI_SPAWNER, ModelFile.UncheckedModelFile(
+            ResourceLocation(FifiMod.MOD_ID, "block/fifi_spawner")
+        ))
     }
 
 }

@@ -10,6 +10,7 @@ class ModBlockLoot : BlockLoot() {
     override fun addTables() {
         dropSelf(ModBlocks.BISMUTH_BLOCK)
         dropSelf(ModBlocks.BURPBOX)
+        dropSelf(ModBlocks.FIFI_SPAWNER)
 
         add(ModBlocks.BISMUTH_ORE) {
             createOreDrop(ModBlocks.BISMUTH_ORE, ModItems.BISMUTH)

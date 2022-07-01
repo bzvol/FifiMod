@@ -26,6 +26,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.DEEPSLATE_BISMUTH_ORE)
         blockItem(ModBlocks.BISMUTH_BLOCK)
         blockItem(ModBlocks.BURPBOX)
+        blockItem(ModBlocks.FIFI_SPAWNER)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

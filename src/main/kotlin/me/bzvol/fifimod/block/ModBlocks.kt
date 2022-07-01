@@ -58,6 +58,16 @@ object ModBlocks {
         )
     }
 
+    val FIFI_SPAWNER: Block by registerBlock("fifi_spawner", ModCreativeModeTab.FIFI_TAB) {
+        FifiSpawnerBlock(
+            BlockBehaviour.Properties
+                .of(Material.STONE, MaterialColor.COLOR_PURPLE)
+                .requiresCorrectToolForDrops()
+                .lightLevel { 7 }
+                .strength(5f, 1200f)
+        )
+    }
+
     private fun <T : Block> registerBlock(
         name: String, tab: CreativeModeTab, blockSupplier: () -> T
     ): ReadOnlyProperty<Any?, T> {

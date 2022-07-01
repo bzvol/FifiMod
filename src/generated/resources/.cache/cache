@@ -2,6 +2,7 @@
 0ca8ba192414614481463690324b34d157625c40 assets/fifimod/blockstates/bismuth_ore.json
 00818989fb67e900c0cf68d7e8ccac8e0035012d assets/fifimod/blockstates/burpbox.json
 0a96eb71d460c1e38684652fcc66b38bb79a0eeb assets/fifimod/blockstates/deepslate_bismuth_ore.json
+ddcd48e1495784857d5c3c3524282ad387381af2 assets/fifimod/blockstates/fifi_spawner.json
 e1002fdf5c464ce7ebb0a64551a074a2e412fab9 assets/fifimod/models/block/bismuth_block.json
 68e0c5076c871d4d012c3f99717b402662bb0fe5 assets/fifimod/models/block/bismuth_ore.json
 d0b4b8381f68b1893bb9d5b1d75bf3f02aa3aee5 assets/fifimod/models/block/burpbox.json
@@ -13,6 +14,7 @@ a1f21dd1858f3cb8353c434123235a095c41aab0 assets/fifimod/models/item/bowl_of_ccmp
 f2b8197f15d7d67543e2cb194c74f0dc6af03e88 assets/fifimod/models/item/burpbox.json
 e03897554a61e3488b3ce99e60b43a8e748c9b10 assets/fifimod/models/item/cottage_cheese.json
 d196a3b21e16175e1908c6973ef192c3cb987b97 assets/fifimod/models/item/deepslate_bismuth_ore.json
+855c6945fae9c8c9f59c60e437eccc0f941f05f2 assets/fifimod/models/item/fifi_spawner.json
 11debf00c8e6f3d0ca49dd07b8a04fa0341cfa88 assets/fifimod/models/item/music_disc_bidibodi.json
 0c2b7d85f91a2decef3fafad1e42f98440bfcd42 assets/fifimod/models/item/poppy_seeds.json
 7b8781963a2fe9f928cbe7672815e8d43bd5604f data/fifimod/advancements/recipes/fifi_tab/bismuth.json
@@ -27,6 +29,7 @@ ced72067e813ff31aeefa143deac7e1b2bad2134 data/fifimod/loot_tables/blocks/bismuth
 72b5a4ad865713984f92621352752397077e36ac data/fifimod/loot_tables/blocks/bismuth_ore.json
 608588e09e94759111e25f089c4fdafec558ce41 data/fifimod/loot_tables/blocks/burpbox.json
 84d9aa7584e5937f10f7b91d1b4c3101e301c4a3 data/fifimod/loot_tables/blocks/deepslate_bismuth_ore.json
+0484cb71af3f475b7596740124cee7a1b6ea31c4 data/fifimod/loot_tables/blocks/fifi_spawner.json
 26074896a64a246b87ffd5ff7f628e65333bf1df data/fifimod/recipes/bismuth.json
 96150f5028e5baa92b1dec94902d59ea7eb7261b data/fifimod/recipes/bismuth_blasting.json
 427849b975970c254a55c53e84e0b2c3cd528d5d data/fifimod/recipes/bismuth_blasting_deepslate.json

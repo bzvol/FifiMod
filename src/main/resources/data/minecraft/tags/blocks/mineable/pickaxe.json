@@ -3,6 +3,7 @@
   "values": [
     "fifimod:bismuth_ore",
     "fifimod:deepslate_bismuth_ore",
-    "fifimod:bismuth_block"
+    "fifimod:bismuth_block",
+    "fifimod:fifi_spawner"
   ]
 }

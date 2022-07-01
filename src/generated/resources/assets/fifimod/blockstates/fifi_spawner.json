@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fifimod:block/fifi_spawner"
+    },
+    "facing=south": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 90
+    }
+  }
+}
