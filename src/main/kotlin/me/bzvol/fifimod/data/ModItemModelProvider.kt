@@ -1,4 +1,4 @@
-package me.bzvol.fifimod.datagen
+package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.ModBlocks
@@ -20,6 +20,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.POPPY_SEEDS)
         simpleItem(ModItems.COTTAGE_CHEESE)
         simpleItem(ModItems.BOWL_OF_CCMPS)
+        simpleItem(ModItems.MUSIC_DISC_BIDIBODI)
 
         blockItem(ModBlocks.BISMUTH_ORE)
         blockItem(ModBlocks.DEEPSLATE_BISMUTH_ORE)

@@ -1,8 +1,8 @@
-package me.bzvol.fifimod.datagen
+package me.bzvol.fifimod.data
 
 import com.google.common.collect.ImmutableList
 import com.mojang.datafixers.util.Pair
-import me.bzvol.fifimod.datagen.loot.ModBlockLoot
+import me.bzvol.fifimod.data.loot.ModBlockLoot
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.loot.LootTableProvider
 import net.minecraft.resources.ResourceLocation
@@ -17,7 +17,7 @@ import java.util.function.Supplier
 
 class ModLootTableProvider(generator: DataGenerator) : LootTableProvider(generator) {
     private val lootTables: List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> =
-        ImmutableList.of(Pair.of(Supplier { ModBlockLoot() }, LootContextParamSets.BLOCK))
+        ImmutableList.of(Pair.of(Supplier(::ModBlockLoot), LootContextParamSets.BLOCK))
 
     override fun getTables(): List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, LootTable.Builder>>>, LootContextParamSet>> =
         lootTables

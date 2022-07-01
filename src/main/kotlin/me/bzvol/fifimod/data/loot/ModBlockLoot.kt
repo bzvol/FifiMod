@@ -1,4 +1,4 @@
-package me.bzvol.fifimod.datagen.loot
+package me.bzvol.fifimod.data.loot
 
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
@@ -19,7 +19,6 @@ class ModBlockLoot : BlockLoot() {
         }
     }
 
-    override fun getKnownBlocks(): Iterable<Block> {
-        return ModBlocks.REGISTRY.entries.map(RegistryObject<Block>::get).asIterable()
-    }
+    override fun getKnownBlocks(): Iterable<Block> =
+        ModBlocks.REGISTRY.entries.map(RegistryObject<Block>::get).asIterable()
 }

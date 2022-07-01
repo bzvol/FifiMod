@@ -4,5 +4,13 @@
     "sounds": [
       "fifimod:burp"
     ]
+  },
+  "music_disc_bidibodi": {
+    "sounds": [
+      {
+        "name": "fifimod:music_disc_bidibodi",
+        "stream": true
+      }
+    ]
   }
 }

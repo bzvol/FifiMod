@@ -42,7 +42,7 @@ object ModBlocks {
     }
 
     val BISMUTH_BLOCK: Block by registerBlock("bismuth_block", ModCreativeModeTab.FIFI_TAB) {
-        Block(
+        BismuthBlock(
             BlockBehaviour.Properties
                 .of(Material.METAL)
                 .strength(3f)

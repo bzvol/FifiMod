@@ -15,6 +15,7 @@ import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.phys.BlockHitResult
+import net.minecraft.world.phys.Vec3
 
 class BurpboxBlock(properties: Properties) : HorizontalDirectionalBlock(properties) {
     override fun createBlockStateDefinition(pBuilder: StateDefinition.Builder<Block, BlockState>) {
@@ -33,29 +34,35 @@ class BurpboxBlock(properties: Properties) : HorizontalDirectionalBlock(properti
         pHand: InteractionHand,
         pHit: BlockHitResult
     ): InteractionResult {
-        if (pLevel.isClientSide) return InteractionResult.SUCCESS
+        if (!pLevel.isClientSide)
+            pLevel.playSound(null, pPos, ModSounds.BURP, SoundSource.BLOCKS, 1f, 1f)
 
-        pLevel.playSound(null, pPos, ModSounds.BURP, SoundSource.BLOCKS, 3f, 1f)
+        else {
+            val dir = pState.getValue(FACING)
 
-        // X+: x+1.0 y+0.5 z+0.5
-        // X-: x+0.0 y+0.5 z+0.5
-        // Z+: x+0.5 y+0.5 z+1.0
-        // Z-: x+0.5 y+0.5 z+0.0
-        val axis = pState.getValue(FACING).axis
-        val axisDir = pState.getValue(FACING).axisDirection.step
-        val axisDir2 = if (axisDir == 1) 1.0 else 0.0
-        val x = if (axis == Direction.Axis.X) axisDir2 else 0.5
-        val z = if (axis == Direction.Axis.Z) axisDir2 else 0.5
-        val xSpeed = if (axis == Direction.Axis.X) 0.2 * axisDir else 0.0
-        val zSpeed = if (axis == Direction.Axis.Z) 0.2 * axisDir else 0.0
-        pLevel.addParticle(
-            ParticleTypes.BUBBLE,
-            pPos.x + x, pPos.y + 0.5, pPos.z + z, // Spawn particle in direction of the block
-            xSpeed, 0.0, zSpeed
-        )
+            val pos = pPos.getCenterOfDirection(dir, 0.3)
+
+            val vX = if (dir.axis == Direction.Axis.X) 0.2 * dir.axisDirection.step else 0.0
+            val vY = 0.0
+            val vZ = if (dir.axis == Direction.Axis.Z) 0.2 * dir.axisDirection.step else 0.0
+
+            pLevel.addParticle(
+                ParticleTypes.EXPLOSION,
+                pos.x, pos.y, pos.z,
+                vX, vY, vZ
+            )
+        }
 
         return InteractionResult.CONSUME
     }
 
+    private fun BlockPos.getCenterOfDirection(dir: Direction, additional: Double = 0.0): Vec3 = when (dir) {
+        Direction.DOWN ->   Vec3(this.x + 0.5, this.y + 0.0 - additional, this.z + 0.5)
+        Direction.UP ->     Vec3(this.x + 0.5, this.y + 1.0 + additional, this.z + 0.5)
+        Direction.NORTH ->  Vec3(this.x + 0.5, this.y + 0.5, this.z + 0.0 - additional)
+        Direction.SOUTH ->  Vec3(this.x + 0.5, this.y + 0.5, this.z + 1.0 + additional)
+        Direction.WEST ->   Vec3(this.x + 0.0 - additional, this.y + 0.5, this.z + 0.5)
+        Direction.EAST ->   Vec3(this.x + 1.0 + additional, this.y + 0.5, this.z + 0.5)
+    }
 
 }

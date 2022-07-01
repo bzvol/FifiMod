@@ -1,4 +1,4 @@
-25ade4fd1395f34c5a1015f25f7c83e8517af753 assets/fifimod/blockstates/bismuth_block.json
+6db487e9d01f28fe0b5a98f1b704b92a06ecc5b2 assets/fifimod/blockstates/bismuth_block.json
 0ca8ba192414614481463690324b34d157625c40 assets/fifimod/blockstates/bismuth_ore.json
 00818989fb67e900c0cf68d7e8ccac8e0035012d assets/fifimod/blockstates/burpbox.json
 0a96eb71d460c1e38684652fcc66b38bb79a0eeb assets/fifimod/blockstates/deepslate_bismuth_ore.json
@@ -13,6 +13,7 @@ a1f21dd1858f3cb8353c434123235a095c41aab0 assets/fifimod/models/item/bowl_of_ccmp
 f2b8197f15d7d67543e2cb194c74f0dc6af03e88 assets/fifimod/models/item/burpbox.json
 e03897554a61e3488b3ce99e60b43a8e748c9b10 assets/fifimod/models/item/cottage_cheese.json
 d196a3b21e16175e1908c6973ef192c3cb987b97 assets/fifimod/models/item/deepslate_bismuth_ore.json
+11debf00c8e6f3d0ca49dd07b8a04fa0341cfa88 assets/fifimod/models/item/music_disc_bidibodi.json
 0c2b7d85f91a2decef3fafad1e42f98440bfcd42 assets/fifimod/models/item/poppy_seeds.json
 7b8781963a2fe9f928cbe7672815e8d43bd5604f data/fifimod/advancements/recipes/fifi_tab/bismuth.json
 6ee44b93505c3ae93da3adb93384bdeb788ee5be data/fifimod/advancements/recipes/fifi_tab/bismuth_blasting.json

@@ -14,6 +14,8 @@ object ModSounds {
 
     val BURP by registerSoundEvent("burp")
 
+    val MUSIC_DISC_BIDIBODI by registerSoundEvent("music_disc_bidibodi")
+
     private fun registerSoundEvent(name: String): ReadOnlyProperty<Any?, SoundEvent> = REGISTRY.registerObject(name) {
         SoundEvent(ResourceLocation(FifiMod.MOD_ID, name))
     }

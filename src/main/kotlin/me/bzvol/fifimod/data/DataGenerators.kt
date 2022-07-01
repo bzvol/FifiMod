@@ -1,4 +1,4 @@
-package me.bzvol.fifimod.datagen
+package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
 import net.minecraftforge.eventbus.api.SubscribeEvent
