@@ -21,6 +21,8 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.COTTAGE_CHEESE)
         simpleItem(ModItems.BOWL_OF_CCMPS)
         simpleItem(ModItems.MUSIC_DISC_BIDIBODI)
+        simpleItem(ModItems.AMETHYST_LIGHTER)
+        simpleItem(ModItems.THE_FIFHER)
 
         blockItem(ModBlocks.BISMUTH_ORE)
         blockItem(ModBlocks.DEEPSLATE_BISMUTH_ORE)

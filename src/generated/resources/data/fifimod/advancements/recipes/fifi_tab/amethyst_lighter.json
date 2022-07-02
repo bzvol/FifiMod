@@ -2,18 +2,19 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:amethyst_lighter"
     ]
   },
   "criteria": {
-    "has_burp_ingredients": {
+    "has_amethyst_lighter_ingredients": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block",
-              "minecraft:tnt"
+              "minecraft:iron_ingot",
+              "minecraft:flint",
+              "minecraft:amethyst_shard"
             ]
           }
         ]
@@ -22,13 +23,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:amethyst_lighter"
       }
     }
   },
   "requirements": [
     [
-      "has_burp_ingredients",
+      "has_amethyst_lighter_ingredients",
       "has_the_recipe"
     ]
   ]

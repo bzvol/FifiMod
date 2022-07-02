@@ -2,18 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:bismuth_from_smelting_deepslate_bismuth_ore"
     ]
   },
   "criteria": {
-    "has_burp_ingredients": {
+    "has_deepslate_bismuth_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block",
-              "minecraft:tnt"
+              "fifimod:deepslate_bismuth_ore"
             ]
           }
         ]
@@ -22,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:bismuth_from_smelting_deepslate_bismuth_ore"
       }
     }
   },
   "requirements": [
     [
-      "has_burp_ingredients",
+      "has_deepslate_bismuth_ore",
       "has_the_recipe"
     ]
   ]

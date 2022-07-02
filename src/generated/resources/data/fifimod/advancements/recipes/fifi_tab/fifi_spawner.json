@@ -2,19 +2,20 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:fifi_spawner"
     ]
   },
   "criteria": {
-    "has_burp_ingredients": {
+    "has_fifi_spawner_ingredients": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block",
-              "minecraft:tnt"
-            ]
+              "fifimod:bismuth",
+              "fifimod:the_fifher"
+            ],
+            "tag": "minecraft:stone_crafting_materials"
           }
         ]
       }
@@ -22,13 +23,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:fifi_spawner"
       }
     }
   },
   "requirements": [
     [
-      "has_burp_ingredients",
+      "has_fifi_spawner_ingredients",
       "has_the_recipe"
     ]
   ]

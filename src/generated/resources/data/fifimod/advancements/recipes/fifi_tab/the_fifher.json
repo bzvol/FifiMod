@@ -2,18 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:the_fifher"
     ]
   },
   "criteria": {
-    "has_burp_ingredients": {
+    "has_amethyst_shard": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block",
-              "minecraft:tnt"
+              "minecraft:amethyst_shard"
             ]
           }
         ]
@@ -22,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:the_fifher"
       }
     }
   },
   "requirements": [
     [
-      "has_burp_ingredients",
+      "has_amethyst_shard",
       "has_the_recipe"
     ]
   ]

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "fifimod:bismuth_ore"
+  },
+  "result": "fifimod:bismuth",
+  "experience": 10.0,
+  "cookingtime": 100
+}

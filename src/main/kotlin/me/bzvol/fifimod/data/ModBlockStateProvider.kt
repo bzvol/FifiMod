@@ -24,8 +24,9 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
             ResourceLocation(FifiMod.MOD_ID, "block/burpbox_side")
         )
 
-        horizontalBlock(ModBlocks.FIFI_SPAWNER, ModelFile.UncheckedModelFile(
-            ResourceLocation(FifiMod.MOD_ID, "block/fifi_spawner")
+        horizontalBlock(ModBlocks.FIFI_SPAWNER, ModelFile.ExistingModelFile(
+            ResourceLocation(FifiMod.MOD_ID, "block/fifi_spawner"),
+            existingFileHelper
         ))
     }
 

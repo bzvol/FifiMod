@@ -5,14 +5,14 @@ import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.data.DataGenerator
-import net.minecraft.data.recipes.FinishedRecipe
-import net.minecraft.data.recipes.RecipeProvider
-import net.minecraft.data.recipes.ShapedRecipeBuilder
-import net.minecraft.data.recipes.ShapelessRecipeBuilder
-import net.minecraft.data.recipes.SimpleCookingRecipeBuilder
+import net.minecraft.data.recipes.*
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.tags.ItemTags
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
+import net.minecraft.world.item.crafting.RecipeSerializer
+import net.minecraft.world.item.crafting.SimpleCookingSerializer
+import net.minecraft.world.level.ItemLike
 import java.util.function.Consumer
 
 class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
@@ -36,44 +36,19 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
             .save(pFinishedRecipeConsumer)
 
-        SimpleCookingRecipeBuilder.blasting(
-            Ingredient.of(ModBlocks.BISMUTH_ORE), ModItems.BISMUTH,
-            10f, 200
-        )
-            .unlockedBy(
-                "has_bismuth_ore",
-                has(ModBlocks.BISMUTH_ORE)
-            )
-            .save(pFinishedRecipeConsumer, ResourceLocation(FifiMod.MOD_ID, "bismuth_blasting"))
-
-        SimpleCookingRecipeBuilder.blasting(
-            Ingredient.of(ModBlocks.DEEPSLATE_BISMUTH_ORE), ModItems.BISMUTH,
-            10f, 200
-        )
-            .unlockedBy(
-                "has_deepslate_bismuth_ore",
-                has(ModBlocks.DEEPSLATE_BISMUTH_ORE)
-            )
-            .save(pFinishedRecipeConsumer, ResourceLocation(FifiMod.MOD_ID, "bismuth_blasting_deepslate"))
-
-        SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(Items.POPPY), ModItems.POPPY_SEEDS,
-            2f, 200
-        )
-            .unlockedBy(
-                "has_poppy",
-                has(Items.POPPY)
-            )
+        cooking(Ingredient.of(ModBlocks.BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING)
             .save(pFinishedRecipeConsumer)
 
-        SimpleCookingRecipeBuilder.smoking(
-            Ingredient.of(Items.MILK_BUCKET), ModItems.COTTAGE_CHEESE,
-            2f, 200
+        cooking(Ingredient.of(ModBlocks.DEEPSLATE_BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING)
+            .save(pFinishedRecipeConsumer)
+
+        SimpleCookingRecipeBuilder.smelting(
+            Ingredient.of(Items.POPPY), ModItems.POPPY_SEEDS, 2f, 200
         )
-            .unlockedBy(
-                "has_milk_bucket",
-                has(Items.MILK_BUCKET)
-            )
+            .unlockedBy("has_poppy", has(Items.POPPY))
+            .save(pFinishedRecipeConsumer)
+
+        cooking(Ingredient.of(Items.MILK_BUCKET), ModItems.COTTAGE_CHEESE, 2f, CookingType.SMOKING)
             .save(pFinishedRecipeConsumer)
 
         ShapedRecipeBuilder.shaped(ModItems.BOWL_OF_CCMPS)
@@ -98,7 +73,7 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             .requires(Items.NOTE_BLOCK)
             .requires(Items.TNT)
             .unlockedBy(
-                "has_burp_things",
+                "has_burp_ingredients",
                 inventoryTrigger(
                     ItemPredicate.Builder.item()
                         .of(Items.NOTE_BLOCK, Items.TNT)
@@ -106,5 +81,89 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
                 )
             )
             .save(pFinishedRecipeConsumer)
+
+        ShapelessRecipeBuilder.shapeless(ModItems.AMETHYST_LIGHTER)
+            .requires(Items.IRON_INGOT)
+            .requires(Items.FLINT)
+            .requires(Items.AMETHYST_SHARD)
+            .unlockedBy(
+                "has_amethyst_lighter_ingredients",
+                inventoryTrigger(
+                    ItemPredicate.Builder.item()
+                        .of(Items.IRON_INGOT, Items.FLINT, Items.AMETHYST_SHARD)
+                        .build()
+                )
+            )
+            .save(pFinishedRecipeConsumer)
+
+        ShapedRecipeBuilder.shaped(ModItems.THE_FIFHER)
+            .define('A', Items.AMETHYST_SHARD)
+            .pattern("AA")
+            .pattern("AA")
+            .pattern("A ")
+            .unlockedBy(
+                "has_amethyst_shard",
+                has(Items.AMETHYST_SHARD)
+            )
+            .save(pFinishedRecipeConsumer)
+
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SPAWNER)
+            .define('S', ItemTags.STONE_CRAFTING_MATERIALS)
+            .define('B', ModItems.BISMUTH)
+            .define('F', ModItems.THE_FIFHER)
+            .pattern(" F ")
+            .pattern("SBS")
+            .pattern("SSS")
+            .unlockedBy(
+                "has_fifi_spawner_ingredients",
+                inventoryTrigger(
+                    ItemPredicate.Builder.item()
+                        .of(ModItems.BISMUTH, ModItems.THE_FIFHER)
+                        .of(ItemTags.STONE_CRAFTING_MATERIALS)
+                        .build()
+                )
+            )
+            .save(pFinishedRecipeConsumer)
+    }
+
+    private fun cooking(
+        pIngredient: Ingredient,
+        pResult: ItemLike,
+        pExperience: Float,
+        pCookingType: CookingType
+    ) = object {
+        fun save(pFinishedRecipeConsumer: Consumer<FinishedRecipe>) {
+            val resultName = pResult.asItem().registryName!!.path
+            val ingredient = pIngredient.items[0].item
+            val ingredientName = ingredient.registryName!!.path
+
+            val advancementName = "has_$ingredientName"
+            SimpleCookingRecipeBuilder.smelting(pIngredient, pResult, pExperience, 200)
+                .unlockedBy(advancementName, has(ingredient))
+                .save(
+                    pFinishedRecipeConsumer, ResourceLocation(
+                        FifiMod.MOD_ID,
+                        "${resultName}_from_smelting_$ingredientName"
+                    )
+                )
+
+            SimpleCookingRecipeBuilder.cooking(
+                pIngredient, pResult, pExperience, 100, pCookingType.serializer
+            )
+                .unlockedBy(advancementName, has(ingredient))
+                .save(
+                    pFinishedRecipeConsumer, ResourceLocation(
+                        FifiMod.MOD_ID,
+                        "${resultName}_from_${pCookingType.pathName}_$ingredientName"
+                    )
+                )
+        }
+    }
+
+    companion object {
+        private enum class CookingType(val pathName: String, val serializer: SimpleCookingSerializer<*>) {
+            BLASTING("blasting", RecipeSerializer.BLASTING_RECIPE),
+            SMOKING("smoking", RecipeSerializer.SMOKING_RECIPE)
+        }
     }
 }

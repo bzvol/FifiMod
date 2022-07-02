@@ -2,11 +2,12 @@ package me.bzvol.fifimod.block
 
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.item.ModItems
-import me.bzvol.fifimod.tab.ModCreativeModeTab
+import me.bzvol.fifimod.util.ModCreativeModeTab
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
+import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.OreBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
@@ -58,7 +59,7 @@ object ModBlocks {
         )
     }
 
-    val FIFI_SPAWNER: Block by registerBlock("fifi_spawner", ModCreativeModeTab.FIFI_TAB) {
+    val FIFI_SPAWNER: Block by registerBlock("fifi_spawner", {
         FifiSpawnerBlock(
             BlockBehaviour.Properties
                 .of(Material.STONE, MaterialColor.COLOR_PURPLE)
@@ -66,7 +67,7 @@ object ModBlocks {
                 .lightLevel { 7 }
                 .strength(5f, 1200f)
         )
-    }
+    }) { BlockItem(it, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.EPIC)) }
 
     private fun <T : Block> registerBlock(
         name: String, tab: CreativeModeTab, blockSupplier: () -> T
@@ -78,11 +79,28 @@ object ModBlocks {
         return delegate
     }
 
+    private fun <T : Block> registerBlock(
+        name: String, blockSupplier: () -> T, blockItemSupplier: (Block) -> BlockItem
+    ): ReadOnlyProperty<Any?, T> {
+        val delegate = REGISTRY.registerObject(name, blockSupplier)
+
+        registerBlockItem(name, delegate, blockItemSupplier)
+
+        return delegate
+    }
+
     private fun <T : Block> registerBlockItem(
         name: String, tab: CreativeModeTab, blockDelegate: ReadOnlyProperty<Any?, T>
     ): ReadOnlyProperty<Any?, Item> = ModItems.REGISTRY.registerObject(name) {
         val block by blockDelegate
         BlockItem(block, Item.Properties().tab(tab))
+    }
+
+    private fun <T : Block> registerBlockItem(
+        name: String, blockDelegate: ReadOnlyProperty<Any?, T>, blockItemSupplier: (Block) -> BlockItem
+    ): ReadOnlyProperty<Any?, Item> = ModItems.REGISTRY.registerObject(name) {
+        val block by blockDelegate
+        blockItemSupplier(block)
     }
 
     fun register(eventBus: IEventBus) {

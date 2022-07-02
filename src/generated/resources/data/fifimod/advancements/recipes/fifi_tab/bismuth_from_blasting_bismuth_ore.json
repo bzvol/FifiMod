@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:bismuth_blasting"
+      "fifimod:bismuth_from_blasting_bismuth_ore"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:bismuth_blasting"
+        "recipe": "fifimod:bismuth_from_blasting_bismuth_ore"
       }
     }
   },

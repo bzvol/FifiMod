@@ -2,7 +2,7 @@ package me.bzvol.fifimod.item
 
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.sound.ModSounds
-import me.bzvol.fifimod.tab.ModCreativeModeTab
+import me.bzvol.fifimod.util.ModCreativeModeTab
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Rarity
@@ -37,6 +37,14 @@ object ModItems {
             ModSounds::MUSIC_DISC_BIDIBODI,
             Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1).rarity(Rarity.RARE)
         )
+    }
+
+    val AMETHYST_LIGHTER: Item by REGISTRY.registerObject("amethyst_lighter") {
+        AmethystLighter(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+
+    val THE_FIFHER: Item by REGISTRY.registerObject("the_fifher") {
+        Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
 
     fun register(eventBus: IEventBus) {

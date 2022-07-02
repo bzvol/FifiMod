@@ -2,18 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:cottage_cheese_from_smelting_milk_bucket"
     ]
   },
   "criteria": {
-    "has_burp_ingredients": {
+    "has_milk_bucket": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block",
-              "minecraft:tnt"
+              "minecraft:milk_bucket"
             ]
           }
         ]
@@ -22,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:cottage_cheese_from_smelting_milk_bucket"
       }
     }
   },
   "requirements": [
     [
-      "has_burp_ingredients",
+      "has_milk_bucket",
       "has_the_recipe"
     ]
   ]

@@ -2,7 +2,7 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:cottage_cheese"
+      "fifimod:cottage_cheese_from_smoking_milk_bucket"
     ]
   },
   "criteria": {
@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:cottage_cheese"
+        "recipe": "fifimod:cottage_cheese_from_smoking_milk_bucket"
       }
     }
   },
