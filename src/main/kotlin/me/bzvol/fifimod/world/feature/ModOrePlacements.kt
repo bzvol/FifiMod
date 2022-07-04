@@ -9,7 +9,7 @@ object ModOrePlacements {
     val ORE_BISMUTH: Holder<PlacedFeature> = PlacementUtils.register(
         "ore_bismuth",
         ModConfiguredFeatures.BISMUTH_ORE, commonOrePlacement(
-            5,
+            10,
             HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(120))
         )
     )

@@ -1,12 +1,14 @@
 package me.bzvol.fifimod.item
 
 import me.bzvol.fifimod.FifiMod
+import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.sound.ModSounds
 import me.bzvol.fifimod.util.ModCreativeModeTab
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.item.RecordItem
+import net.minecraftforge.common.ForgeSpawnEggItem
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
@@ -27,6 +29,10 @@ object ModItems {
         Item(Item.Properties().tab(CreativeModeTab.TAB_MISC))
     }
 
+    val PETI_ITEM: Item by REGISTRY.registerObject("peti_item") {
+        PetiItem(Item.Properties().tab(CreativeModeTab.TAB_MISC))
+    }
+
     val BOWL_OF_CCMPS: Item by REGISTRY.registerObject("bowl_of_ccmps") {
         Item(Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BOWL_OF_CCMPS))
     }
@@ -45,6 +51,13 @@ object ModItems {
 
     val THE_FIFHER: Item by REGISTRY.registerObject("the_fifher") {
         Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+
+    val FIFI_SPAWN_EGG: Item by REGISTRY.registerObject("fifi_spawn_egg") {
+        ForgeSpawnEggItem(
+            ModEntityTypes::FIFI, 0xba23b0, 0xf081d4,
+            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)
+        )
     }
 
     fun register(eventBus: IEventBus) {

@@ -124,6 +124,29 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
                 )
             )
             .save(pFinishedRecipeConsumer)
+
+        ShapelessRecipeBuilder.shapeless(ModItems.PETI_ITEM)
+            .requires(Items.POTATO)
+            .requires(Items.STICK)
+            .unlockedBy(
+                "has_peti_ingredients",
+                inventoryTrigger(
+                    ItemPredicate.Builder.item()
+                        .of(Items.POTATO, Items.STICK)
+                        .build()
+                )
+            )
+            .save(pFinishedRecipeConsumer)
+
+        ShapelessRecipeBuilder.shapeless(ModBlocks.POTATO_BLOCK)
+            .requires(Items.POTATO, 9)
+            .unlockedBy("has_potato", has(Items.POTATO))
+            .save(pFinishedRecipeConsumer)
+
+        ShapelessRecipeBuilder.shapeless(Items.POTATO, 9)
+            .requires(ModBlocks.POTATO_BLOCK)
+            .unlockedBy("has_potato_block", has(ModBlocks.POTATO_BLOCK))
+            .save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

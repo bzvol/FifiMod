@@ -5,16 +5,19 @@
   "item.fifimod.bowl_of_ccmps": "Túrósgombásmákos",
   "item.fifimod.music_disc_bidibodi": "Hanglemez",
   "item.fifimod.music_disc_bidibodi.desc": "Tommer Kristóf - Bidibodi",
-  "item.fifimod.amethyst_lighter": "Ametiszt Gyújtó",
+  "item.fifimod.amethyst_lighter": "Ametiszt gyújtó",
   "item.fifimod.the_fifher": "A Fiffer",
+  "item.fifimod.peti_item": "Krumplizó",
+  "item.fifimod.fifi_spawn_egg": "Fifiidéző tojás",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
-  "block.fifimod.deepslate_bismuth_ore": "Mélykövi Bizmutérc",
+  "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",
   "block.fifimod.bismuth_block": "Bizmutblokk",
   "block.fifimod.burpbox": "Böfigép",
-  "block.fifimod.fifi_spawner": "Fifi Teremtő",
+  "block.fifimod.fifi_spawner": "Fifiidéző gép",
+  "block.fifimod.potato_block": "Krumpliblokk",
 
-  "itemGroup.fifi_tab": "Fifi Tárgyak",
+  "itemGroup.fifi_tab": "Fifi cuccocskák",
 
-  "sounds.fifimod.burp": "Böfögés Hang"
+  "sounds.fifimod.burp": "Böfögés hang"
 }

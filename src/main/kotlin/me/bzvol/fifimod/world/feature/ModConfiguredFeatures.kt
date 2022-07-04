@@ -19,6 +19,6 @@ object ModConfiguredFeatures {
 
     val BISMUTH_ORE: Holder<ConfiguredFeature<OreConfiguration, *>> = FeatureUtils.register(
         "ore_bismuth",
-        Feature.ORE, OreConfiguration(ORE_BISMUTH_TARGET_LIST, 3, 0.3f)
+        Feature.ORE, OreConfiguration(ORE_BISMUTH_TARGET_LIST, 5)
     )
 }

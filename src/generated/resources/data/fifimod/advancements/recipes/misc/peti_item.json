@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:peti_item"
+    ]
+  },
+  "criteria": {
+    "has_peti_ingredients": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "minecraft:potato",
+              "minecraft:stick"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:peti_item"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_peti_ingredients",
+      "has_the_recipe"
+    ]
+  ]
+}

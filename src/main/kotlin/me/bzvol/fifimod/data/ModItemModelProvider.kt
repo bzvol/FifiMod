@@ -23,12 +23,19 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.MUSIC_DISC_BIDIBODI)
         simpleItem(ModItems.AMETHYST_LIGHTER)
         simpleItem(ModItems.THE_FIFHER)
+        simpleItem(ModItems.PETI_ITEM)
+
+        withExistingParent(
+            ModItems.FIFI_SPAWN_EGG.registryName?.path,
+            mcLoc("item/template_spawn_egg")
+        )
 
         blockItem(ModBlocks.BISMUTH_ORE)
         blockItem(ModBlocks.DEEPSLATE_BISMUTH_ORE)
         blockItem(ModBlocks.BISMUTH_BLOCK)
         blockItem(ModBlocks.BURPBOX)
         blockItem(ModBlocks.FIFI_SPAWNER)
+        blockItem(ModBlocks.POTATO_BLOCK)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

@@ -10,6 +10,7 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.OreBlock
+import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.material.Material
 import net.minecraft.world.level.material.MaterialColor
@@ -68,6 +69,15 @@ object ModBlocks {
                 .strength(5f, 1200f)
         )
     }) { BlockItem(it, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.EPIC)) }
+
+    val POTATO_BLOCK: Block by registerBlock("potato_block", ModCreativeModeTab.FIFI_TAB) {
+        Block(
+            BlockBehaviour.Properties
+                .of(Material.VEGETABLE, MaterialColor.COLOR_BROWN)
+                .strength(1f)
+                .sound(SoundType.WOOD)
+        )
+    }
 
     private fun <T : Block> registerBlock(
         name: String, tab: CreativeModeTab, blockSupplier: () -> T
