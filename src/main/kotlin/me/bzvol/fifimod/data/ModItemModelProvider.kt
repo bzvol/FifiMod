@@ -24,6 +24,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.AMETHYST_LIGHTER)
         simpleItem(ModItems.THE_FIFHER)
         simpleItem(ModItems.PETI_ITEM)
+        simpleItem(ModItems.BEAN)
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,

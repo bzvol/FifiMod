@@ -17,136 +17,25 @@ import java.util.function.Consumer
 
 class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
     override fun buildCraftingRecipes(pFinishedRecipeConsumer: Consumer<FinishedRecipe>) {
-        ShapedRecipeBuilder.shaped(ModBlocks.BISMUTH_BLOCK)
-            .define('B', ModItems.BISMUTH)
-            .define('G', Items.GOLD_NUGGET)
-            .pattern("BBG")
-            .pattern("BB ")
-            .unlockedBy(
-                "has_bismuth",
-                has(ModItems.BISMUTH)
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(ModItems.BISMUTH, 4)
-            .requires(ModBlocks.BISMUTH_BLOCK)
-            .unlockedBy(
-                "has_bismuth_block",
-                has(ModBlocks.BISMUTH_BLOCK)
-            )
-            .save(pFinishedRecipeConsumer)
-
-        cooking(Ingredient.of(ModBlocks.BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING)
-            .save(pFinishedRecipeConsumer)
-
-        cooking(Ingredient.of(ModBlocks.DEEPSLATE_BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING)
-            .save(pFinishedRecipeConsumer)
-
-        SimpleCookingRecipeBuilder.smelting(
-            Ingredient.of(Items.POPPY), ModItems.POPPY_SEEDS, 2f, 200
-        )
-            .unlockedBy("has_poppy", has(Items.POPPY))
-            .save(pFinishedRecipeConsumer)
-
-        cooking(Ingredient.of(Items.MILK_BUCKET), ModItems.COTTAGE_CHEESE, 2f, CookingType.SMOKING)
-            .save(pFinishedRecipeConsumer)
-
-        ShapedRecipeBuilder.shaped(ModItems.BOWL_OF_CCMPS)
-            .define('B', Items.BOWL)
-            .define('M', Items.BROWN_MUSHROOM)
-            .define('C', ModItems.COTTAGE_CHEESE)
-            .define('P', ModItems.POPPY_SEEDS)
-            .pattern(" P ")
-            .pattern("CPM")
-            .pattern(" B ")
-            .unlockedBy(
-                "has_ccmps_ingredients",
-                inventoryTrigger(
-                    ItemPredicate.Builder.item()
-                        .of(ModItems.POPPY_SEEDS, ModItems.COTTAGE_CHEESE, Items.BROWN_MUSHROOM)
-                        .build()
-                )
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(ModBlocks.BURPBOX)
-            .requires(Items.NOTE_BLOCK)
-            .requires(Items.TNT)
-            .unlockedBy(
-                "has_burp_ingredients",
-                inventoryTrigger(
-                    ItemPredicate.Builder.item()
-                        .of(Items.NOTE_BLOCK, Items.TNT)
-                        .build()
-                )
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(ModItems.AMETHYST_LIGHTER)
-            .requires(Items.IRON_INGOT)
-            .requires(Items.FLINT)
-            .requires(Items.AMETHYST_SHARD)
-            .unlockedBy(
-                "has_amethyst_lighter_ingredients",
-                inventoryTrigger(
-                    ItemPredicate.Builder.item()
-                        .of(Items.IRON_INGOT, Items.FLINT, Items.AMETHYST_SHARD)
-                        .build()
-                )
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapedRecipeBuilder.shaped(ModItems.THE_FIFHER)
-            .define('A', Items.AMETHYST_SHARD)
-            .pattern("AA")
-            .pattern("AA")
-            .pattern("A ")
-            .unlockedBy(
-                "has_amethyst_shard",
-                has(Items.AMETHYST_SHARD)
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SPAWNER)
-            .define('S', ItemTags.STONE_CRAFTING_MATERIALS)
-            .define('B', ModItems.BISMUTH)
-            .define('F', ModItems.THE_FIFHER)
-            .pattern(" F ")
-            .pattern("SBS")
-            .pattern("SSS")
-            .unlockedBy(
-                "has_fifi_spawner_ingredients",
-                inventoryTrigger(
-                    ItemPredicate.Builder.item()
-                        .of(ModItems.BISMUTH, ModItems.THE_FIFHER)
-                        .of(ItemTags.STONE_CRAFTING_MATERIALS)
-                        .build()
-                )
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(ModItems.PETI_ITEM)
-            .requires(Items.POTATO)
-            .requires(Items.STICK)
-            .unlockedBy(
-                "has_peti_ingredients",
-                inventoryTrigger(
-                    ItemPredicate.Builder.item()
-                        .of(Items.POTATO, Items.STICK)
-                        .build()
-                )
-            )
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(ModBlocks.POTATO_BLOCK)
-            .requires(Items.POTATO, 9)
-            .unlockedBy("has_potato", has(Items.POTATO))
-            .save(pFinishedRecipeConsumer)
-
-        ShapelessRecipeBuilder.shapeless(Items.POTATO, 9)
-            .requires(ModBlocks.POTATO_BLOCK)
-            .unlockedBy("has_potato_block", has(ModBlocks.POTATO_BLOCK))
-            .save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.BISMUTH_BLOCK).define('B', ModItems.BISMUTH).define('G', Items.GOLD_NUGGET).pattern("BBG").pattern("BB ").unlockedBy("has_bismuth", has(ModItems.BISMUTH)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModItems.BISMUTH, 4).requires(ModBlocks.BISMUTH_BLOCK).unlockedBy("has_bismuth_block", has(ModBlocks.BISMUTH_BLOCK)).save(pFinishedRecipeConsumer)
+        cooking(Ingredient.of(ModBlocks.BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING).save(pFinishedRecipeConsumer)
+        cooking(Ingredient.of(ModBlocks.DEEPSLATE_BISMUTH_ORE), ModItems.BISMUTH, 10f, CookingType.BLASTING).save(pFinishedRecipeConsumer)
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(Items.POPPY), ModItems.POPPY_SEEDS, 2f, 200).unlockedBy("has_poppy", has(Items.POPPY)).save(pFinishedRecipeConsumer)
+        cooking(Ingredient.of(Items.MILK_BUCKET), ModItems.COTTAGE_CHEESE, 2f, CookingType.SMOKING).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.BOWL_OF_CCMPS).define('B', Items.BOWL).define('M', Items.BROWN_MUSHROOM).define('C', ModItems.COTTAGE_CHEESE).define('P', ModItems.POPPY_SEEDS).pattern(" P ").pattern("CPM").pattern(" B ").unlockedBy("has_ccmps_ingredients", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.POPPY_SEEDS, ModItems.COTTAGE_CHEESE, Items.BROWN_MUSHROOM).build())).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModBlocks.BURPBOX).requires(Items.NOTE_BLOCK).requires(Items.TNT).unlockedBy("has_burp_ingredients", inventoryTrigger(ItemPredicate.Builder.item().of(Items.NOTE_BLOCK, Items.TNT).build())).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModItems.AMETHYST_LIGHTER).requires(Items.IRON_INGOT).requires(Items.FLINT).requires(Items.AMETHYST_SHARD).unlockedBy("has_amethyst_lighter_ingredients", inventoryTrigger(ItemPredicate.Builder.item().of(Items.IRON_INGOT, Items.FLINT, Items.AMETHYST_SHARD).build())).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.THE_FIFHER).define('A', Items.AMETHYST_SHARD).pattern("AA").pattern("AA").pattern("A ").unlockedBy("has_amethyst_shard", has(Items.AMETHYST_SHARD)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SPAWNER).define('S', ItemTags.STONE_CRAFTING_MATERIALS).define('B', ModItems.BISMUTH).define('F', ModItems.THE_FIFHER).pattern(" F ").pattern("SBS").pattern("SSS").unlockedBy("has_fifi_spawner_ingredients", inventoryTrigger(ItemPredicate.Builder.item().of(ModItems.BISMUTH, ModItems.THE_FIFHER).of(ItemTags.STONE_CRAFTING_MATERIALS).build())).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModItems.PETI_ITEM).requires(Items.POTATO).requires(Items.STICK).unlockedBy("has_peti_ingredients", inventoryTrigger(ItemPredicate.Builder.item().of(Items.POTATO, Items.STICK).build())).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModBlocks.POTATO_BLOCK).requires(Items.POTATO, 9).unlockedBy("has_potato", has(Items.POTATO)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(Items.POTATO, 9).requires(ModBlocks.POTATO_BLOCK).unlockedBy("has_potato_block", has(ModBlocks.POTATO_BLOCK)).save(pFinishedRecipeConsumer)
+        val chainmailArmorTrigger = inventoryTrigger(ItemPredicate.Builder.item().of(Items.IRON_INGOT, Items.IRON_NUGGET).build())
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_HELMET).define('I', Items.IRON_INGOT).define('N', Items.IRON_NUGGET).pattern("III").pattern("N N").unlockedBy("has_chainmail_helmet_ingredients", chainmailArmorTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_CHESTPLATE).define('I', Items.IRON_INGOT).define('N', Items.IRON_NUGGET).pattern("N N").pattern("III").pattern("NNN").unlockedBy("has_chainmail_chestplate_ingredients", chainmailArmorTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_LEGGINGS).define('I', Items.IRON_INGOT).define('N', Items.IRON_NUGGET).pattern("NIN").pattern("I I").pattern("N N").unlockedBy("has_chainmail_leggings_ingredients", chainmailArmorTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(Items.CHAINMAIL_BOOTS).define('I', Items.IRON_INGOT).define('N', Items.IRON_NUGGET).pattern("N N").pattern("I I").unlockedBy("has_chainmail_boots_ingredients", chainmailArmorTrigger).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

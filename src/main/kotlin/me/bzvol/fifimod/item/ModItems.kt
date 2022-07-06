@@ -17,48 +17,16 @@ import thedarkcolour.kotlinforforge.forge.registerObject
 object ModItems {
     val REGISTRY: DeferredRegister<Item> = DeferredRegister.create(ForgeRegistries.ITEMS, FifiMod.MOD_ID)
 
-    val BISMUTH: Item by REGISTRY.registerObject("bismuth") {
-        Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
-    }
-
-    val POPPY_SEEDS: Item by REGISTRY.registerObject("poppy_seeds") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MISC))
-    }
-
-    val COTTAGE_CHEESE: Item by REGISTRY.registerObject("cottage_cheese") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MISC))
-    }
-
-    val PETI_ITEM: Item by REGISTRY.registerObject("peti_item") {
-        PetiItem(Item.Properties().tab(CreativeModeTab.TAB_MISC))
-    }
-
-    val BOWL_OF_CCMPS: Item by REGISTRY.registerObject("bowl_of_ccmps") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BOWL_OF_CCMPS))
-    }
-
-    val MUSIC_DISC_BIDIBODI: Item by REGISTRY.registerObject("music_disc_bidibodi") {
-        RecordItem(
-            15,
-            ModSounds::MUSIC_DISC_BIDIBODI,
-            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1).rarity(Rarity.RARE)
-        )
-    }
-
-    val AMETHYST_LIGHTER: Item by REGISTRY.registerObject("amethyst_lighter") {
-        AmethystLighter(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
-    }
-
-    val THE_FIFHER: Item by REGISTRY.registerObject("the_fifher") {
-        Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
-    }
-
-    val FIFI_SPAWN_EGG: Item by REGISTRY.registerObject("fifi_spawn_egg") {
-        ForgeSpawnEggItem(
-            ModEntityTypes::FIFI, 0xba23b0, 0xf081d4,
-            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)
-        )
-    }
+    val BISMUTH: Item by REGISTRY.registerObject("bismuth") { Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)) }
+    val POPPY_SEEDS: Item by REGISTRY.registerObject("poppy_seeds") { Item(Item.Properties().tab(CreativeModeTab.TAB_MISC)) }
+    val COTTAGE_CHEESE: Item by REGISTRY.registerObject("cottage_cheese") { Item(Item.Properties().tab(CreativeModeTab.TAB_MISC)) }
+    val PETI_ITEM: Item by REGISTRY.registerObject("peti_item") { PetiItem(Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1)) }
+    val BOWL_OF_CCMPS: Item by REGISTRY.registerObject("bowl_of_ccmps") { Item(Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BOWL_OF_CCMPS).stacksTo(1)) }
+    val MUSIC_DISC_BIDIBODI: Item by REGISTRY.registerObject("music_disc_bidibodi") { RecordItem(15, ModSounds::MUSIC_DISC_BIDIBODI, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1).rarity(Rarity.RARE)) }
+    val AMETHYST_LIGHTER: Item by REGISTRY.registerObject("amethyst_lighter") { AmethystLighter(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1)) }
+    val THE_FIFHER: Item by REGISTRY.registerObject("the_fifher") { Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)) }
+    val FIFI_SPAWN_EGG: Item by REGISTRY.registerObject("fifi_spawn_egg") { ForgeSpawnEggItem(ModEntityTypes::FIFI, 0xba23b0, 0xf081d4, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)) }
+    val BEAN by REGISTRY.registerObject("bean") { BeanItem(Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BEAN)) }
 
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)

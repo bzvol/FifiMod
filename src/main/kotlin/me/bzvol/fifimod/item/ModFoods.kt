@@ -7,4 +7,11 @@ object ModFoods {
         .nutrition(12)
         .saturationMod(0.8f)
         .build()
+
+    val BEAN = (FoodProperties.Builder())
+        .nutrition(5)
+        .saturationMod(0.8f)
+        .build()
+
 }
+
