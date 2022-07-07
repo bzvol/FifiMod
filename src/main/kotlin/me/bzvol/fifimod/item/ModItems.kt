@@ -27,6 +27,7 @@ object ModItems {
     val THE_FIFHER: Item by REGISTRY.registerObject("the_fifher") { Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)) }
     val FIFI_SPAWN_EGG: Item by REGISTRY.registerObject("fifi_spawn_egg") { ForgeSpawnEggItem(ModEntityTypes::FIFI, 0xba23b0, 0xf081d4, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)) }
     val BEAN by REGISTRY.registerObject("bean") { BeanItem(Item.Properties().tab(CreativeModeTab.TAB_FOOD).food(ModFoods.BEAN)) }
+    val EFUM by REGISTRY.registerObject("efum") { EfumItem(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(16)) }
 
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
