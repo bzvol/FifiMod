@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    },
+    {
+      "item": "fifimod:tin_ingot"
+    }
+  ],
+  "result": {
+    "item": "fifimod:tin_block"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    },
+    {
+      "item": "fifimod:bronze_ingot"
+    }
+  ],
+  "result": {
+    "item": "fifimod:bronze_block"
+  }
+}

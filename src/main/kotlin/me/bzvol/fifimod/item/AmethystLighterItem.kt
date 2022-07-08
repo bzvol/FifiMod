@@ -1,5 +1,6 @@
 package me.bzvol.fifimod.item
 
+import me.bzvol.fifimod.block.FifiSpawnerBlock
 import net.minecraft.advancements.CriteriaTriggers
 import net.minecraft.server.level.ServerPlayer
 import net.minecraft.sounds.SoundEvents
@@ -15,7 +16,7 @@ import net.minecraft.world.level.block.CandleCakeBlock
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.gameevent.GameEvent
 
-class AmethystLighter(properties: Properties) : FlintAndSteelItem(properties) {
+class AmethystLighterItem(properties: Properties) : FlintAndSteelItem(properties) {
     override fun useOn(pContext: UseOnContext): InteractionResult {
         val player = pContext.player
         val level = pContext.level
@@ -61,7 +62,12 @@ class AmethystLighter(properties: Properties) : FlintAndSteelItem(properties) {
                 1.0f,
                 level.random.nextFloat() * 0.4f + 0.8f
             )
-            level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, true), 11)
+
+            if (!FifiSpawnerBlock.canLight(blockstate))
+                level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, true), 11)
+            else
+                (blockstate.block as FifiSpawnerBlock).light()
+
             level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos)
             if (player != null) {
                 pContext.itemInHand.hurtAndBreak(1, player) { pPlayer: Player ->

@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:bronze_block"
+    }
+  ],
+  "result": {
+    "item": "fifimod:bronze_ingot",
+    "count": 9
+  }
+}

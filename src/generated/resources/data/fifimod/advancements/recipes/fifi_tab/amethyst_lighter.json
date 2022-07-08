@@ -6,15 +6,13 @@
     ]
   },
   "criteria": {
-    "has_amethyst_lighter_ingredients": {
+    "has_flint": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:iron_ingot",
-              "minecraft:flint",
-              "minecraft:amethyst_shard"
+              "minecraft:flint"
             ]
           }
         ]
@@ -29,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_amethyst_lighter_ingredients",
+      "has_flint",
       "has_the_recipe"
     ]
   ]

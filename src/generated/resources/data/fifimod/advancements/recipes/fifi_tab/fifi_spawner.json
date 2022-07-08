@@ -6,16 +6,14 @@
     ]
   },
   "criteria": {
-    "has_fifi_spawner_ingredients": {
+    "has_bismuth": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "fifimod:bismuth",
-              "fifimod:the_fifher"
-            ],
-            "tag": "minecraft:stone_crafting_materials"
+              "fifimod:bismuth"
+            ]
           }
         ]
       }
@@ -29,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_fifi_spawner_ingredients",
+      "has_bismuth",
       "has_the_recipe"
     ]
   ]

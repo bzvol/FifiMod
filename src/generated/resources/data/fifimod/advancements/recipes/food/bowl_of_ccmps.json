@@ -6,14 +6,12 @@
     ]
   },
   "criteria": {
-    "has_ccmps_ingredients": {
+    "has_brown_mushroom": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "fifimod:poppy_seeds",
-              "fifimod:cottage_cheese",
               "minecraft:brown_mushroom"
             ]
           }
@@ -29,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_ccmps_ingredients",
+      "has_brown_mushroom",
       "has_the_recipe"
     ]
   ]

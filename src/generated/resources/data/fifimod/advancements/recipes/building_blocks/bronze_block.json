@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:bronze_block"
     ]
   },
   "criteria": {
-    "has_note_block": {
+    "has_bronze_ingot": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block"
+              "fifimod:bronze_ingot"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:bronze_block"
       }
     }
   },
   "requirements": [
     [
-      "has_note_block",
+      "has_bronze_ingot",
       "has_the_recipe"
     ]
   ]

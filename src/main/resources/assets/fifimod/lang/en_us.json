@@ -10,6 +10,9 @@
   "item.fifimod.peti_item": "Peti Item",
   "item.fifimod.fifi_spawn_egg": "Fifi Spawn Egg",
   "item.fifimod.bean": "Bean",
+  "item.fifimod.efum": "Efum",
+  "item.fifimod.tin_ingot": "Tin Ingot",
+  "item.fifimod.bronze_ingot": "Bronze Ingot",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
@@ -17,6 +20,9 @@
   "block.fifimod.burpbox": "Burpbox",
   "block.fifimod.fifi_spawner": "Fifi Spawner",
   "block.fifimod.potato_block": "Potato Block",
+  "block.fifimod.tin_ore": "Tin Ore",
+  "block.fifimod.tin_block": "Tin Block",
+  "block.fifimod.bronze_block": "Bronze Block",
 
   "itemGroup.fifi_tab": "Fifi Tab",
 

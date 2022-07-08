@@ -23,7 +23,8 @@ object ModEntityTypes {
     val EFUM: EntityType<Efum> by REGISTRY.registerObject("efum") {
         EntityType.Builder.of(::Efum, MobCategory.MISC)
             .sized(0.25f, 0.25f)
-            .build(ResourceLocation(FifiMod.MOD_ID), "efum").toString())
+            .clientTrackingRange(4).updateInterval(10)
+            .build(ResourceLocation(FifiMod.MOD_ID, "efum").toString())
     }
 
     fun register(eventBus: IEventBus) {

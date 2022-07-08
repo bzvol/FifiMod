@@ -25,6 +25,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.THE_FIFHER)
         simpleItem(ModItems.PETI_ITEM)
         simpleItem(ModItems.BEAN)
+        simpleItem(ModItems.EFUM)
+        simpleItem(ModItems.TIN_INGOT)
+        simpleItem(ModItems.BRONZE_INGOT)
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,
@@ -37,6 +40,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.BURPBOX)
         blockItem(ModBlocks.FIFI_SPAWNER)
         blockItem(ModBlocks.POTATO_BLOCK)
+        blockItem(ModBlocks.TIN_ORE)
+        blockItem(ModBlocks.TIN_BLOCK)
+        blockItem(ModBlocks.BRONZE_BLOCK)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

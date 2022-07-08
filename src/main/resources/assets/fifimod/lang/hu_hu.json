@@ -10,6 +10,9 @@
   "item.fifimod.peti_item": "Krumplizó",
   "item.fifimod.fifi_spawn_egg": "Fifiidéző tojás",
   "item.fifimod.bean": "Bab",
+  "item.fifimod.efum": "Efüm",
+  "item.fifimod.tin_ingot": "Ón",
+  "item.fifimod.bronze_ingot": "Bronz",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
   "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",
@@ -17,6 +20,9 @@
   "block.fifimod.burpbox": "Böfigép",
   "block.fifimod.fifi_spawner": "Fifiidéző gép",
   "block.fifimod.potato_block": "Krumpliblokk",
+  "block.fifimod.tin_ore": "Ónérc",
+  "block.fifimod.tin_block": "Ónblokk",
+  "block.fifimod.bronze_block": "Bronzblokk",
 
   "itemGroup.fifi_tab": "Fifi cuccocskák",
 

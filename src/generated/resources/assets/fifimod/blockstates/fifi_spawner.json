@@ -1,17 +1,32 @@
 {
   "variants": {
-    "facing=north": {
+    "facing=north,lit=false": {
       "model": "fifimod:block/fifi_spawner"
     },
-    "facing=south": {
+    "facing=south,lit=false": {
       "model": "fifimod:block/fifi_spawner",
       "y": 180
     },
-    "facing=west": {
+    "facing=west,lit=false": {
       "model": "fifimod:block/fifi_spawner",
       "y": 270
     },
-    "facing=east": {
+    "facing=east,lit=false": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 90
+    },
+    "facing=north,lit=true": {
+      "model": "fifimod:block/fifi_spawner"
+    },
+    "facing=south,lit=true": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 180
+    },
+    "facing=west,lit=true": {
+      "model": "fifimod:block/fifi_spawner",
+      "y": 270
+    },
+    "facing=east,lit=true": {
       "model": "fifimod:block/fifi_spawner",
       "y": 90
     }

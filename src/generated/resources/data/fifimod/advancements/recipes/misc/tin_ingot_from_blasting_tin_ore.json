@@ -2,17 +2,17 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:burpbox"
+      "fifimod:tin_ingot_from_blasting_tin_ore"
     ]
   },
   "criteria": {
-    "has_note_block": {
+    "has_tin_ore": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:note_block"
+              "fifimod:tin_ore"
             ]
           }
         ]
@@ -21,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:burpbox"
+        "recipe": "fifimod:tin_ingot_from_blasting_tin_ore"
       }
     }
   },
   "requirements": [
     [
-      "has_note_block",
+      "has_tin_ore",
       "has_the_recipe"
     ]
   ]

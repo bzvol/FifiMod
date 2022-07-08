@@ -6,14 +6,13 @@
     ]
   },
   "criteria": {
-    "has_peti_ingredients": {
+    "has_potato": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
             "items": [
-              "minecraft:potato",
-              "minecraft:stick"
+              "minecraft:potato"
             ]
           }
         ]
@@ -28,7 +27,7 @@
   },
   "requirements": [
     [
-      "has_peti_ingredients",
+      "has_potato",
       "has_the_recipe"
     ]
   ]

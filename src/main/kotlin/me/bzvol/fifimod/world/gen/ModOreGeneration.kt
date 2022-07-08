@@ -12,5 +12,6 @@ object ModOreGeneration {
             event.generation.getFeatures(GenerationStep.Decoration.UNDERGROUND_ORES)
 
         base.add(ModOrePlacements.ORE_BISMUTH)
+        base.add(ModOrePlacements.ORE_TIN)
     }
 }

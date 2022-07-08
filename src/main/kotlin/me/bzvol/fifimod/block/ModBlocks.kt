@@ -43,12 +43,42 @@ object ModBlocks {
         )
     }
 
+    val TIN_ORE by registerBlock("tin_ore", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+        OreBlock(
+            BlockBehaviour.Properties
+                .of(Material.STONE)
+                .strength(3f)
+                .requiresCorrectToolForDrops()
+        )
+    }
+
     val BISMUTH_BLOCK: Block by registerBlock("bismuth_block", ModCreativeModeTab.FIFI_TAB) {
         BismuthBlock(
             BlockBehaviour.Properties
-                .of(Material.METAL)
-                .strength(3f)
+                .of(Material.METAL, MaterialColor.METAL)
                 .requiresCorrectToolForDrops()
+                .strength(3f)
+                .sound(SoundType.METAL)
+        )
+    }
+
+    val TIN_BLOCK by registerBlock("tin_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+        Block(
+            BlockBehaviour.Properties
+                .of(Material.METAL, MaterialColor.METAL)
+                .requiresCorrectToolForDrops()
+                .strength(5f, 6f)
+                .sound(SoundType.METAL)
+        )
+    }
+
+    val BRONZE_BLOCK by registerBlock("bronze_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+        Block(
+            BlockBehaviour.Properties
+                .of(Material.METAL, MaterialColor.METAL)
+                .requiresCorrectToolForDrops()
+                .strength(5f, 6f)
+                .sound(SoundType.METAL)
         )
     }
 

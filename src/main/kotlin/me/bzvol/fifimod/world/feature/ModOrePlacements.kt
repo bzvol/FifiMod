@@ -10,7 +10,14 @@ object ModOrePlacements {
         "ore_bismuth",
         ModConfiguredFeatures.BISMUTH_ORE, commonOrePlacement(
             10,
-            HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(-80), VerticalAnchor.aboveBottom(120))
+            HeightRangePlacement.triangle(VerticalAnchor.absolute(-80), VerticalAnchor.absolute(120))
+        )
+    )
+    val ORE_TIN: Holder<PlacedFeature> = PlacementUtils.register(
+        "ore_tin",
+        ModConfiguredFeatures.TIN_ORE, commonOrePlacement(
+            50,
+            HeightRangePlacement.uniform(VerticalAnchor.absolute(20), VerticalAnchor.absolute(100))
         )
     )
 
