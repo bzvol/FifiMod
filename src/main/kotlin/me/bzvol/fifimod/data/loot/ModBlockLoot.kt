@@ -26,6 +26,7 @@ class ModBlockLoot : BlockLoot() {
         dropSelf(ModBlocks.TIN_ORE)
         dropSelf(ModBlocks.TIN_BLOCK)
         dropSelf(ModBlocks.BRONZE_BLOCK)
+        dropSelf(ModBlocks.STEEL_BLOCK)
 
         add(ModBlocks.BISMUTH_ORE) {
             createOreDrop(ModBlocks.BISMUTH_ORE, ModItems.BISMUTH)

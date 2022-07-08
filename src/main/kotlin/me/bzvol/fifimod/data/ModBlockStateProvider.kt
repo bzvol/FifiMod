@@ -18,6 +18,7 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
         simpleBlock(ModBlocks.TIN_ORE)
         simpleBlock(ModBlocks.TIN_BLOCK)
         simpleBlock(ModBlocks.BRONZE_BLOCK)
+        simpleBlock(ModBlocks.STEEL_BLOCK)
 
         horizontalBlock(ModBlocks.BISMUTH_BLOCK, cubeAll(ModBlocks.BISMUTH_BLOCK))
 

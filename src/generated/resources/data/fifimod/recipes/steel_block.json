@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    },
+    {
+      "item": "fifimod:steel"
+    }
+  ],
+  "result": {
+    "item": "fifimod:steel_block"
+  }
+}

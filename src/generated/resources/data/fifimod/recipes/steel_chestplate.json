@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "S S",
+    "SSS",
+    "SSS"
+  ],
+  "key": {
+    "S": {
+      "item": "fifimod:steel"
+    }
+  },
+  "result": {
+    "item": "fifimod:steel_chestplate"
+  }
+}

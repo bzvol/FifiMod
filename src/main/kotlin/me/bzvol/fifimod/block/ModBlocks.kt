@@ -82,6 +82,16 @@ object ModBlocks {
         )
     }
 
+    val STEEL_BLOCK by registerBlock("steel_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+        Block(
+            BlockBehaviour.Properties
+                .of(Material.METAL, MaterialColor.METAL)
+                .requiresCorrectToolForDrops()
+                .strength(5f, 6f)
+                .sound(SoundType.METAL)
+        )
+    }
+
     val BURPBOX: Block by registerBlock("burpbox", ModCreativeModeTab.FIFI_TAB) {
         BurpboxBlock(
             BlockBehaviour.Properties

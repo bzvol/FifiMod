@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "BBB",
+    "B B",
+    "B B"
+  ],
+  "key": {
+    "B": {
+      "item": "fifimod:bronze_ingot"
+    }
+  },
+  "result": {
+    "item": "fifimod:bronze_leggings"
+  }
+}

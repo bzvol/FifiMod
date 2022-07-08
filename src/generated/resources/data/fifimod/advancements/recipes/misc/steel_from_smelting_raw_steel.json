@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:steel_from_smelting_raw_steel"
+    ]
+  },
+  "criteria": {
+    "has_raw_steel": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fifimod:raw_steel"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:steel_from_smelting_raw_steel"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_raw_steel",
+      "has_the_recipe"
+    ]
+  ]
+}

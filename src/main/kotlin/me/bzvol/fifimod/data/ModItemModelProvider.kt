@@ -28,6 +28,28 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.EFUM)
         simpleItem(ModItems.TIN_INGOT)
         simpleItem(ModItems.BRONZE_INGOT)
+        simpleItem(ModItems.RAW_STEEL)
+        simpleItem(ModItems.STEEL)
+
+        simpleItem(ModItems.BRONZE_HELMET)
+        simpleItem(ModItems.BRONZE_CHESTPLATE)
+        simpleItem(ModItems.BRONZE_LEGGINGS)
+        simpleItem(ModItems.BRONZE_BOOTS)
+        simpleItem(ModItems.STEEL_HELMET)
+        simpleItem(ModItems.STEEL_CHESTPLATE)
+        simpleItem(ModItems.STEEL_LEGGINGS)
+        simpleItem(ModItems.STEEL_BOOTS)
+
+        handheldItem(ModItems.BRONZE_PICKAXE)
+        handheldItem(ModItems.BRONZE_AXE)
+        handheldItem(ModItems.BRONZE_SWORD)
+        handheldItem(ModItems.BRONZE_SHOVEL)
+        handheldItem(ModItems.BRONZE_HOE)
+        handheldItem(ModItems.STEEL_PICKAXE)
+        handheldItem(ModItems.STEEL_AXE)
+        handheldItem(ModItems.STEEL_SWORD)
+        handheldItem(ModItems.STEEL_SHOVEL)
+        handheldItem(ModItems.STEEL_HOE)
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,
@@ -43,6 +65,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.TIN_ORE)
         blockItem(ModBlocks.TIN_BLOCK)
         blockItem(ModBlocks.BRONZE_BLOCK)
+        blockItem(ModBlocks.STEEL_BLOCK)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =
