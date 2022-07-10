@@ -5,6 +5,7 @@ import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.item.ArmorMaterial
+import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 
 enum class ModArmorMaterials(
@@ -22,6 +23,9 @@ enum class ModArmorMaterials(
     }),
     STEEL("steel", 15, listOf(2, 5, 6, 2), 9, SoundEvents.ARMOR_EQUIP_IRON, 0f, 0f, {
         Ingredient.of(ModItems.STEEL)
+    }),
+    FIFI("fifi", 45, listOf(3, 6, 8, 3), 30, SoundEvents.ARMOR_EQUIP_NETHERITE, 4f, 0.3f, {
+        Ingredient.of(ModItems.FIFI)
     });
 
     override fun getDurabilityForSlot(pSlot: EquipmentSlot): Int =

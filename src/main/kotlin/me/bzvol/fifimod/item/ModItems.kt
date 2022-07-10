@@ -117,7 +117,7 @@ object ModItems {
         PickaxeItem(ModTiers.STEEL, 1, -2.8f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
     }
     val STEEL_AXE by REGISTRY.registerObject("steel_axe") {
-        AxeItem(ModTiers.STEEL, 6f, -3.1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        AxeItem(ModTiers.STEEL, 5f, -3.1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
     }
     val STEEL_SWORD by REGISTRY.registerObject("steel_sword") {
         SwordItem(ModTiers.STEEL, 3, -2.4f, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
@@ -139,6 +139,10 @@ object ModItems {
     }
     val STEEL_BOOTS by REGISTRY.registerObject("steel_boots") {
         ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.FEET, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+    }
+
+    val FIFI by REGISTRY.registerObject("fifi") {
+        Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.RARE))
     }
 
     fun register(eventBus: IEventBus) {
