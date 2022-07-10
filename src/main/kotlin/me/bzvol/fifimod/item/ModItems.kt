@@ -65,7 +65,7 @@ object ModItems {
     }
 
     val EFUM by REGISTRY.registerObject("efum") {
-        EfumItem(Item.Properties()/*.tab(ModCreativeModeTab.FIFI_TAB)*/.stacksTo(16))
+        EfumItem(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(16))
     }
 
     val TIN_INGOT by REGISTRY.registerObject("tin_ingot") {

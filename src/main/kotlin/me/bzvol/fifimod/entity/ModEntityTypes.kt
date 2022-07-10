@@ -1,7 +1,7 @@
 package me.bzvol.fifimod.entity
 
 import me.bzvol.fifimod.FifiMod
-import me.bzvol.fifimod.entity.projectile.Efum
+import me.bzvol.fifimod.entity.projectile.EfumEntity
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.MobCategory
@@ -20,8 +20,8 @@ object ModEntityTypes {
             .build(ResourceLocation(FifiMod.MOD_ID, "fifi").toString())
     }
 
-    val EFUM: EntityType<Efum> by REGISTRY.registerObject("efum") {
-        EntityType.Builder.of(::Efum, MobCategory.MISC)
+    val EFUM: EntityType<EfumEntity> by REGISTRY.registerObject("efum") {
+        EntityType.Builder.of(::EfumEntity, MobCategory.MISC)
             .sized(0.25f, 0.25f)
             .clientTrackingRange(4).updateInterval(10)
             .build(ResourceLocation(FifiMod.MOD_ID, "efum").toString())

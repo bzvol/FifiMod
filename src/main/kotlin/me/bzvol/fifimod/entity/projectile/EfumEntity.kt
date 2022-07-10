@@ -12,9 +12,9 @@ import net.minecraft.world.level.Level
 import net.minecraft.world.phys.EntityHitResult
 import net.minecraft.world.phys.HitResult
 
-class Efum : ThrowableItemProjectile {
+class EfumEntity : ThrowableItemProjectile {
 
-    constructor(pEntityType: EntityType<out Efum>, pLevel: Level) : super(pEntityType, pLevel)
+    constructor(pEntityType: EntityType<out EfumEntity>, pLevel: Level) : super(pEntityType, pLevel)
     constructor(pLevel: Level, pShooter: LivingEntity) : super(ModEntityTypes.EFUM, pShooter, pLevel)
     constructor(pLevel: Level, pX: Double, pY: Double, pZ: Double) : super(ModEntityTypes.EFUM, pX, pY, pZ, pLevel)
 

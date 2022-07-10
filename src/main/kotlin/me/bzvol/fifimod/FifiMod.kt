@@ -11,6 +11,7 @@ import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRenderers
+import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLDedicatedServerSetupEvent
@@ -52,6 +53,7 @@ object FifiMod {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
+        EntityRenderers.register(ModEntityTypes.EFUM, ::ThrownItemRenderer)
     }
 
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {
