@@ -71,7 +71,12 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.STRIPPED_FIFI_LOG)
         blockItem(ModBlocks.FIFI_WOOD)
         blockItem(ModBlocks.STRIPPED_FIFI_WOOD)
+        blockItem(ModBlocks.FIFI_LEAVES)
         blockItem(ModBlocks.FIFI_PLANKS)
+        blockItem(ModBlocks.FIFI_STAIRS)
+        blockItem(ModBlocks.FIFI_SLAB)
+        blockItem(ModBlocks.FIFI_FENCE_GATE)
+        getBuilder(ModBlocks.FIFI_FENCE.registryName?.path).parent(ModelFile.UncheckedModelFile(ResourceLocation(FifiMod.MOD_ID, "block/" + ModBlocks.FIFI_FENCE.registryName?.path + "_side")))
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

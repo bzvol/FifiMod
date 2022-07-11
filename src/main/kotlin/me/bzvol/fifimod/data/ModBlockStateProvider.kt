@@ -20,6 +20,7 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
         simpleBlock(ModBlocks.BRONZE_BLOCK)
         simpleBlock(ModBlocks.STEEL_BLOCK)
         simpleBlock(ModBlocks.FIFI_PLANKS)
+        simpleBlock(ModBlocks.FIFI_LEAVES)
 
         horizontalBlock(ModBlocks.BISMUTH_BLOCK, cubeAll(ModBlocks.BISMUTH_BLOCK))
 
@@ -35,10 +36,16 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
             existingFileHelper
         ))
 
-        axisBlock(ModBlocks.FIFI_LOG) // TODO: LANG FILES, LOOT TABLES, BLOCK TAGS
+        axisBlock(ModBlocks.FIFI_LOG)
         axisBlock(ModBlocks.FIFI_WOOD)
         axisBlock(ModBlocks.STRIPPED_FIFI_LOG)
         axisBlock(ModBlocks.STRIPPED_FIFI_WOOD)
+
+        val fifiPlanksTexture = ResourceLocation(FifiMod.MOD_ID, "block/fifi_planks")
+        stairsBlock(ModBlocks.FIFI_STAIRS, fifiPlanksTexture)
+        slabBlock(ModBlocks.FIFI_SLAB, fifiPlanksTexture, fifiPlanksTexture)
+        fenceBlock(ModBlocks.FIFI_FENCE, fifiPlanksTexture)
+        fenceGateBlock(ModBlocks.FIFI_FENCE_GATE, fifiPlanksTexture)
     }
 
 }

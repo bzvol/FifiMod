@@ -2,16 +2,18 @@
   "parent": "minecraft:recipes/root",
   "rewards": {
     "recipes": [
-      "fifimod:fifi_planks"
+      "fifimod:fifi_fence"
     ]
   },
   "criteria": {
-    "has_fifi_log": {
+    "has_fifi_planks": {
       "trigger": "minecraft:inventory_changed",
       "conditions": {
         "items": [
           {
-            "tag": "fifimod:fifi_logs"
+            "items": [
+              "fifimod:fifi_planks"
+            ]
           }
         ]
       }
@@ -19,13 +21,13 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "fifimod:fifi_planks"
+        "recipe": "fifimod:fifi_fence"
       }
     }
   },
   "requirements": [
     [
-      "has_fifi_log",
+      "has_fifi_planks",
       "has_the_recipe"
     ]
   ]

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "fifimod:fifi_planks"
+    }
+  },
+  "result": {
+    "item": "fifimod:fifi_stairs",
+    "count": 4
+  }
+}

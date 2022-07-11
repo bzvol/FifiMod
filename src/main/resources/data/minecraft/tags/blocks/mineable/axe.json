@@ -5,6 +5,10 @@
     "fifimod:fifi_wood",
     "fifimod:stripped_fifi_log",
     "fifimod:stripped_fifi_wood",
-    "fifimod:fifi_planks"
+    "fifimod:fifi_planks",
+    "fifimod:fifi_stairs",
+    "fifimod:fifi_slab",
+    "fifimod:fifi_fence",
+    "fifimod:fifi_fence_gate"
   ]
 }

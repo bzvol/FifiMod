@@ -1,20 +1,9 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    [
-      {
-        "item": "fifimod:fifi_log"
-      },
-      {
-        "item": "fifimod:fifi_wood"
-      },
-      {
-        "item": "fifimod:stripped_fifi_log"
-      },
-      {
-        "item": "fifimod:stripped_fifi_wood"
-      }
-    ]
+    {
+      "tag": "fifimod:fifi_logs"
+    }
   ],
   "result": {
     "item": "fifimod:fifi_planks",

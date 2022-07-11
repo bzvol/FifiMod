@@ -6,6 +6,7 @@ import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.entity.client.FifiRenderer
 import me.bzvol.fifimod.item.ModItems
+import me.bzvol.fifimod.painting.ModPaintings
 import me.bzvol.fifimod.sound.ModSounds
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.ItemBlockRenderTypes
@@ -33,6 +34,7 @@ object FifiMod {
         ModItems.register(MOD_BUS)
         ModSounds.register(MOD_BUS)
         ModEntityTypes.register(MOD_BUS)
+        ModPaintings.register(MOD_BUS)
 
         runForDist(
             clientTarget = {
@@ -51,6 +53,7 @@ object FifiMod {
         LOGGER.log(Level.INFO, "Initializing client...")
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.translucent())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
         EntityRenderers.register(ModEntityTypes.EFUM, ::ThrownItemRenderer)

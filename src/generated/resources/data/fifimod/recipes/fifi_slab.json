@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "fifimod:fifi_planks"
+    }
+  },
+  "result": {
+    "item": "fifimod:fifi_slab",
+    "count": 6
+  }
+}

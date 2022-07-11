@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab_top",
+  "textures": {
+    "side": "fifimod:block/fifi_planks",
+    "bottom": "fifimod:block/fifi_planks",
+    "top": "fifimod:block/fifi_planks"
+  }
+}

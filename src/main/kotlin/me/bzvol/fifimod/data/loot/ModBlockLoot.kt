@@ -32,6 +32,10 @@ class ModBlockLoot : BlockLoot() {
         dropSelf(ModBlocks.STRIPPED_FIFI_LOG)
         dropSelf(ModBlocks.STRIPPED_FIFI_WOOD)
         dropSelf(ModBlocks.FIFI_PLANKS)
+        dropSelf(ModBlocks.FIFI_STAIRS)
+        dropSelf(ModBlocks.FIFI_SLAB)
+        dropSelf(ModBlocks.FIFI_FENCE)
+        dropSelf(ModBlocks.FIFI_FENCE_GATE)
 
         add(ModBlocks.BISMUTH_ORE) {
             createOreDrop(ModBlocks.BISMUTH_ORE, ModItems.BISMUTH)
@@ -51,6 +55,10 @@ class ModBlockLoot : BlockLoot() {
                                 .otherwise(LootItem.lootTableItem(ModBlocks.POTATO_BLOCK))
                         )
                 )
+        }
+
+        add(ModBlocks.FIFI_LEAVES) {
+            createLeavesDrops(it, ModBlocks.FIFI_PLANKS, 0.025f, 0.027777778f, 0.03125f, 0.041666668f, 0.1f)
         }
     }
 

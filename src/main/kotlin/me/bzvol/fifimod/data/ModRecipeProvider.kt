@@ -3,11 +3,15 @@ package me.bzvol.fifimod.data
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
+import me.bzvol.fifimod.util.ModTags
+import net.minecraft.advancements.critereon.InventoryChangeTrigger
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.recipes.*
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.ItemTags
+import net.minecraft.tags.TagKey
+import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.RecipeSerializer
@@ -67,9 +71,13 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModItems.STEEL_CHESTPLATE).define('S', ModItems.STEEL).pattern("S S").pattern("SSS").pattern("SSS").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.STEEL_LEGGINGS).define('S', ModItems.STEEL).pattern("SSS").pattern("S S").pattern("S S").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.STEEL_BOOTS).define('S', ModItems.STEEL).pattern("S S").pattern("S S").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
-        ShapelessRecipeBuilder.shapeless(ModBlocks.FIFI_PLANKS, 4).requires(Ingredient.of(ModBlocks.FIFI_LOG, ModBlocks.FIFI_WOOD, ModBlocks.STRIPPED_FIFI_LOG, ModBlocks.STRIPPED_FIFI_WOOD)).unlockedBy("has_fifi_log", has(ModBlocks.FIFI_LOG)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModBlocks.FIFI_PLANKS, 4).requires(ModTags.Items.FIFI_LOGS).unlockedBy("has_fifi_log", has(ModTags.Items.FIFI_LOGS)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_WOOD, 3).define('#', ModBlocks.FIFI_LOG).pattern("##").pattern("##").unlockedBy("has_fifi_log", has(ModBlocks.FIFI_LOG)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.STRIPPED_FIFI_WOOD, 3).define('#', ModBlocks.STRIPPED_FIFI_LOG).pattern("##").pattern("##").unlockedBy("has_stripped_fifi_log", has(ModBlocks.STRIPPED_FIFI_LOG)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_STAIRS, 4).define('#', ModBlocks.FIFI_PLANKS).pattern("#  ").pattern("## ").pattern("###").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SLAB, 6).define('#', ModBlocks.FIFI_PLANKS).pattern("###").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE, 3).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("#S#").pattern("#S#").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE_GATE).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("S#S").pattern("S#S").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(
@@ -97,6 +105,9 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
         }
     }
+
+    private fun has(pTag: TagKey<Item>): InventoryChangeTrigger.TriggerInstance =
+        inventoryTrigger(ItemPredicate.Builder.item().of(pTag).build())
 
     companion object {
         private enum class CookingType(val pathName: String, val serializer: SimpleCookingSerializer<*>) {

@@ -11,6 +11,7 @@ import net.minecraft.world.level.block.Block
 object ModTags {
     object Blocks {
         val FIFI_SPAWN_TYPES: TagKey<Block> = tag("fifi_spawn_types")
+        val FIFI_LOGS: TagKey<Block> = tag("fifi_logs")
 
         private fun tag(name: String): TagKey<Block> {
             return BlockTags.create(ResourceLocation(FifiMod.MOD_ID, name))
@@ -22,6 +23,8 @@ object ModTags {
     }
 
     object Items {
+        val FIFI_LOGS: TagKey<Item> = tag("fifi_logs")
+
         private fun tag(name: String): TagKey<Item> {
             return ItemTags.create(ResourceLocation(FifiMod.MOD_ID, name))
         }

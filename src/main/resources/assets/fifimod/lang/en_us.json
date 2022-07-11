@@ -49,7 +49,12 @@
   "block.fifimod.fifi_wood": "Fifi Wood",
   "block.fifimod.stripped_fifi_log": "Stripped Fifi Log",
   "block.fifimod.stripped_fifi_wood": "Stripped Fifi Wood",
+  "block.fifimod.fifi_leaves": "Fifi Leaves",
   "block.fifimod.fifi_planks": "Fifi Planks",
+  "block.fifimod.fifi_stairs": "Fifi Stairs",
+  "block.fifimod.fifi_slab": "Fifi Slab",
+  "block.fifimod.fifi_fence": "Fifi Fence",
+  "block.fifimod.fifi_fence_gate": "Fifi Fence Gate",
 
   "itemGroup.fifi_tab": "Fifi Tab",
 

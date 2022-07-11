@@ -13,8 +13,13 @@ import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
+import net.minecraft.world.level.block.FenceBlock
+import net.minecraft.world.level.block.FenceGateBlock
+import net.minecraft.world.level.block.LeavesBlock
 import net.minecraft.world.level.block.OreBlock
+import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.SoundType
+import net.minecraft.world.level.block.StairBlock
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.material.Material
@@ -137,7 +142,7 @@ object ModBlocks {
         ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_WOOD).noOcclusion())
     }
     val FIFI_PLANKS by registerBlock("fifi_planks", ModCreativeModeTab.FIFI_TAB) {
-        object : Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)) {
+        object : Block(Properties.copy(Blocks.JUNGLE_PLANKS)) {
             override fun isFlammable(
                 state: BlockState,
                 level: BlockGetter,
@@ -160,7 +165,43 @@ object ModBlocks {
             ): Int = 5
         }
     }
+    val FIFI_LEAVES by registerBlock("fifi_leaves", ModCreativeModeTab.FIFI_TAB) {
+        object : LeavesBlock(Properties.copy(Blocks.JUNGLE_LEAVES)) {
+            override fun isFlammable(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Boolean = true
 
+            override fun getFlammability(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Int = 60
+
+            override fun getFireSpreadSpeed(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Int = 30
+        }
+    }
+
+    val FIFI_STAIRS by registerBlock("fifi_stairs", ModCreativeModeTab.FIFI_TAB) {
+        StairBlock({ ModBlocks.FIFI_PLANKS.defaultBlockState() }, BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS))
+    }
+    val FIFI_SLAB by registerBlock("fifi_slab", ModCreativeModeTab.FIFI_TAB) {
+        SlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SLAB))
+    }
+    val FIFI_FENCE by registerBlock("fifi_fence", ModCreativeModeTab.FIFI_TAB) {
+        FenceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE))
+    }
+    val FIFI_FENCE_GATE by registerBlock("fifi_fence_gate", ModCreativeModeTab.FIFI_TAB) {
+        FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE))
+    }
 
     private fun <T : Block> registerBlock(
         name: String, tab: CreativeModeTab, blockSupplier: () -> T
