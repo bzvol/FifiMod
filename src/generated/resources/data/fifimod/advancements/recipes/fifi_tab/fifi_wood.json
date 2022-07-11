@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:fifi_wood"
+    ]
+  },
+  "criteria": {
+    "has_fifi_log": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fifimod:fifi_log"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:fifi_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_fifi_log",
+      "has_the_recipe"
+    ]
+  ]
+}

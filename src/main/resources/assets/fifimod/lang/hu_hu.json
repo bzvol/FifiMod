@@ -45,6 +45,11 @@
   "block.fifimod.tin_block": "Ónblokk",
   "block.fifimod.bronze_block": "Bronzblokk",
   "block.fifimod.steel_block": "Acélblokk",
+  "block.fifimod.fifi_log": "Fifi fa",
+  "block.fifimod.fifi_wood": "Fifi fa",
+  "block.fifimod.stripped_fifi_log": "Vágott fifi fa",
+  "block.fifimod.stripped_fifi_wood": "Vágott fifi fa",
+  "block.fifimod.fifi_planks": "Fifi deszka",
 
   "itemGroup.fifi_tab": "Fifi cuccocskák",
 

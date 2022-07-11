@@ -45,6 +45,11 @@
   "block.fifimod.tin_block": "Tin Block",
   "block.fifimod.bronze_block": "Bronze Block",
   "block.fifimod.steel_block": "Steel Block",
+  "block.fifimod.fifi_log": "Fifi Log",
+  "block.fifimod.fifi_wood": "Fifi Wood",
+  "block.fifimod.stripped_fifi_log": "Stripped Fifi Log",
+  "block.fifimod.stripped_fifi_wood": "Stripped Fifi Wood",
+  "block.fifimod.fifi_planks": "Fifi Planks",
 
   "itemGroup.fifi_tab": "Fifi Tab",
 

@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "side": "fifimod:block/fifi_wood_side",
+    "end": "fifimod:block/fifi_wood_end"
+  }
+}

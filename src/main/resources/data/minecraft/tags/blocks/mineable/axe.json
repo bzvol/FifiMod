@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "fifimod:fifi_log",
+    "fifimod:fifi_wood",
+    "fifimod:stripped_fifi_log",
+    "fifimod:stripped_fifi_wood",
+    "fifimod:fifi_planks"
+  ]
+}

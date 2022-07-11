@@ -67,6 +67,9 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModItems.STEEL_CHESTPLATE).define('S', ModItems.STEEL).pattern("S S").pattern("SSS").pattern("SSS").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.STEEL_LEGGINGS).define('S', ModItems.STEEL).pattern("SSS").pattern("S S").pattern("S S").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.STEEL_BOOTS).define('S', ModItems.STEEL).pattern("S S").pattern("S S").unlockedBy("has_steel", steelTrigger).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModBlocks.FIFI_PLANKS, 4).requires(Ingredient.of(ModBlocks.FIFI_LOG, ModBlocks.FIFI_WOOD, ModBlocks.STRIPPED_FIFI_LOG, ModBlocks.STRIPPED_FIFI_WOOD)).unlockedBy("has_fifi_log", has(ModBlocks.FIFI_LOG)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.FIFI_WOOD, 3).define('#', ModBlocks.FIFI_LOG).pattern("##").pattern("##").unlockedBy("has_fifi_log", has(ModBlocks.FIFI_LOG)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.STRIPPED_FIFI_WOOD, 3).define('#', ModBlocks.STRIPPED_FIFI_LOG).pattern("##").pattern("##").unlockedBy("has_stripped_fifi_log", has(ModBlocks.STRIPPED_FIFI_LOG)).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(
