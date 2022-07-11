@@ -67,6 +67,11 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.TIN_BLOCK)
         blockItem(ModBlocks.BRONZE_BLOCK)
         blockItem(ModBlocks.STEEL_BLOCK)
+        blockItem(ModBlocks.FIFI_LOG)
+        blockItem(ModBlocks.STRIPPED_FIFI_LOG)
+        blockItem(ModBlocks.FIFI_WOOD)
+        blockItem(ModBlocks.STRIPPED_FIFI_WOOD)
+        blockItem(ModBlocks.FIFI_PLANKS)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

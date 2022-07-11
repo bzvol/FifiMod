@@ -1,3 +1,5 @@
+@file:Suppress("DeprecatedCallableAddReplaceWith")
+
 package me.bzvol.fifimod.block
 
 import net.minecraft.core.BlockPos
@@ -49,6 +51,7 @@ class FifiSpawnerBlock(properties: Properties) : HorizontalDirectionalBlock(prop
         super.onNeighborChange(state, level, pos, neighbor)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun tick(pState: BlockState, pLevel: ServerLevel, pPos: BlockPos, pRandom: Random) {
         super.tick(pState, pLevel, pPos, pRandom)
     }

@@ -3,15 +3,20 @@ package me.bzvol.fifimod.block
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.util.ModCreativeModeTab
+import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Rarity
+import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.block.OreBlock
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.state.BlockBehaviour
+import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.material.Material
 import net.minecraft.world.level.material.MaterialColor
 import net.minecraftforge.eventbus.api.IEventBus
@@ -118,6 +123,44 @@ object ModBlocks {
                 .sound(SoundType.WOOD)
         )
     }
+
+    val FIFI_LOG by registerBlock("fifi_log", ModCreativeModeTab.FIFI_TAB) {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_LOG).noOcclusion())
+    }
+    val FIFI_WOOD by registerBlock("fifi_wood", ModCreativeModeTab.FIFI_TAB) {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_WOOD).noOcclusion())
+    }
+    val STRIPPED_FIFI_LOG by registerBlock("stripped_fifi_log", ModCreativeModeTab.FIFI_TAB) {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_LOG).noOcclusion())
+    }
+    val STRIPPED_FIFI_WOOD by registerBlock("stripped_fifi_wood", ModCreativeModeTab.FIFI_TAB) {
+        ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_WOOD).noOcclusion())
+    }
+    val FIFI_PLANKS by registerBlock("fifi_planks", ModCreativeModeTab.FIFI_TAB) {
+        object : Block(BlockBehaviour.Properties.copy(Blocks.JUNGLE_PLANKS)) {
+            override fun isFlammable(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Boolean = true
+
+            override fun getFlammability(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Int = 20
+
+            override fun getFireSpreadSpeed(
+                state: BlockState,
+                level: BlockGetter,
+                pos: BlockPos,
+                direction: Direction
+            ): Int = 5
+        }
+    }
+
 
     private fun <T : Block> registerBlock(
         name: String, tab: CreativeModeTab, blockSupplier: () -> T
