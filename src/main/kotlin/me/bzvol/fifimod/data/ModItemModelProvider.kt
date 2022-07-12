@@ -31,6 +31,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.RAW_STEEL)
         simpleItem(ModItems.STEEL)
         simpleItem(ModItems.FIFI)
+        simpleItem(ModItems.OXIDIZED_COPPER_INGOT)
 
         simpleItem(ModItems.BRONZE_HELMET)
         simpleItem(ModItems.BRONZE_CHESTPLATE)

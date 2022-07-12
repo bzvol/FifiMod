@@ -1,4 +1,4 @@
-package me.bzvol.fifimod.event
+package me.bzvol.fifimod.item.event
 
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.entity.FifiEntity

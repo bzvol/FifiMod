@@ -34,6 +34,7 @@
   "item.fifimod.steel_leggings": "Acélnadrág",
   "item.fifimod.steel_boots": "Acélcsizma",
   "item.fifimod.fifi": "Fifi",
+  "item.fifimod.oxidized_copper_ingot": "Oxidált réz",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
   "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",
@@ -57,6 +58,7 @@
   "block.fifimod.fifi_fence_gate": "Fifi kapu",
 
   "itemGroup.fifi_tab": "Fifi cuccocskák",
+  "itemGroup.pethings_tab": "Peti cuccai",
 
   "sounds.fifimod.burp": "Böfögés hang"
 }

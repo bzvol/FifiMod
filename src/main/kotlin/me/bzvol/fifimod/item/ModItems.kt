@@ -28,7 +28,7 @@ object ModItems {
     }
 
     val PETI_ITEM: Item by REGISTRY.registerObject("peti_item") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MISC).stacksTo(1))
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).stacksTo(1))
     }
 
     val BOWL_OF_CCMPS: Item by REGISTRY.registerObject("bowl_of_ccmps") {
@@ -69,80 +69,84 @@ object ModItems {
     }
 
     val TIN_INGOT by REGISTRY.registerObject("tin_ingot") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MATERIALS))
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     val BRONZE_INGOT by REGISTRY.registerObject("bronze_ingot") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MATERIALS))
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     val BRONZE_PICKAXE by REGISTRY.registerObject("bronze_pickaxe") {
-        PickaxeItem(ModTiers.BRONZE, 1, -2.8f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        PickaxeItem(ModTiers.BRONZE, 1, -2.8f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_AXE by REGISTRY.registerObject("bronze_axe") {
-        AxeItem(ModTiers.BRONZE, 6f, -3.1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        AxeItem(ModTiers.BRONZE, 6f, -3.1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_SWORD by REGISTRY.registerObject("bronze_sword") {
-        SwordItem(ModTiers.BRONZE, 3, -2.4f, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        SwordItem(ModTiers.BRONZE, 3, -2.4f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_SHOVEL by REGISTRY.registerObject("bronze_shovel") {
-        ShovelItem(ModTiers.BRONZE, 1.5f, -3f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        ShovelItem(ModTiers.BRONZE, 1.5f, -3f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_HOE by REGISTRY.registerObject("bronze_hoe") {
-        HoeItem(ModTiers.BRONZE, -2, -1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        HoeItem(ModTiers.BRONZE, -2, -1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_HELMET by REGISTRY.registerObject("bronze_helmet") {
-        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.HEAD, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_CHESTPLATE by REGISTRY.registerObject("bronze_chestplate") {
-        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.CHEST, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_LEGGINGS by REGISTRY.registerObject("bronze_leggings") {
-        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.LEGS, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.LEGS, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val BRONZE_BOOTS by REGISTRY.registerObject("bronze_boots") {
-        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.FEET, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.BRONZE, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
 
     val RAW_STEEL by REGISTRY.registerObject("raw_steel") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MATERIALS))
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     val STEEL by REGISTRY.registerObject("steel") {
-        Item(Item.Properties().tab(CreativeModeTab.TAB_MATERIALS))
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     val STEEL_PICKAXE by REGISTRY.registerObject("steel_pickaxe") {
-        PickaxeItem(ModTiers.STEEL, 1, -2.8f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        PickaxeItem(ModTiers.STEEL, 1, -2.8f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_AXE by REGISTRY.registerObject("steel_axe") {
-        AxeItem(ModTiers.STEEL, 5f, -3.1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        AxeItem(ModTiers.STEEL, 5f, -3.1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_SWORD by REGISTRY.registerObject("steel_sword") {
-        SwordItem(ModTiers.STEEL, 3, -2.4f, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        SwordItem(ModTiers.STEEL, 3, -2.4f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_SHOVEL by REGISTRY.registerObject("steel_shovel") {
-        ShovelItem(ModTiers.STEEL, 1.5f, -3f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        ShovelItem(ModTiers.STEEL, 1.5f, -3f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_HOE by REGISTRY.registerObject("steel_hoe") {
-        HoeItem(ModTiers.STEEL, -2, -1f, Item.Properties().tab(CreativeModeTab.TAB_TOOLS))
+        HoeItem(ModTiers.STEEL, -2, -1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_HELMET by REGISTRY.registerObject("steel_helmet") {
-        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.HEAD, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_CHESTPLATE by REGISTRY.registerObject("steel_chestplate") {
-        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.CHEST, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_LEGGINGS by REGISTRY.registerObject("steel_leggings") {
-        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.LEGS, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.LEGS, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val STEEL_BOOTS by REGISTRY.registerObject("steel_boots") {
-        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.FEET, Item.Properties().tab(CreativeModeTab.TAB_COMBAT))
+        ArmorItem(ModArmorMaterials.STEEL, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     val FIFI by REGISTRY.registerObject("fifi") {
         Item(Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.RARE))
+    }
+
+    val OXIDIZED_COPPER_INGOT by REGISTRY.registerObject("oxidized_copper_ingot") {
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
     fun register(eventBus: IEventBus) {

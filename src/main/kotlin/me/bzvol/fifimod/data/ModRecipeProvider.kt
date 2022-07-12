@@ -17,6 +17,8 @@ import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraft.world.item.crafting.SimpleCookingSerializer
 import net.minecraft.world.level.ItemLike
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Blocks
 import java.util.function.Consumer
 
 class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
@@ -78,6 +80,7 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SLAB, 6).define('#', ModBlocks.FIFI_PLANKS).pattern("###").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE, 3).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("#S#").pattern("#S#").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE_GATE).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("S#S").pattern("S#S").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModItems.OXIDIZED_COPPER_INGOT, 9).requires(Blocks.OXIDIZED_COPPER).unlockedBy("has_oxidized_copper", has(Blocks.OXIDIZED_COPPER)).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

@@ -53,7 +53,7 @@ object ModBlocks {
         )
     }
 
-    val TIN_ORE by registerBlock("tin_ore", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+    val TIN_ORE by registerBlock("tin_ore", ModCreativeModeTab.PETHINGS_TAB) {
         OreBlock(
             BlockBehaviour.Properties
                 .of(Material.STONE)
@@ -72,7 +72,7 @@ object ModBlocks {
         )
     }
 
-    val TIN_BLOCK by registerBlock("tin_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+    val TIN_BLOCK by registerBlock("tin_block", ModCreativeModeTab.PETHINGS_TAB) {
         Block(
             BlockBehaviour.Properties
                 .of(Material.METAL, MaterialColor.METAL)
@@ -82,7 +82,7 @@ object ModBlocks {
         )
     }
 
-    val BRONZE_BLOCK by registerBlock("bronze_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+    val BRONZE_BLOCK by registerBlock("bronze_block", ModCreativeModeTab.PETHINGS_TAB) {
         Block(
             BlockBehaviour.Properties
                 .of(Material.METAL, MaterialColor.METAL)
@@ -92,7 +92,7 @@ object ModBlocks {
         )
     }
 
-    val STEEL_BLOCK by registerBlock("steel_block", CreativeModeTab.TAB_BUILDING_BLOCKS) {
+    val STEEL_BLOCK by registerBlock("steel_block", ModCreativeModeTab.PETHINGS_TAB) {
         Block(
             BlockBehaviour.Properties
                 .of(Material.METAL, MaterialColor.METAL)
@@ -120,7 +120,7 @@ object ModBlocks {
         )
     }) { BlockItem(it, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.EPIC)) }
 
-    val POTATO_BLOCK: Block by registerBlock("potato_block", ModCreativeModeTab.FIFI_TAB) {
+    val POTATO_BLOCK: Block by registerBlock("potato_block", ModCreativeModeTab.PETHINGS_TAB) {
         Block(
             BlockBehaviour.Properties
                 .of(Material.VEGETABLE, MaterialColor.COLOR_BROWN)
