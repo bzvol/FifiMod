@@ -25,6 +25,19 @@ object ModPaintings {
     val POCOK by REGISTRY.registerObject("pocok") {
         Motive(32, 32)
     }
+    val LORCSY_FREND by REGISTRY.registerObject("lorcsy_frend") {
+        Motive(16, 48)
+    }
+    val PETKO by REGISTRY.registerObject("petko") {
+        Motive(16, 16)
+    }
+    val FESZULET by REGISTRY.registerObject("feszulet") {
+        Motive(32, 32)
+    }
+    val SHIBA_INU by REGISTRY.registerObject("shiba_inu") {
+        Motive(32, 16)
+    }
+
 
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
