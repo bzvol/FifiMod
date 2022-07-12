@@ -22,6 +22,9 @@ object ModPaintings {
     val SAD_CAT by REGISTRY.registerObject("sad_cat") {
         Motive(32, 32)
     }
+    val POCOK by REGISTRY.registerObject("pocok") {
+        Motive(32, 32)
+    }
 
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)

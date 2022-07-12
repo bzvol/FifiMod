@@ -1,7 +1,14 @@
 {
   "variants": {
-    "": {
-      "model": "fifimod:block/fifi_leaves"
-    }
+    "": [
+      {
+        "model": "fifimod:block/fifi_leaves",
+        "weight": 90
+      },
+      {
+        "model": "fifimod:block/fifi_leaves_flower",
+        "weight": 10
+      }
+    ]
   }
 }

@@ -8,4 +8,8 @@ object ModCreativeModeTab {
     val FIFI_TAB: CreativeModeTab = object : CreativeModeTab("fifi_tab") {
         override fun makeIcon(): ItemStack = ItemStack(ModItems.THE_FIFHER)
     }
+
+    val PETHINGS_TAB: CreativeModeTab = object : CreativeModeTab("pethings_tab") {
+        override fun makeIcon(): ItemStack = ItemStack(ModItems.PETI_ITEM)
+    }
 }
