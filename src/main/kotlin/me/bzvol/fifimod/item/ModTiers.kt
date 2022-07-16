@@ -20,4 +20,9 @@ object ModTiers {
         5, 5077, 10f, 5f, 30,
         BlockTags.NEEDS_DIAMOND_TOOL
     ) { Ingredient.of(ModItems.FIFI) }
+
+    val PIG_IRON: ForgeTier = ForgeTier(
+        4, 1561, 8f, 3f, 10,
+        BlockTags.NEEDS_DIAMOND_TOOL
+    ) { Ingredient.of(ModItems.PIG_IRON_INGOT) }
 }

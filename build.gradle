@@ -28,7 +28,7 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 
 minecraft {
     // Change to your preferred mappings
-    mappings channel: 'parchment', version: '2022.06.26-1.18.2'
+    mappings channel: 'parchment', version: '2022.07.10-1.18.2'
     // Add your AccessTransformer
     // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
 

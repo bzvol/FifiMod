@@ -41,6 +41,10 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.STEEL_CHESTPLATE)
         simpleItem(ModItems.STEEL_LEGGINGS)
         simpleItem(ModItems.STEEL_BOOTS)
+        simpleItem(ModItems.PIG_IRON_HELMET)
+        simpleItem(ModItems.PIG_IRON_CHESTPLATE)
+        simpleItem(ModItems.PIG_IRON_LEGGINGS)
+        simpleItem(ModItems.PIG_IRON_BOOTS)
 
         handheldItem(ModItems.BRONZE_PICKAXE)
         handheldItem(ModItems.BRONZE_AXE)
@@ -52,6 +56,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.STEEL_SWORD)
         handheldItem(ModItems.STEEL_SHOVEL)
         handheldItem(ModItems.STEEL_HOE)
+        handheldItem(ModItems.PIG_IRON_SWORD)
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,

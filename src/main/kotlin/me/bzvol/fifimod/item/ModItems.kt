@@ -149,6 +149,26 @@ object ModItems {
         Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
+    val PIG_IRON_INGOT by REGISTRY.registerObject("pig_iron_ingot") {
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+
+    val PIG_IRON_SWORD by REGISTRY.registerObject("pig_iron_sword") {
+        SwordItem(ModTiers.PIG_IRON, 3, -2.4f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_HELMET by REGISTRY.registerObject("pig_iron_helmet") {
+        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_CHESTPLATE by REGISTRY.registerObject("pig_iron_chestplate") {
+        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_LEGGINGS by REGISTRY.registerObject("pig_iron_leggings") {
+        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.LEGS, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_BOOTS by REGISTRY.registerObject("pig_iron_boots") {
+        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
     }

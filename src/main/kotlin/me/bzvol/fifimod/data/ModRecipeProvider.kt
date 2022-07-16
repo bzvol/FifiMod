@@ -80,7 +80,14 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_SLAB, 6).define('#', ModBlocks.FIFI_PLANKS).pattern("###").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE, 3).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("#S#").pattern("#S#").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModBlocks.FIFI_FENCE_GATE).define('#', ModBlocks.FIFI_PLANKS).define('S', Items.STICK).pattern("S#S").pattern("S#S").unlockedBy("has_fifi_planks", has(ModBlocks.FIFI_PLANKS)).save(pFinishedRecipeConsumer)
-        ShapelessRecipeBuilder.shapeless(ModItems.OXIDIZED_COPPER_INGOT, 9).requires(Blocks.OXIDIZED_COPPER).unlockedBy("has_oxidized_copper", has(Blocks.OXIDIZED_COPPER)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModItems.OXIDIZED_COPPER_INGOT, 9).requires(Blocks.OXIDIZED_COPPER).unlockedBy("has_oxidized_copper_ingot", has(Blocks.OXIDIZED_COPPER)).save(pFinishedRecipeConsumer)
+        val pigironTrigger = has(ModItems.PIG_IRON_INGOT)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_INGOT).define('T', ModItems.TIN_INGOT).define('C', ModItems.OXIDIZED_COPPER_INGOT).pattern("TTT").pattern("TCT").pattern("TTT").unlockedBy("has_oxidized_copper", has(ModItems.OXIDIZED_COPPER_INGOT)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_SWORD).define('#', ModItems.PIG_IRON_INGOT).define('S', Items.STICK).pattern(" # ").pattern(" # ").pattern(" S ").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_HELMET).define('#', ModItems.PIG_IRON_INGOT).pattern("###").pattern("# #").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_CHESTPLATE).define('#', ModItems.PIG_IRON_INGOT).pattern("# #").pattern("###").pattern("###").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_LEGGINGS).define('#', ModItems.PIG_IRON_INGOT).pattern("###").pattern("# #").pattern("# #").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_BOOTS).define('#', ModItems.PIG_IRON_INGOT).pattern("# #").pattern("# #").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

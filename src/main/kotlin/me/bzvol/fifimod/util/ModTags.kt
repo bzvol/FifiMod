@@ -10,7 +10,6 @@ import net.minecraft.world.level.block.Block
 
 object ModTags {
     object Blocks {
-        val FIFI_SPAWN_TYPES: TagKey<Block> = tag("fifi_spawn_types")
         val FIFI_LOGS: TagKey<Block> = tag("fifi_logs")
 
         private fun tag(name: String): TagKey<Block> {

@@ -35,6 +35,12 @@
   "item.fifimod.steel_boots": "Acélcsizma",
   "item.fifimod.fifi": "Fifi",
   "item.fifimod.oxidized_copper_ingot": "Oxidált réz",
+  "item.fifimod.pig_iron_ingot": "Nyersvas",
+  "item.fifimod.pig_iron_helmet": "Nyersvas sisak",
+  "item.fifimod.pig_iron_chestplate": "Nyersvas mellvért",
+  "item.fifimod.pig_iron_leggings": "Nyersvas nadrág",
+  "item.fifimod.pig_iron_boots": "Nyersvas csizma",
+  "item.fifimod.pig_iron_sword": "Nyersvas kard",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
   "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",

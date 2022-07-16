@@ -35,6 +35,12 @@
   "item.fifimod.steel_boots": "Steel Boots",
   "item.fifimod.fifi": "Fifi",
   "item.fifimod.oxidized_copper_ingot": "Oxidized Copper Ingot",
+  "item.fifimod.pig_iron_ingot": "Pig Iron Ingot",
+  "item.fifimod.pig_iron_helmet": "Pig Iron Helmet",
+  "item.fifimod.pig_iron_chestplate": "Pig Iron Chestplate",
+  "item.fifimod.pig_iron_leggings": "Pig Iron Leggings",
+  "item.fifimod.pig_iron_boots": "Pig Iron Boots",
+  "item.fifimod.pig_iron_sword": "Pig Iron Sword",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
@@ -57,7 +63,7 @@
   "block.fifimod.fifi_fence": "Fifi Fence",
   "block.fifimod.fifi_fence_gate": "Fifi Fence Gate",
 
-  "itemGroup.fifi_tab": "Fifi things",
+  "itemGroup.fifi_tab": "Fifi Things",
   "itemGroup.pethings_tab": "Pethings",
 
   "sounds.fifimod.burp": "Burp Sound"
