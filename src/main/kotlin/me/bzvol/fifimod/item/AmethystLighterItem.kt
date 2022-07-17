@@ -25,7 +25,8 @@ class AmethystLighterItem(properties: Properties) : FlintAndSteelItem(properties
         return if (
             !CampfireBlock.canLight(blockstate) &&
             !CandleBlock.canLight(blockstate) &&
-            !CandleCakeBlock.canLight(blockstate)
+            !CandleCakeBlock.canLight(blockstate) &&
+            !FifiSpawnerBlock.canLight(blockstate)
         ) {
             val blockpos1 = blockpos.relative(pContext.clickedFace)
             if (BaseFireBlock.canBePlacedAt(level, blockpos1, pContext.horizontalDirection)) {
@@ -66,7 +67,7 @@ class AmethystLighterItem(properties: Properties) : FlintAndSteelItem(properties
             if (!FifiSpawnerBlock.canLight(blockstate))
                 level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, true), 11)
             else
-                (blockstate.block as FifiSpawnerBlock).light()
+                (blockstate.block as FifiSpawnerBlock).light(blockstate)
 
             level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos)
             if (player != null) {
