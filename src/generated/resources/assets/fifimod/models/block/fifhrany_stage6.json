@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "fifimod:block/fifhrany_stage6"
+  }
+}

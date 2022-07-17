@@ -1,6 +1,7 @@
 package me.bzvol.fifimod.item
 
 import me.bzvol.fifimod.FifiMod
+import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.sound.ModSounds
 import me.bzvol.fifimod.util.ModCreativeModeTab
@@ -167,6 +168,10 @@ object ModItems {
     }
     val PIG_IRON_BOOTS by REGISTRY.registerObject("pig_iron_boots") {
         ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+
+    val FIFHRANY_SEEDS by REGISTRY.registerObject("fifhrany_seeds") {
+        ItemNameBlockItem(ModBlocks.FIFHRANY, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
 
     fun register(eventBus: IEventBus) {

@@ -1,18 +1,22 @@
 package me.bzvol.fifimod.data.loot
 
+import me.bzvol.fifimod.FifiMod
+import me.bzvol.fifimod.block.FifhranyBlock
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.advancements.critereon.ItemPredicate
+import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.data.loot.BlockLoot
-import net.minecraft.util.valueproviders.UniformFloat
-import net.minecraft.util.valueproviders.UniformInt
+import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Items
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
-import net.minecraft.world.level.storage.loot.functions.LootItemFunctions
+import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer
+import net.minecraft.world.level.storage.loot.entries.LootTableReference
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
 import net.minecraft.world.level.storage.loot.predicates.MatchTool
 import net.minecraft.world.level.storage.loot.providers.number.ConstantValue
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator
@@ -50,7 +54,7 @@ class ModBlockLoot : BlockLoot() {
                     LootPool.lootPool().setRolls(ConstantValue.exactly(1f))
                         .add(
                             LootItem.lootTableItem(Items.BAKED_POTATO)
-                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 9f)))
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 8f)))
                                 .`when`(MatchTool.toolMatches(ItemPredicate.Builder.item().of(ModItems.PETI_ITEM)))
                                 .otherwise(LootItem.lootTableItem(ModBlocks.POTATO_BLOCK))
                         )
@@ -59,6 +63,56 @@ class ModBlockLoot : BlockLoot() {
 
         add(ModBlocks.FIFI_LEAVES) {
             createLeavesDrops(it, ModBlocks.FIFI_PLANKS, 0.025f, 0.027777778f, 0.03125f, 0.041666668f, 0.1f)
+        }
+
+        add(ModBlocks.FIFHRANY) {
+            LootTable.lootTable().withPool(
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(
+                    LootItem.lootTableItem(ModItems.FIFI)
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 6f)))
+                        .`when`(
+                            LootItemBlockStatePropertyCondition.hasBlockStateProperties(it).setProperties(
+                                StatePropertiesPredicate.Builder.properties().hasProperty(FifhranyBlock.AGE, 8)
+                            )
+                        )
+                        .otherwise(
+                            LootItem.lootTableItem(ModItems.FIFI)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                                .`when`(
+                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(it).setProperties(
+                                        StatePropertiesPredicate.Builder.properties().hasProperty(FifhranyBlock.AGE, 7)
+                                    )
+                                )
+                        )
+                        .otherwise(
+                            LootItem.lootTableItem(ModItems.FIFI)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                                .`when`(
+                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(it).setProperties(
+                                        StatePropertiesPredicate.Builder.properties().hasProperty(FifhranyBlock.AGE, 6)
+                                    )
+                                )
+                        )
+                        .otherwise(
+                            LootItem.lootTableItem(ModItems.FIFI)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                                .`when`(
+                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(it).setProperties(
+                                        StatePropertiesPredicate.Builder.properties().hasProperty(FifhranyBlock.AGE, 5)
+                                    )
+                                )
+                        )
+                        .otherwise(
+                            LootItem.lootTableItem(ModItems.FIFI)
+                                .apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                                .`when`(
+                                    LootItemBlockStatePropertyCondition.hasBlockStateProperties(it).setProperties(
+                                        StatePropertiesPredicate.Builder.properties().hasProperty(FifhranyBlock.AGE, 4)
+                                    )
+                                )
+                        )
+                )
+            )
         }
     }
 

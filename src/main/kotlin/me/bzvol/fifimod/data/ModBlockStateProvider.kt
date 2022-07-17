@@ -1,6 +1,7 @@
 package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
+import me.bzvol.fifimod.block.FifhranyBlock
 import me.bzvol.fifimod.block.ModBlocks
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
@@ -69,6 +70,19 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
         fenceBlock(ModBlocks.FIFI_FENCE, fifiPlanksTexture)
         fenceGateBlock(ModBlocks.FIFI_FENCE_GATE, fifiPlanksTexture)
         models().fenceInventory("fifi_fence_inventory", fifiPlanksTexture)
+
+        getVariantBuilder(ModBlocks.FIFHRANY)
+            .forAllStates { state ->
+                val age = state.getValue(FifhranyBlock.AGE)
+                ConfiguredModel.builder()
+                    .modelFile(
+                        models().crop(
+                            "fifhrany_stage$age",
+                            ResourceLocation(FifiMod.MOD_ID, "block/fifhrany_stage$age")
+                        )
+                    )
+                    .build()
+            }
     }
 
 }

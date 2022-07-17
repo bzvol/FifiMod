@@ -41,6 +41,7 @@
   "item.fifimod.pig_iron_leggings": "Pig Iron Leggings",
   "item.fifimod.pig_iron_boots": "Pig Iron Boots",
   "item.fifimod.pig_iron_sword": "Pig Iron Sword",
+  "item.fifimod.fifhrany_seeds": "Fifhrany Seeds",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
@@ -62,6 +63,7 @@
   "block.fifimod.fifi_slab": "Fifi Slab",
   "block.fifimod.fifi_fence": "Fifi Fence",
   "block.fifimod.fifi_fence_gate": "Fifi Fence Gate",
+  "block.fifimod.fifhrany": "Fifhrany",
 
   "itemGroup.fifi_tab": "Fifi Things",
   "itemGroup.pethings_tab": "Pethings",

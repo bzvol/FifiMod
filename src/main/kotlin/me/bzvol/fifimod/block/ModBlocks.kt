@@ -142,7 +142,7 @@ object ModBlocks {
         ModFlammableRotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_JUNGLE_WOOD).noOcclusion())
     }
     val FIFI_PLANKS by registerBlock("fifi_planks", ModCreativeModeTab.FIFI_TAB) {
-        object : Block(Properties.copy(Blocks.JUNGLE_PLANKS)) {
+        object : Block(Properties.copy(Blocks.JUNGLE_PLANKS).noOcclusion()) {
             override fun isFlammable(
                 state: BlockState,
                 level: BlockGetter,
@@ -166,7 +166,7 @@ object ModBlocks {
         }
     }
     val FIFI_LEAVES by registerBlock("fifi_leaves", ModCreativeModeTab.FIFI_TAB) {
-        object : LeavesBlock(Properties.copy(Blocks.JUNGLE_LEAVES)) {
+        object : LeavesBlock(Properties.copy(Blocks.JUNGLE_LEAVES).noOcclusion()) {
             override fun isFlammable(
                 state: BlockState,
                 level: BlockGetter,
@@ -191,24 +191,28 @@ object ModBlocks {
     }
 
     val FIFI_STAIRS by registerBlock("fifi_stairs", ModCreativeModeTab.FIFI_TAB) {
-        StairBlock({ ModBlocks.FIFI_PLANKS.defaultBlockState() }, BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS))
+        StairBlock({ FIFI_PLANKS.defaultBlockState() }, BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS).noOcclusion())
     }
     val FIFI_SLAB by registerBlock("fifi_slab", ModCreativeModeTab.FIFI_TAB) {
-        SlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SLAB))
+        SlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SLAB).noOcclusion())
     }
     val FIFI_FENCE by registerBlock("fifi_fence", ModCreativeModeTab.FIFI_TAB) {
-        FenceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE))
+        FenceBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE).noOcclusion())
     }
     val FIFI_FENCE_GATE by registerBlock("fifi_fence_gate", ModCreativeModeTab.FIFI_TAB) {
-        FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE))
+        FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_FENCE_GATE).noOcclusion())
+    }
+
+    val FIFHRANY by registerBlock("fifhrany", ModCreativeModeTab.FIFI_TAB, false) {
+        FifhranyBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion())
     }
 
     private fun <T : Block> registerBlock(
-        name: String, tab: CreativeModeTab, blockSupplier: () -> T
+        name: String, tab: CreativeModeTab, registerItem: Boolean = true, blockSupplier: () -> T
     ): ReadOnlyProperty<Any?, T> {
         val delegate = REGISTRY.registerObject(name, blockSupplier)
 
-        registerBlockItem(name, tab, delegate)
+        if (registerItem) registerBlockItem(name, tab, delegate)
 
         return delegate
     }

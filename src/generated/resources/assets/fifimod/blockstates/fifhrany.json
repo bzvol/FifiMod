@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "fifimod:block/fifhrany_stage0"
+    },
+    "age=1": {
+      "model": "fifimod:block/fifhrany_stage1"
+    },
+    "age=2": {
+      "model": "fifimod:block/fifhrany_stage2"
+    },
+    "age=3": {
+      "model": "fifimod:block/fifhrany_stage3"
+    },
+    "age=4": {
+      "model": "fifimod:block/fifhrany_stage4"
+    },
+    "age=5": {
+      "model": "fifimod:block/fifhrany_stage5"
+    },
+    "age=6": {
+      "model": "fifimod:block/fifhrany_stage6"
+    },
+    "age=7": {
+      "model": "fifimod:block/fifhrany_stage7"
+    },
+    "age=8": {
+      "model": "fifimod:block/fifhrany_stage8"
+    }
+  }
+}

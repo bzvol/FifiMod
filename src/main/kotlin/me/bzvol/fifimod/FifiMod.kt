@@ -53,7 +53,8 @@ object FifiMod {
         LOGGER.log(Level.INFO, "Initializing client...")
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.translucent())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFHRANY, RenderType.cutout())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
         EntityRenderers.register(ModEntityTypes.EFUM, ::ThrownItemRenderer)
