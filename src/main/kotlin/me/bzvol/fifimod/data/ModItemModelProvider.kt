@@ -59,6 +59,11 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.STEEL_SHOVEL)
         handheldItem(ModItems.STEEL_HOE)
         handheldItem(ModItems.PIG_IRON_SWORD)
+        handheldItem(ModItems.FIFI_PICKAXE)
+        handheldItem(ModItems.FIFI_AXE)
+        handheldItem(ModItems.FIFI_SWORD)
+        handheldItem(ModItems.FIFI_SHOVEL)
+        handheldItem(ModItems.FIFI_HOE)
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,

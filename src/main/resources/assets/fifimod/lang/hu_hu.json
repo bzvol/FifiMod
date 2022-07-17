@@ -42,6 +42,11 @@
   "item.fifimod.pig_iron_boots": "Nyersvas csizma",
   "item.fifimod.pig_iron_sword": "Nyersvas kard",
   "item.fifimod.fifhrany_seeds": "Fifráni magok",
+  "item.fifimod.fifi_sword": "Fifikard",
+  "item.fifimod.fifi_shovel": "Fifiásó",
+  "item.fifimod.fifi_axe": "Fifibalta",
+  "item.fifimod.fifi_hoe": "Fifikasza",
+  "item.fifimod.fifi_pickaxe": "Fificsákány",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
   "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",

@@ -174,6 +174,22 @@ object ModItems {
         ItemNameBlockItem(ModBlocks.FIFHRANY, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
 
+    val FIFI_PICKAXE by REGISTRY.registerObject("fifi_pickaxe") {
+        PickaxeItem(ModTiers.FIFI, 1, -2.8f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_AXE by REGISTRY.registerObject("fifi_axe") {
+        AxeItem(ModTiers.FIFI, 5f, -3.1f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_SWORD by REGISTRY.registerObject("fifi_sword") {
+        SwordItem(ModTiers.FIFI, 3, -2.4f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_SHOVEL by REGISTRY.registerObject("fifi_shovel") {
+        ShovelItem(ModTiers.FIFI, 1.5f, -3f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_HOE by REGISTRY.registerObject("fifi_hoe") {
+        HoeItem(ModTiers.FIFI, -2, -1f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
     }

@@ -88,6 +88,12 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_CHESTPLATE).define('#', ModItems.PIG_IRON_INGOT).pattern("# #").pattern("###").pattern("###").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_LEGGINGS).define('#', ModItems.PIG_IRON_INGOT).pattern("###").pattern("# #").pattern("# #").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.PIG_IRON_BOOTS).define('#', ModItems.PIG_IRON_INGOT).pattern("# #").pattern("# #").unlockedBy("has_pig_iron_ingot", pigironTrigger).save(pFinishedRecipeConsumer)
+        val fifiTrigger = has(ModItems.FIFI)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_PICKAXE).define('T', ModItems.FIFI).define('A', Items.AMETHYST_SHARD).define('S', Items.STICK).pattern("TAT").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_AXE).define('T', ModItems.FIFI).define('S', Items.STICK).pattern("TT ").pattern("TS ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_SWORD).define('T', ModItems.FIFI).define('A', Items.AMETHYST_SHARD).define('S', Items.STICK).pattern(" T ").pattern(" A ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_SHOVEL).define('T', ModItems.FIFI).define('S', Items.STICK).pattern(" T ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_HOE).define('T', ModItems.FIFI).define('S', Items.STICK).pattern("TT ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

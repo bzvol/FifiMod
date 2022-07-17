@@ -42,6 +42,11 @@
   "item.fifimod.pig_iron_boots": "Pig Iron Boots",
   "item.fifimod.pig_iron_sword": "Pig Iron Sword",
   "item.fifimod.fifhrany_seeds": "Fifhrany Seeds",
+  "item.fifimod.fifi_sword": "Fifi Sword",
+  "item.fifimod.fifi_shovel": "Fifi Shovel",
+  "item.fifimod.fifi_axe": "Fifi Axe",
+  "item.fifimod.fifi_hoe": "Fifi Hoe",
+  "item.fifimod.fifi_pickaxe": "Fifi Pickaxe",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
