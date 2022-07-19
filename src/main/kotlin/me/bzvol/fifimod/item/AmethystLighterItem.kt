@@ -66,8 +66,8 @@ class AmethystLighterItem(properties: Properties) : FlintAndSteelItem(properties
 
             if (!FifiSpawnerBlock.canLight(blockstate))
                 level.setBlock(blockpos, blockstate.setValue(BlockStateProperties.LIT, true), 11)
-            else
-                (blockstate.block as FifiSpawnerBlock).light(blockstate)
+            else if (!level.isClientSide)
+                (blockstate.block as FifiSpawnerBlock).light(level, blockstate, blockpos)
 
             level.gameEvent(player, GameEvent.BLOCK_PLACE, blockpos)
             if (player != null) {

@@ -1,19 +1,18 @@
-@file:Suppress("DeprecatedCallableAddReplaceWith")
+@file:Suppress("DeprecatedCallableAddReplaceWith", "DEPRECATION")
 
 package me.bzvol.fifimod.block
 
-import me.bzvol.fifimod.FifiMod
-import me.bzvol.fifimod.block.entity.FifiSpawnerBlockEntity
-import me.bzvol.fifimod.block.entity.ModBlockEntities
+import me.bzvol.fifimod.entity.ModEntityTypes
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
+import net.minecraft.world.entity.MobSpawnType
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.Level
-import net.minecraft.world.level.block.*
-import net.minecraft.world.level.block.entity.BlockEntity
-import net.minecraft.world.level.block.entity.BlockEntityTicker
-import net.minecraft.world.level.block.entity.BlockEntityType
+import net.minecraft.world.level.block.Block
+import net.minecraft.world.level.block.Mirror
+import net.minecraft.world.level.block.RenderShape
+import net.minecraft.world.level.block.Rotation
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
@@ -23,12 +22,12 @@ import net.minecraft.world.phys.shapes.CollisionContext
 import net.minecraft.world.phys.shapes.VoxelShape
 import java.util.*
 
-class FifiSpawnerBlock(properties: Properties) : BaseEntityBlock(properties) {
+class FifiSpawnerBlock(properties: Properties) : Block(properties) {
     companion object {
         val FACING: DirectionProperty = BlockStateProperties.HORIZONTAL_FACING
         val LIT: BooleanProperty = BlockStateProperties.LIT
 
-        private val SHAPE: VoxelShape = Block.box(.0, .0, .0, 16.0, 9.0, 16.0)
+        private val SHAPE: VoxelShape = box(.0, .0, .0, 16.0, 9.0, 16.0)
 
         fun canLight(pState: BlockState): Boolean =
             pState.`is`(ModBlocks.FIFI_SPAWNER) && pState.hasProperty(LIT) && pState.getValue(LIT)
@@ -90,22 +89,17 @@ class FifiSpawnerBlock(properties: Properties) : BaseEntityBlock(properties) {
     @Deprecated("Deprecated in Java")
     override fun getRenderShape(pState: BlockState): RenderShape = RenderShape.MODEL
 
-    override fun newBlockEntity(pPos: BlockPos, pState: BlockState): BlockEntity =
-        FifiSpawnerBlockEntity(pPos, pState)
-
-    override fun <T : BlockEntity?> getTicker(
-        pLevel: Level,
-        pState: BlockState,
-        pBlockEntityType: BlockEntityType<T>
-    ): BlockEntityTicker<T>? =
-        createTickerHelper(pBlockEntityType, ModBlockEntities.FIFI_SPAWNER_ENTITY)
-        { p1, p2, p3, p4 ->
-            FifiSpawnerBlockEntity.tick(p1, p2, p3, p4 as FifiSpawnerBlockEntity)
+    @Suppress("ControlFlowWithEmptyBody")
+    fun light(pLevel: Level, pState: BlockState, pPos: BlockPos) {
+        if (pState.getValue(LIT)) {
+            val mob = ModEntityTypes.FIFI.spawn(
+                pLevel as ServerLevel,
+                null, null, null,
+                pPos.above(2),
+                MobSpawnType.SPAWNER, false, false
+            )
+            mob?.startSpawning(pState, pPos)
         }
-
-    fun light(pState: BlockState) {
-        if (pState.getValue(LIT))
-            FifiSpawnerBlockEntity.isSpawningEntity = true
     }
 
 }

@@ -1,7 +1,6 @@
 package me.bzvol.fifimod.block.entity
 
-import me.bzvol.fifimod.FifiMod
-import me.bzvol.fifimod.block.FifiSpawnerBlock
+/*
 import me.bzvol.fifimod.entity.FifiEntity
 import me.bzvol.fifimod.entity.ModEntityTypes
 import net.minecraft.core.BlockPos
@@ -11,7 +10,6 @@ import net.minecraft.world.level.Explosion
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
 import net.minecraft.world.level.block.entity.BlockEntity
-import net.minecraft.world.level.block.entity.BlockEntityTicker
 import net.minecraft.world.level.block.state.BlockState
 
 class FifiSpawnerBlockEntity(
@@ -38,10 +36,10 @@ class FifiSpawnerBlockEntity(
                         MobSpawnType.SPAWNER, false, false
                     )
                     entity?.yRot = pState.getValue(HorizontalDirectionalBlock.FACING).toYRot()
-                    entity?.isInvulnerable = true
-                    entity?.isNoAi = true
+                    entity?.isInvulnerable = true // Make the entity invulnerable to avoid attacks,
+                    entity?.isNoAi = true // Freeze entity, while playing spawn animation on it.
                 } else {
-                    if (entityRotate < 360) {
+                    if (entityRotate < 360) { // Rotate the entity
                         entity!!.yRot = (entity!!.yRot + 1) % 360
                         ++entityRotate
                     } else {
@@ -64,4 +62,4 @@ class FifiSpawnerBlockEntity(
             }
         }
     }
-}
+}*/

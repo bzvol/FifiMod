@@ -3,7 +3,6 @@
 package me.bzvol.fifimod
 
 import me.bzvol.fifimod.block.ModBlocks
-import me.bzvol.fifimod.block.entity.ModBlockEntities
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.entity.client.FifiRenderer
 import me.bzvol.fifimod.item.ModItems
@@ -35,7 +34,6 @@ object FifiMod {
         ModItems.register(MOD_BUS)
         ModSounds.register(MOD_BUS)
         ModEntityTypes.register(MOD_BUS)
-        ModBlockEntities.register(MOD_BUS)
         ModPaintings.register(MOD_BUS)
 
         runForDist(
