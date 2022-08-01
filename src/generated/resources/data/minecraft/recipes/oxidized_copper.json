@@ -1,0 +1,35 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    },
+    {
+      "item": "fifimod:oxidized_copper_ingot"
+    }
+  ],
+  "result": {
+    "item": "minecraft:oxidized_copper"
+  }
+}

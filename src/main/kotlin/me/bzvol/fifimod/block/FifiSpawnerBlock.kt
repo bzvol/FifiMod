@@ -98,7 +98,7 @@ class FifiSpawnerBlock(properties: Properties) : Block(properties) {
                 pPos.above(2),
                 MobSpawnType.SPAWNER, false, false
             )
-            mob?.startSpawning(pState, pPos)
+            mob?.startSpawning(pPos)
         }
     }
 

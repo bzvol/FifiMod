@@ -27,7 +27,7 @@ enum class ModArmorMaterials(
     FIFI("fifi", 45, listOf(3, 6, 8, 3), 30, SoundEvents.ARMOR_EQUIP_NETHERITE, 4f, 0.3f, {
         Ingredient.of(ModItems.FIFI)
     }),
-    PIG_IRON("pig_iron", 33, listOf(3, 6, 8, 3), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0f, {
+    PIG_IRON("pig_iron", 30, listOf(3, 6, 8, 3), 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2f, 0f, {
         Ingredient.of(ModItems.PIG_IRON_INGOT)
     });
 

@@ -7,6 +7,7 @@ import me.bzvol.fifimod.sound.ModSounds
 import me.bzvol.fifimod.util.ModCreativeModeTab
 import net.minecraft.world.entity.EquipmentSlot
 import net.minecraft.world.item.*
+import net.minecraft.world.item.crafting.RecipeType
 import net.minecraftforge.common.ForgeSpawnEggItem
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.registries.DeferredRegister
@@ -154,8 +155,20 @@ object ModItems {
         Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
 
+    val PIG_IRON_PICKAXE by REGISTRY.registerObject("pig_iron_pickaxe") {
+        PickaxeItem(ModTiers.PIG_IRON, 1, -2.8f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_AXE by REGISTRY.registerObject("pig_iron_axe") {
+        AxeItem(ModTiers.PIG_IRON, 5f, -3.1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
     val PIG_IRON_SWORD by REGISTRY.registerObject("pig_iron_sword") {
         SwordItem(ModTiers.PIG_IRON, 3, -2.4f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_SHOVEL by REGISTRY.registerObject("pig_iron_shovel") {
+        ShovelItem(ModTiers.PIG_IRON, 1.5f, -3f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+    }
+    val PIG_IRON_HOE by REGISTRY.registerObject("pig_iron_hoe") {
+        HoeItem(ModTiers.PIG_IRON, -2, -1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val PIG_IRON_HELMET by REGISTRY.registerObject("pig_iron_helmet") {
         ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
@@ -188,6 +201,19 @@ object ModItems {
     }
     val FIFI_HOE by REGISTRY.registerObject("fifi_hoe") {
         HoeItem(ModTiers.FIFI, -2, -1f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+
+    val SQUID_RINGS by REGISTRY.registerObject("squid_rings") {
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).food(ModFoods.SQUID_RINGS))
+    }
+    val COOKED_SQUID_RINGS by REGISTRY.registerObject("cooked_squid_rings") {
+        Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).food(ModFoods.COOKED_SQUID_RINGS))
+    }
+
+    val ASH by REGISTRY.registerObject("ash") {
+        object : Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)) {
+            override fun getBurnTime(itemStack: ItemStack, recipeType: RecipeType<*>?): Int = 200
+        }
     }
 
     fun register(eventBus: IEventBus) {

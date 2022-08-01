@@ -14,6 +14,7 @@ object DataGenerators {
 
         generator.addProvider(ModRecipeProvider(generator))
         generator.addProvider(ModLootTableProvider(generator))
+        generator.addProvider(ModGlobalLootModifierProvider(generator))
 
         generator.addProvider(ModItemModelProvider(generator, existingFileHelper))
         generator.addProvider(ModBlockStateProvider(generator, existingFileHelper))

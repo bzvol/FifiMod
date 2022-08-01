@@ -47,6 +47,13 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
     private val controller = AnimationController(this, "controller", 0f, this::predicate)
 
     private fun <E : IAnimatable> predicate(event: AnimationEvent<E>): PlayState {
+        if (this.isSpawning) {
+            event.controller.setAnimation(
+                AnimationBuilder().addAnimation("animation.fifi.spawn", false)
+            )
+            return PlayState.CONTINUE
+        }
+
         if (event.isMoving) {
             event.controller.setAnimation(
                 AnimationBuilder().addAnimation("animation.fifi.walk", true)
@@ -64,15 +71,14 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
     override fun getFactory(): AnimationFactory = this.factory
 
     override fun registerGoals() {
-        this.goalSelector.addGoal(1, WaitForSpawnGoal(this))
-        this.goalSelector.addGoal(2, FloatGoal(this))
-        this.goalSelector.addGoal(3, PanicGoal(this, 1.2))
-        this.goalSelector.addGoal(4, PlaceSeedGoal(this, ModBlocks.FIFHRANY.defaultBlockState(), 1.0))
-        this.goalSelector.addGoal(5, TemptGoal(this, 1.1, Ingredient.of(ModItems.BOWL_OF_CCMPS), false))
-        this.goalSelector.addGoal(6, LookAtPlayerGoal(this, Player::class.java, 8f))
-        this.goalSelector.addGoal(7, WaterAvoidingRandomStrollGoal(this, 1.0))
-        this.goalSelector.addGoal(8, RandomLookAroundGoal(this))
-        this.goalSelector.addGoal(9, HurtByTargetGoal(this).setAlertOthers())
+        this.goalSelector.addGoal(1, FloatGoal(this))
+        this.goalSelector.addGoal(2, PanicGoal(this, 1.2))
+        this.goalSelector.addGoal(3, PlaceSeedGoal(this, ModBlocks.FIFHRANY.defaultBlockState(), 1.0))
+        this.goalSelector.addGoal(4, TemptGoal(this, 1.1, Ingredient.of(ModItems.BOWL_OF_CCMPS), false))
+        this.goalSelector.addGoal(5, LookAtPlayerGoal(this, Player::class.java, 8f))
+        this.goalSelector.addGoal(6, WaterAvoidingRandomStrollGoal(this, 1.0))
+        this.goalSelector.addGoal(7, RandomLookAroundGoal(this))
+        this.goalSelector.addGoal(8, HurtByTargetGoal(this).setAlertOthers())
     }
 
     override fun mobInteract(pPlayer: Player, pHand: InteractionHand): InteractionResult {
@@ -90,18 +96,16 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
 
     override fun tick() {
         if (this.isSpawning) {
-            this.yRot = (this.yRot + 1) % 360
             ++this.rotAnim
             if (this.rotAnim >= 360) stopSpawning()
         }
     }
 
-    fun startSpawning(pState: BlockState, pPos: BlockPos) {
+    fun startSpawning(pPos: BlockPos) {
         this.spawnerPos = pPos
         this.isSpawning = true
         this.isNoAi = true
         this.isInvulnerable = true
-        this.yRot = pState.getValue(FifiSpawnerBlock.FACING).toYRot()
     }
 
     private fun stopSpawning() {
@@ -130,13 +134,5 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
                 .add(Attributes.ATTACK_SPEED, 2.0)
                 .add(Attributes.MOVEMENT_SPEED, 0.15)
                 .build()
-    }
-
-    private class WaitForSpawnGoal(pMob: FifiEntity) : Goal() {
-        private val mob = pMob
-
-        override fun canUse(): Boolean = mob.isSpawning
-        override fun canContinueToUse(): Boolean = mob.isSpawning
-        override fun isInterruptable(): Boolean = !mob.isSpawning
     }
 }

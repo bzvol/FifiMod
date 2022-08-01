@@ -1,0 +1,10 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:entities/squid"
+    }
+  ],
+  "addition": "fifimod:squid_rings",
+  "type": "fifimod:squid_ring_from_squid"
+}

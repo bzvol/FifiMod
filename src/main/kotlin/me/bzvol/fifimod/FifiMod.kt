@@ -3,6 +3,7 @@
 package me.bzvol.fifimod
 
 import me.bzvol.fifimod.block.ModBlocks
+import me.bzvol.fifimod.data.loot.ModGLMSerializers
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.entity.client.FifiRenderer
 import me.bzvol.fifimod.item.ModItems
@@ -35,6 +36,7 @@ object FifiMod {
         ModSounds.register(MOD_BUS)
         ModEntityTypes.register(MOD_BUS)
         ModPaintings.register(MOD_BUS)
+        ModGLMSerializers.register(MOD_BUS)
 
         runForDist(
             clientTarget = {
@@ -54,6 +56,7 @@ object FifiMod {
 
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SAPLING, RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFHRANY, RenderType.cutout())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)

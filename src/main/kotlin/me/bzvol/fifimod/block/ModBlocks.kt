@@ -3,8 +3,10 @@ package me.bzvol.fifimod.block
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.util.ModCreativeModeTab
+import me.bzvol.fifimod.world.feature.tree.FifiTreeGrower
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
+import net.minecraft.tags.BlockTags
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
@@ -17,6 +19,7 @@ import net.minecraft.world.level.block.FenceBlock
 import net.minecraft.world.level.block.FenceGateBlock
 import net.minecraft.world.level.block.LeavesBlock
 import net.minecraft.world.level.block.OreBlock
+import net.minecraft.world.level.block.SaplingBlock
 import net.minecraft.world.level.block.SlabBlock
 import net.minecraft.world.level.block.SoundType
 import net.minecraft.world.level.block.StairBlock
@@ -191,7 +194,10 @@ object ModBlocks {
     }
 
     val FIFI_STAIRS by registerBlock("fifi_stairs", ModCreativeModeTab.FIFI_TAB) {
-        StairBlock({ FIFI_PLANKS.defaultBlockState() }, BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS).noOcclusion())
+        StairBlock(
+            { FIFI_PLANKS.defaultBlockState() },
+            BlockBehaviour.Properties.copy(Blocks.JUNGLE_STAIRS).noOcclusion()
+        )
     }
     val FIFI_SLAB by registerBlock("fifi_slab", ModCreativeModeTab.FIFI_TAB) {
         SlabBlock(BlockBehaviour.Properties.copy(Blocks.JUNGLE_SLAB).noOcclusion())
@@ -205,6 +211,21 @@ object ModBlocks {
 
     val FIFHRANY by registerBlock("fifhrany", ModCreativeModeTab.FIFI_TAB, false) {
         FifhranyBlock(BlockBehaviour.Properties.copy(Blocks.CARROTS).noOcclusion())
+    }
+
+    val FIFI_SAPLING by registerBlock("fifi_sapling", ModCreativeModeTab.FIFI_TAB) {
+        object : SaplingBlock(FifiTreeGrower(), Properties.copy(Blocks.DARK_OAK_SAPLING)) {
+            override fun mayPlaceOn(pState: BlockState, pLevel: BlockGetter, pPos: BlockPos): Boolean =
+                pState.`is`(BlockTags.SAND)
+        }
+    }
+
+    val ASH_BLOCK by registerBlock("ash_block", ModCreativeModeTab.PETHINGS_TAB) {
+        Block(
+            BlockBehaviour.Properties.copy(Blocks.SOUL_SAND).color(MaterialColor.COLOR_BLACK)
+                .speedFactor(0.7f)
+                .requiresCorrectToolForDrops()
+        )
     }
 
     private fun <T : Block> registerBlock(

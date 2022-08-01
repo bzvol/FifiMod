@@ -22,22 +22,24 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
         simpleBlock(ModBlocks.BRONZE_BLOCK)
         simpleBlock(ModBlocks.STEEL_BLOCK)
         simpleBlock(ModBlocks.FIFI_PLANKS)
+        simpleBlock(ModBlocks.ASH_BLOCK)
+
+        simpleBlock(
+            ModBlocks.FIFI_SAPLING,
+            models().cross("fifi_sapling", ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling"))
+        )
 
         simpleBlock(
             ModBlocks.FIFI_LEAVES, *ConfiguredModel.builder()
                 .modelFile(
-                    models().cubeAll(
-                        "fifi_leaves",
-                        ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves")
-                    )
+                    models().withExistingParent("fifi_leaves", mcLoc("block/leaves"))
+                        .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves"))
                 )
                 .weight(90)
                 .nextModel()
                 .modelFile(
-                    models().cubeAll(
-                        "fifi_leaves_flower",
-                        ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves_flower")
-                    )
+                    models().withExistingParent("fifi_leaves_flower", mcLoc("block/leaves"))
+                        .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves_flower"))
                 )
                 .weight(10)
                 .build()

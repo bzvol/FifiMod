@@ -34,6 +34,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.OXIDIZED_COPPER_INGOT)
         simpleItem(ModItems.PIG_IRON_INGOT)
         simpleItem(ModItems.FIFHRANY_SEEDS)
+        simpleItem(ModItems.SQUID_RINGS)
+        simpleItem(ModItems.COOKED_SQUID_RINGS)
+        simpleItem(ModItems.ASH)
 
         simpleItem(ModItems.BRONZE_HELMET)
         simpleItem(ModItems.BRONZE_CHESTPLATE)
@@ -58,7 +61,11 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.STEEL_SWORD)
         handheldItem(ModItems.STEEL_SHOVEL)
         handheldItem(ModItems.STEEL_HOE)
+        handheldItem(ModItems.PIG_IRON_PICKAXE)
+        handheldItem(ModItems.PIG_IRON_AXE)
         handheldItem(ModItems.PIG_IRON_SWORD)
+        handheldItem(ModItems.PIG_IRON_SHOVEL)
+        handheldItem(ModItems.PIG_IRON_HOE)
         handheldItem(ModItems.FIFI_PICKAXE)
         handheldItem(ModItems.FIFI_AXE)
         handheldItem(ModItems.FIFI_SWORD)
@@ -89,7 +96,22 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.FIFI_STAIRS)
         blockItem(ModBlocks.FIFI_SLAB)
         blockItem(ModBlocks.FIFI_FENCE_GATE)
-        getBuilder(ModBlocks.FIFI_FENCE.registryName?.path).parent(ModelFile.UncheckedModelFile(ResourceLocation(FifiMod.MOD_ID, "block/" + ModBlocks.FIFI_FENCE.registryName?.path + "_inventory")))
+        getBuilder("fifi_fence").parent(
+            ModelFile.UncheckedModelFile(
+                ResourceLocation(
+                    FifiMod.MOD_ID,
+                    "block/fifi_fence_inventory"
+                )
+            )
+        )
+        withExistingParent(
+            "fifi_sapling",
+            ResourceLocation("item/generated")
+        ).texture(
+            "layer0",
+            ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling")
+        )
+        blockItem(ModBlocks.ASH_BLOCK)
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =
