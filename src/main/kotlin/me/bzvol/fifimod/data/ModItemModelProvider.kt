@@ -9,6 +9,7 @@ import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraftforge.client.model.generators.ItemModelBuilder
 import net.minecraftforge.client.model.generators.ItemModelProvider
+import net.minecraftforge.client.model.generators.ModelBuilder
 import net.minecraftforge.client.model.generators.ModelFile
 import net.minecraftforge.common.data.ExistingFileHelper
 
@@ -71,6 +72,40 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.FIFI_SWORD)
         handheldItem(ModItems.FIFI_SHOVEL)
         handheldItem(ModItems.FIFI_HOE)
+
+        for (i in 0..2)
+            getBuilder("modern_bow_pulling_$i")
+                .parent(ModelFile.UncheckedModelFile(ResourceLocation(FifiMod.MOD_ID, "item/modern_bow")))
+                .texture("layer0", ResourceLocation(FifiMod.MOD_ID, "item/modern_bow_pulling_$i"))
+
+        withExistingParent("modern_bow", ResourceLocation("item/generated"))
+            .transforms()
+            .transform(ModelBuilder.Perspective.THIRDPERSON_RIGHT)
+            .rotation(-80f, 260f, -40f).translation(-1f, -2f, 2.5f)
+            .scale(.9f, .9f, .9f).end()
+            .transform(ModelBuilder.Perspective.THIRDPERSON_LEFT)
+            .rotation(-80f, 280f, 40f).translation(-1f, -2f, 2.5f)
+            .scale(.9f, .9f, .9f).end()
+            .transform(ModelBuilder.Perspective.FIRSTPERSON_RIGHT)
+            .rotation(0f, -90f, 25f).translation(1.13f, 3.2f, 1.13f)
+            .scale(0.68f, 0.68f, 0.68f).end()
+            .transform(ModelBuilder.Perspective.FIRSTPERSON_LEFT)
+            .rotation(0f, 90f, -25f).translation(1.13f, 3.2f, 1.13f)
+            .scale(0.68f, 0.68f, 0.68f).end().end()
+            .texture("layer0", ResourceLocation(FifiMod.MOD_ID, "item/modern_bow"))
+            .override().predicate(ResourceLocation("pulling"), 1f).model(
+                getExistingFile(ResourceLocation(FifiMod.MOD_ID, "item/modern_bow_pulling_0"))
+            ).end()
+            .override()
+            .predicate(ResourceLocation("pulling"), 1f).predicate(ResourceLocation("pull"), 0.65f)
+            .model(
+                getExistingFile(ResourceLocation(FifiMod.MOD_ID, "item/modern_bow_pulling_1"))
+            ).end()
+            .override()
+            .predicate(ResourceLocation("pulling"), 1f).predicate(ResourceLocation("pull"), 0.9f)
+            .model(
+                getExistingFile(ResourceLocation(FifiMod.MOD_ID, "item/modern_bow_pulling_2"))
+            ).end()
 
         withExistingParent(
             ModItems.FIFI_SPAWN_EGG.registryName?.path,

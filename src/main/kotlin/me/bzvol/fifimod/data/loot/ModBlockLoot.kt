@@ -9,12 +9,16 @@ import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.data.loot.BlockLoot
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Items
+import net.minecraft.world.item.enchantment.Enchantments
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
 import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer
 import net.minecraft.world.level.storage.loot.entries.LootTableReference
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount
+import net.minecraft.world.level.storage.loot.functions.LootItemFunction
+import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
 import net.minecraft.world.level.storage.loot.predicates.MatchTool
@@ -120,7 +124,8 @@ class ModBlockLoot : BlockLoot() {
             LootTable.lootTable().withPool(
                 LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(
                     LootItem.lootTableItem(ModItems.ASH)
-                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 7f)))
+                        .apply(SetItemCountFunction.setCount(UniformGenerator.between(3f, 5f)))
+                        .apply(ApplyBonusCount.addUniformBonusCount(Enchantments.BLOCK_FORTUNE))
                 )
             )
         }

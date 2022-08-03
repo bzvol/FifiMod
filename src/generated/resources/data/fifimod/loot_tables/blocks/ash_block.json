@@ -13,9 +13,17 @@
               "count": {
                 "type": "minecraft:uniform",
                 "min": 3.0,
-                "max": 7.0
+                "max": 5.0
               },
               "add": false
+            },
+            {
+              "function": "minecraft:apply_bonus",
+              "enchantment": "minecraft:fortune",
+              "formula": "minecraft:uniform_bonus_count",
+              "parameters": {
+                "bonusMultiplier": 1
+              }
             }
           ],
           "name": "fifimod:ash"

@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:ash_block"
+    ]
+  },
+  "criteria": {
+    "has_ash": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fifimod:ash"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:ash_block"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ash",
+      "has_the_recipe"
+    ]
+  ]
+}

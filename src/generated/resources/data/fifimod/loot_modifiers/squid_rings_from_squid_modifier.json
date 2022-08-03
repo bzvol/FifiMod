@@ -6,5 +6,25 @@
     }
   ],
   "addition": "fifimod:squid_rings",
-  "type": "fifimod:squid_ring_from_squid"
+  "chance": 0.7,
+  "functions": [
+    {
+      "function": "minecraft:set_count",
+      "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 2.0
+      },
+      "add": false
+    },
+    {
+      "function": "minecraft:apply_bonus",
+      "enchantment": "minecraft:looting",
+      "formula": "minecraft:uniform_bonus_count",
+      "parameters": {
+        "bonusMultiplier": 1
+      }
+    }
+  ],
+  "type": "fifimod:one_item_modifier"
 }

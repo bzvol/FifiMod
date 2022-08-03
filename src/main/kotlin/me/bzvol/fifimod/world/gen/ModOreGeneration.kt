@@ -13,5 +13,10 @@ object ModOreGeneration {
 
         base.add(ModOrePlacements.ORE_BISMUTH)
         base.add(ModOrePlacements.ORE_TIN)
+
+        val decoration: MutableList<Holder<PlacedFeature>> =
+            event.generation.getFeatures(GenerationStep.Decoration.UNDERGROUND_DECORATION)
+
+        decoration.add(ModOrePlacements.ORE_ASH)
     }
 }

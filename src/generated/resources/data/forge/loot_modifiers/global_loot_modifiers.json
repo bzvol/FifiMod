@@ -1,6 +1,7 @@
 {
   "replace": false,
   "entries": [
-    "fifimod:squid_rings_from_squid_modifier"
+    "fifimod:squid_rings_from_squid_modifier",
+    "fifimod:beans_from_village_modifier"
   ]
 }

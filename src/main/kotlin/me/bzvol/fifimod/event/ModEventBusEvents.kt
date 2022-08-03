@@ -1,7 +1,7 @@
 package me.bzvol.fifimod.event
 
 import me.bzvol.fifimod.FifiMod
-import me.bzvol.fifimod.event.loot.SquidRingsFromSquidAdditionModifier
+import me.bzvol.fifimod.event.loot.OneItemAdditionModifier
 import net.minecraft.resources.ResourceLocation
 import net.minecraftforge.common.loot.GlobalLootModifierSerializer
 import net.minecraftforge.event.RegistryEvent
@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.Mod
 object ModEventBusEvents {
     @SubscribeEvent
     fun registerModifierSerializers(event: RegistryEvent.Register<GlobalLootModifierSerializer<*>>) {
-        event.registry.register(SquidRingsFromSquidAdditionModifier.Serializer().setRegistryName(
+        event.registry.register(OneItemAdditionModifier.Serializer().setRegistryName(
             ResourceLocation(FifiMod.MOD_ID, "squid_rings_from_squid")
         ))
     }

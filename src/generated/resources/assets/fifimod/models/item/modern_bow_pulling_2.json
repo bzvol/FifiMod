@@ -1,0 +1,6 @@
+{
+  "parent": "fifimod:item/modern_bow",
+  "textures": {
+    "layer0": "fifimod:item/modern_bow_pulling_2"
+  }
+}

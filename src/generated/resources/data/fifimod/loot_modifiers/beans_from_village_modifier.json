@@ -1,0 +1,31 @@
+{
+  "conditions": [
+    {
+      "condition": "minecraft:alternative",
+      "terms": [
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_plains_house"
+        },
+        {
+          "condition": "forge:loot_table_id",
+          "loot_table_id": "minecraft:chests/village/village_taiga_house"
+        }
+      ]
+    }
+  ],
+  "addition": "fifimod:bean",
+  "chance": 0.1,
+  "functions": [
+    {
+      "function": "minecraft:set_count",
+      "count": {
+        "type": "minecraft:uniform",
+        "min": 1.0,
+        "max": 5.0
+      },
+      "add": false
+    }
+  ],
+  "type": "fifimod:one_item_modifier"
+}

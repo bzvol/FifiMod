@@ -9,6 +9,7 @@ import me.bzvol.fifimod.entity.client.FifiRenderer
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.painting.ModPaintings
 import me.bzvol.fifimod.sound.ModSounds
+import me.bzvol.fifimod.util.ModItemProperties
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
@@ -61,6 +62,8 @@ object FifiMod {
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
         EntityRenderers.register(ModEntityTypes.EFUM, ::ThrownItemRenderer)
+
+        ModItemProperties.addItemProperties()
     }
 
     private fun onServerSetup(event: FMLDedicatedServerSetupEvent) {

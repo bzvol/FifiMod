@@ -21,6 +21,14 @@ object ModOrePlacements {
         )
     )
 
+    val ORE_ASH: Holder<PlacedFeature> = PlacementUtils.register(
+        "ore_ash",
+        ModConfiguredFeatures.ASH_BLOCK, commonOrePlacement(
+            17,
+            HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31))
+        )
+    )
+
     private fun orePlacement(modifier1: PlacementModifier, modifier2: PlacementModifier): List<PlacementModifier> =
         listOf(modifier1, InSquarePlacement.spread(), modifier2, BiomeFilter.biome())
 

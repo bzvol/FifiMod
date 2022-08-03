@@ -216,6 +216,10 @@ object ModItems {
         }
     }
 
+    val MODERN_BOW by REGISTRY.registerObject("modern_bow") {
+        BowItem(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).durability(655))
+    }
+
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
     }
