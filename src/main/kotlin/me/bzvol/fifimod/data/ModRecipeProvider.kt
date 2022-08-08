@@ -100,7 +100,7 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModItems.FIFI_SHOVEL).define('T', ModItems.FIFI).define('S', Items.STICK).pattern(" T ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.FIFI_HOE).define('T', ModItems.FIFI).define('S', Items.STICK).pattern("TT ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
         cooking(Ingredient.of(ModItems.SQUID_RINGS), ModItems.COOKED_SQUID_RINGS, 2f, CookingType.SMOKING)
-        ShapedRecipeBuilder.shaped(ModBlocks.ASH_BLOCK).define('#', ModItems.ASH).pattern("##").pattern("##").unlockedBy("has_ash", has(ModItems.ASH)).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(ModBlocks.ASH_BLOCK).requires(ModItems.ASH, 9).unlockedBy("has_ash", has(ModItems.ASH)).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

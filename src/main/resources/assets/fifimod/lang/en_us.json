@@ -83,5 +83,7 @@
   "itemGroup.fifi_tab": "Fifi Things",
   "itemGroup.pethings_tab": "Pethings",
 
-  "sounds.fifimod.burp": "Burp Sound"
+  "sounds.fifimod.burp": "Burp Sound",
+
+  "entity.minecraft.villager.fifimod.peti": "Peti"
 }

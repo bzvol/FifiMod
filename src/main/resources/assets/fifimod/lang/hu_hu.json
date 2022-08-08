@@ -83,5 +83,7 @@
   "itemGroup.fifi_tab": "Fifi cuccocskák",
   "itemGroup.pethings_tab": "Peti cuccai",
 
-  "sounds.fifimod.burp": "Böfögés hang"
+  "sounds.fifimod.burp": "Böfögés hang",
+
+  "entity.minecraft.villager.fifimod.peti": "Peti"
 }
