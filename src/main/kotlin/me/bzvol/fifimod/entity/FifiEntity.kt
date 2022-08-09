@@ -44,7 +44,7 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
     private lateinit var spawnerPos: BlockPos
 
     private val factory: AnimationFactory = AnimationFactory(this)
-    private val controller = AnimationController(this, "controller", 0f, this::predicate)
+    private val controller = AnimationController(this, "fifi_controller", 0f, this::predicate)
 
     private fun <E : IAnimatable> predicate(event: AnimationEvent<E>): PlayState {
         if (this.isSpawning) {

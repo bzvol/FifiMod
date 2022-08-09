@@ -2,6 +2,7 @@ package me.bzvol.fifimod.event
 
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.entity.FifiEntity
+import me.bzvol.fifimod.entity.LitulyEntity
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.event.loot.OneItemAdditionModifier
 import net.minecraft.resources.ResourceLocation
@@ -23,5 +24,6 @@ object ModEvents {
     @SubscribeEvent
     fun entityAttributeEvent(event: EntityAttributeCreationEvent) {
         event.put(ModEntityTypes.FIFI, FifiEntity.setAttributes())
+        event.put(ModEntityTypes.LITULY, LitulyEntity.setAttributes())
     }
 }

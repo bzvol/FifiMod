@@ -24,6 +24,11 @@ class ModEntityLoot : EntityLoot() {
                 )
             )
         )
+
+        add(
+            ModEntityTypes.LITULY,
+            LootTable.lootTable()
+        )
     }
 
     override fun getKnownEntities(): Iterable<EntityType<*>> =

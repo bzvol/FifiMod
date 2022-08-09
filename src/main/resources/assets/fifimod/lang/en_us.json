@@ -55,6 +55,7 @@
   "item.fifimod.cooked_squid_rings": "Cooked Squid Rings",
   "item.fifimod.ash": "Ash",
   "item.fifimod.modern_bow": "Modern Bow",
+  "item.fifimod.lituly_spawn_egg": "Lituly Spawn Egg",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
@@ -85,5 +86,8 @@
 
   "sounds.fifimod.burp": "Burp Sound",
 
+  "entity.fifimod.fifi": "Fifi",
+  "entity.fifimod.lituly": "Lituly",
+  "entity.fifimod.efum": "Efum",
   "entity.minecraft.villager.fifimod.peti": "Peti"
 }

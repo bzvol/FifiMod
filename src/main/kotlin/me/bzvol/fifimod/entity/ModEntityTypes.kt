@@ -22,6 +22,8 @@ object ModEntityTypes {
 
     val LITULY: EntityType<LitulyEntity> by REGISTRY.registerObject("lituly") {
         EntityType.Builder.of(::LitulyEntity, MobCategory.CREATURE)
+            .sized(0.27f, 0.2f)
+            .build(ResourceLocation(FifiMod.MOD_ID, "lituly").toString())
     }
 
     val EFUM: EntityType<EfumEntity> by REGISTRY.registerObject("efum") {

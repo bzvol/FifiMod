@@ -7,6 +7,7 @@ import me.bzvol.fifimod.data.loot.ModGLMSerializers
 import me.bzvol.fifimod.enchantment.ModEnchantments
 import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.entity.client.FifiRenderer
+import me.bzvol.fifimod.entity.client.LitulyRenderer
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.painting.ModPaintings
 import me.bzvol.fifimod.sound.ModSounds
@@ -17,6 +18,10 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes
 import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRenderers
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
+import net.minecraft.world.entity.PathfinderMob
+import net.minecraft.world.entity.SpawnPlacements
+import net.minecraft.world.entity.animal.Animal
+import net.minecraft.world.level.levelgen.Heightmap
 import net.minecraftforge.fml.common.Mod
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent
@@ -62,6 +67,13 @@ object FifiMod {
 
     private fun onSetup(event: FMLCommonSetupEvent) {
         ModVillagers.registerPOIs()
+
+        SpawnPlacements.register(
+            ModEntityTypes.LITULY,
+            SpawnPlacements.Type.ON_GROUND,
+            Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+            PathfinderMob::checkMobSpawnRules
+        )
     }
 
     private fun onClientSetup(event: FMLClientSetupEvent) {
@@ -73,6 +85,7 @@ object FifiMod {
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFHRANY, RenderType.cutout())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
+        EntityRenderers.register(ModEntityTypes.LITULY, ::LitulyRenderer)
         EntityRenderers.register(ModEntityTypes.EFUM, ::ThrownItemRenderer)
 
         ModItemProperties.addItemProperties()

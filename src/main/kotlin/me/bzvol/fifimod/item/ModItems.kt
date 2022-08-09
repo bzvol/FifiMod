@@ -220,6 +220,15 @@ object ModItems {
         BowItem(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).durability(655))
     }
 
+    val LITULY_SPAWN_EGG: Item by REGISTRY.registerObject("lituly_spawn_egg") {
+        ForgeSpawnEggItem(
+            ModEntityTypes::LITULY,
+            0xde2121,
+            0x292929,
+            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)
+        )
+    }
+
     fun register(eventBus: IEventBus) {
         REGISTRY.register(eventBus)
     }

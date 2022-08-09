@@ -111,6 +111,10 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
             ModItems.FIFI_SPAWN_EGG.registryName?.path,
             mcLoc("item/template_spawn_egg")
         )
+        withExistingParent(
+            ModItems.LITULY_SPAWN_EGG.registryName?.path,
+            mcLoc("item/template_spawn_egg")
+        )
 
         blockItem(ModBlocks.BISMUTH_ORE)
         blockItem(ModBlocks.DEEPSLATE_BISMUTH_ORE)

@@ -55,6 +55,7 @@
   "item.fifimod.cooked_squid_rings": "Sült tintahal karikák",
   "item.fifimod.ash": "Hamu",
   "item.fifimod.modern_bow": "Modern íj",
+  "item.fifimod.lituly_spawn_egg": "Litülkeidéző tojás",
 
   "block.fifimod.bismuth_ore": "Bizmutérc",
   "block.fifimod.deepslate_bismuth_ore": "Bizmutérc mélypalában",
@@ -85,5 +86,8 @@
 
   "sounds.fifimod.burp": "Böfögés hang",
 
+  "entity.fifimod.fifi": "Fifi",
+  "entity.fifimod.lituly": "Litülke",
+  "entity.fifimod.efum": "Efüm",
   "entity.minecraft.villager.fifimod.peti": "Peti"
 }

@@ -18,7 +18,6 @@ class FifiBookScreen : Screen(NarratorChatListener.NO_TITLE) {
 
         val i = (this.width - 192) / 2
         this.blit(pPoseStack, i, 2, 0, 0, 192, 192)
-        this.font.draw(pPoseStack, TranslatableComponent(""))
     }
 
     companion object {
