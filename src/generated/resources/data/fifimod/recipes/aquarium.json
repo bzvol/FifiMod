@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "T T",
+    "GGG",
+    "TTT"
+  ],
+  "key": {
+    "T": {
+      "item": "fifimod:tin_block"
+    },
+    "G": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "fifimod:aquarium"
+  }
+}

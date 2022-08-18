@@ -51,6 +51,9 @@
   "item.fifimod.fifi_axe": "Fifibalta",
   "item.fifimod.fifi_hoe": "Fifikasza",
   "item.fifimod.fifi_pickaxe": "Fificsákány",
+  "item.fifimod.fifi_hood": "Fifi kapucni",
+  "item.fifimod.fifi_sweater": "Fifi pulóver",
+  "item.fifimod.fifi_hat": "Fifi kalap",
   "item.fifimod.squid_rings": "Tintahal karikák",
   "item.fifimod.cooked_squid_rings": "Sült tintahal karikák",
   "item.fifimod.ash": "Hamu",
@@ -80,6 +83,7 @@
   "block.fifimod.fifhrany": "Fifráni",
   "block.fifimod.fifi_sapling": "Fifi csemete",
   "block.fifimod.ash_block": "Hamublokk",
+  "block.fifimod.aquarium": "Akvárium",
 
   "itemGroup.fifi_tab": "Fifi cuccocskák",
   "itemGroup.pethings_tab": "Peti cuccai",

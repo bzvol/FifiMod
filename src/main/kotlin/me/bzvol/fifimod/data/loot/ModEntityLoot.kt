@@ -4,6 +4,7 @@ import me.bzvol.fifimod.entity.ModEntityTypes
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.data.loot.EntityLoot
 import net.minecraft.world.entity.EntityType
+import net.minecraft.world.item.Items
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
@@ -27,7 +28,13 @@ class ModEntityLoot : EntityLoot() {
 
         add(
             ModEntityTypes.LITULY,
-            LootTable.lootTable()
+            LootTable.lootTable().withPool(
+                LootPool.lootPool().setRolls(ConstantValue.exactly(1f)).add(
+                    LootItem.lootTableItem(
+                        Items.MELON_SEEDS
+                    ).apply(SetItemCountFunction.setCount(UniformGenerator.between(0f, 2f)))
+                )
+            )
         )
     }
 

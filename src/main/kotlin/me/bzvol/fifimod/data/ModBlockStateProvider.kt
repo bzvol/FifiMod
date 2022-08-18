@@ -1,10 +1,12 @@
 package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
+import me.bzvol.fifimod.block.AquariumBlock
 import me.bzvol.fifimod.block.FifhranyBlock
 import me.bzvol.fifimod.block.ModBlocks
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
+import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraftforge.client.model.generators.BlockStateProvider
 import net.minecraftforge.client.model.generators.ConfiguredModel
 import net.minecraftforge.client.model.generators.ModelBuilder
@@ -83,6 +85,18 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                             ResourceLocation(FifiMod.MOD_ID, "block/fifhrany_stage$age")
                         )
                     )
+                    .build()
+            }
+
+        getVariantBuilder(ModBlocks.AQUARIUM)
+            .forAllStates { state ->
+                val facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING)
+                val fill = state.getValue(AquariumBlock.FILL)
+                ConfiguredModel.builder()
+                    .modelFile(ModelFile.UncheckedModelFile(
+                        ResourceLocation(FifiMod.MOD_ID, "block/aquarium_${fill.modelName}"),
+                    ))
+                    .rotationY(((facing.toYRot() + 180) % 360).toInt())
                     .build()
             }
     }

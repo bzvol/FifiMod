@@ -1,5 +1,6 @@
 package me.bzvol.fifimod.block
 
+import com.ibm.icu.util.Region.RegionType
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.util.ModCreativeModeTab
@@ -225,6 +226,17 @@ object ModBlocks {
             BlockBehaviour.Properties.copy(Blocks.SOUL_SAND).color(MaterialColor.COLOR_BLACK)
                 .speedFactor(0.7f)
                 .requiresCorrectToolForDrops()
+        )
+    }
+
+    val AQUARIUM by registerBlock("aquarium", ModCreativeModeTab.FIFI_TAB) {
+        AquariumBlock(
+            BlockBehaviour.Properties
+                .of(Material.GLASS)
+                .requiresCorrectToolForDrops()
+                .strength(2f)
+                .sound(SoundType.GLASS)
+                .noOcclusion()
         )
     }
 

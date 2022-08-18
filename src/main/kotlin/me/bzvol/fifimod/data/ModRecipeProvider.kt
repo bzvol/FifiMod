@@ -17,7 +17,6 @@ import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.RecipeSerializer
 import net.minecraft.world.item.crafting.SimpleCookingSerializer
 import net.minecraft.world.level.ItemLike
-import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import java.util.function.Consumer
 
@@ -99,8 +98,13 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
         ShapedRecipeBuilder.shaped(ModItems.FIFI_SWORD).define('T', ModItems.FIFI).define('A', Items.AMETHYST_SHARD).define('S', Items.STICK).pattern(" T ").pattern(" A ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.FIFI_SHOVEL).define('T', ModItems.FIFI).define('S', Items.STICK).pattern(" T ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
         ShapedRecipeBuilder.shaped(ModItems.FIFI_HOE).define('T', ModItems.FIFI).define('S', Items.STICK).pattern("TT ").pattern(" S ").pattern(" S ").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapelessRecipeBuilder.shapeless(Blocks.PINK_WOOL).requires(ItemTags.WOOL).requires(ModItems.FIFI).unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_HOOD).define('W', Blocks.PINK_WOOL).define('#', ModItems.FIFI).pattern("# #").pattern("WWW").pattern("W W").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_SWEATER).define('W', Blocks.PINK_WOOL).define('#', ModItems.FIFI).pattern("# #").pattern("WWW").pattern("WWW").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModItems.FIFI_HAT).define('#', ModItems.FIFI).pattern(" # ").pattern("###").unlockedBy("has_fifi", fifiTrigger).save(pFinishedRecipeConsumer)
         cooking(Ingredient.of(ModItems.SQUID_RINGS), ModItems.COOKED_SQUID_RINGS, 2f, CookingType.SMOKING)
         ShapelessRecipeBuilder.shapeless(ModBlocks.ASH_BLOCK).requires(ModItems.ASH, 9).unlockedBy("has_ash", has(ModItems.ASH)).save(pFinishedRecipeConsumer)
+        ShapedRecipeBuilder.shaped(ModBlocks.AQUARIUM).define('T', ModBlocks.TIN_BLOCK).define('G', Blocks.GLASS_PANE).pattern("T T").pattern("GGG").pattern("TTT").unlockedBy("has_glass_pane", has(Blocks.GLASS_PANE)).save(pFinishedRecipeConsumer)
     }
 
     private fun cooking(

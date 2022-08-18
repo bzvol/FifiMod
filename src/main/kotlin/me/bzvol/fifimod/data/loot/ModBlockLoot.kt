@@ -46,6 +46,8 @@ class ModBlockLoot : BlockLoot() {
         dropSelf(ModBlocks.FIFI_FENCE_GATE)
         dropSelf(ModBlocks.FIFI_SAPLING)
 
+        add(ModBlocks.AQUARIUM, noDrop())
+
         add(ModBlocks.BISMUTH_ORE) {
             createOreDrop(ModBlocks.BISMUTH_ORE, ModItems.BISMUTH)
         }

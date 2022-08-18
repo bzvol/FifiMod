@@ -202,6 +202,15 @@ object ModItems {
     val FIFI_HOE by REGISTRY.registerObject("fifi_hoe") {
         HoeItem(ModTiers.FIFI, -2, -1f, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
+    val FIFI_HOOD by REGISTRY.registerObject("fifi_hood") {
+        ArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_SWEATER by REGISTRY.registerObject("fifi_sweater") {
+        ArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_HAT by REGISTRY.registerObject("fifi_hat") {
+        FifiArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.HEAD, Item.Properties())
+    }
 
     val SQUID_RINGS by REGISTRY.registerObject("squid_rings") {
         Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).food(ModFoods.SQUID_RINGS))
@@ -211,7 +220,7 @@ object ModItems {
     }
 
     val ASH by REGISTRY.registerObject("ash") {
-        object : Item(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)) {
+        object : Item(Properties().tab(ModCreativeModeTab.PETHINGS_TAB)) {
             override fun getBurnTime(itemStack: ItemStack, recipeType: RecipeType<*>?): Int = 200
         }
     }

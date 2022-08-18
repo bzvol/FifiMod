@@ -1,5 +1,6 @@
 package me.bzvol.fifimod.entity
 
+import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.FifiSpawnerBlock
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.entity.ai.goal.PlaceSeedGoal
@@ -95,23 +96,28 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
     }
 
     override fun tick() {
-        if (this.isSpawning) {
+        if (this.isSpawning && this.level.isClientSide) {
             ++this.rotAnim
+            if (this::spawnerPos.isInitialized)
+                this.setPos(spawnerPos.x.toDouble(), spawnerPos.y + 2.0, spawnerPos.z.toDouble())
             if (this.rotAnim >= 360) stopSpawning()
+            FifiMod.LOGGER.debug("${this.uuid} is ${if (this.isSpawning) "" else "not "}spawning, rotAnim value is ${this.rotAnim}")
         }
+
     }
 
     fun startSpawning(pPos: BlockPos) {
         this.spawnerPos = pPos
         this.isSpawning = true
-        this.isNoAi = true
+        // this.isNoAi = true
         this.isInvulnerable = true
     }
 
     private fun stopSpawning() {
         this.isSpawning = false
-        this.isNoAi = false
+        // this.isNoAi = false
         this.isInvulnerable = false
+        this.rotAnim = -360
 
         if (this::spawnerPos.isInitialized) {
             this.level.explode(

@@ -51,6 +51,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.PIG_IRON_CHESTPLATE)
         simpleItem(ModItems.PIG_IRON_LEGGINGS)
         simpleItem(ModItems.PIG_IRON_BOOTS)
+        simpleItem(ModItems.FIFI_HOOD)
+        simpleItem(ModItems.FIFI_SWEATER)
+        // simpleItem(ModItems.FIFI_HAT)
 
         handheldItem(ModItems.BRONZE_PICKAXE)
         handheldItem(ModItems.BRONZE_AXE)
@@ -151,6 +154,10 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
             ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling")
         )
         blockItem(ModBlocks.ASH_BLOCK)
+        withExistingParent(
+            "aquarium",
+            ResourceLocation(FifiMod.MOD_ID, "block/aquarium_empty")
+        )
     }
 
     private fun simpleItem(item: Item): ItemModelBuilder =

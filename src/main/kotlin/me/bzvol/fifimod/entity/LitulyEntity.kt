@@ -1,15 +1,11 @@
 package me.bzvol.fifimod.entity
 
-import me.bzvol.fifimod.block.ModBlocks
-import me.bzvol.fifimod.entity.ai.goal.PlaceSeedGoal
-import me.bzvol.fifimod.item.ModItems
 import net.minecraft.world.entity.EntityType
 import net.minecraft.world.entity.PathfinderMob
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier
 import net.minecraft.world.entity.ai.attributes.Attributes
 import net.minecraft.world.entity.ai.goal.*
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal
-import net.minecraft.world.entity.player.Player
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.level.Level
@@ -60,7 +56,7 @@ class LitulyEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Pa
                 .add(Attributes.MAX_HEALTH, 4.0)
                 .add(Attributes.ATTACK_DAMAGE, 3.0)
                 .add(Attributes.ATTACK_SPEED, 2.0)
-                .add(Attributes.MOVEMENT_SPEED, 0.05)
+                .add(Attributes.MOVEMENT_SPEED, 0.2)
                 .build()
     }
 }

@@ -79,10 +79,11 @@ object FifiMod {
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
 
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.translucent())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SAPLING, RenderType.cutout())
         ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFHRANY, RenderType.cutout())
+        ItemBlockRenderTypes.setRenderLayer(ModBlocks.AQUARIUM, RenderType.cutout())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
         EntityRenderers.register(ModEntityTypes.LITULY, ::LitulyRenderer)
