@@ -33,7 +33,26 @@ class AquariumBlock(properties: Properties) : Block(properties), Wearable {
         val FACING: DirectionProperty = BlockStateProperties.HORIZONTAL_FACING
         val FILL: EnumProperty<Fill> = EnumProperty.create("fill", Fill::class.java)
 
-        private val SHAPE = box(.0, .0, .0, 16.0, 14.0, 16.0)
+        private val SHAPE_FRAME = Shapes.join(
+            box(.0, .0, .0, 16.0, 14.0, 16.0),
+            box(1.0, 1.0, 1.0, 15.0, 14.0, 15.0),
+            BooleanOp.ONLY_FIRST
+        )
+        private val SHAPE_INSIDE = Shapes.or(
+            box(1.0, 1.0, 1.0, 15.0, 3.0, 15.0),
+            box(10.0, 3.0, 1.0, 15.0, 4.0, 15.0),
+            box(1.0, 3.0, 10.0, 10.0, 4.0, 15.0),
+            box(7.0, 3.0, 6.0, 10.0, 4.0, 10.0),
+            box(9.0, 3.0, 3.0, 10.0, 4.0, 6.0),
+            box(8.0, 3.0, 5.0, 9.0, 4.0, 6.0),
+            box(6.0, 3.0, 7.0, 7.0, 4.0, 10.0),
+            box(5.0, 3.0, 9.0, 6.0, 4.0, 10.0),
+            box(1.0, 4.0, 11.0, 8.0, 5.0, 15.0),
+            box(1.0, 4.0, 10.0, 6.0, 5.0, 11.0),
+            box(8.0, 4.0, 13.0, 9.0, 5.0, 15.0),
+            box(1.0, 5.0, 13.0, 6.0, 6.0, 15.0),
+            box(1.0, 5.0, 12.0, 4.0, 6.0, 13.0),
+        )
     }
 
     init {
@@ -69,11 +88,7 @@ class AquariumBlock(properties: Properties) : Block(properties), Wearable {
                 box(1.0, 1.0, 1.0, 15.0, 14.0, 15.0),
                 BooleanOp.ONLY_FIRST
             )
-            else -> Shapes.join(
-                box(.0, .0, .0, 16.0, 14.0, 16.0),
-                box(1.0, 6.0, 1.0, 15.0, 14.0, 15.0),
-                BooleanOp.ONLY_FIRST
-            )
+            else -> Shapes.or(SHAPE_FRAME, SHAPE_INSIDE)
         }
 
     @Deprecated("Deprecated in Java")
