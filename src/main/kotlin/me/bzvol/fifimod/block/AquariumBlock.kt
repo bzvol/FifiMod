@@ -1,6 +1,8 @@
 package me.bzvol.fifimod.block
 
+import me.bzvol.fifimod.util.rotate
 import net.minecraft.core.BlockPos
+import net.minecraft.core.Direction
 import net.minecraft.sounds.SoundEvent
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.sounds.SoundSource
@@ -88,7 +90,11 @@ class AquariumBlock(properties: Properties) : Block(properties), Wearable {
                 box(1.0, 1.0, 1.0, 15.0, 14.0, 15.0),
                 BooleanOp.ONLY_FIRST
             )
-            else -> Shapes.or(SHAPE_FRAME, SHAPE_INSIDE)
+            else -> {
+                if (pState.getValue(FACING) != Direction.NORTH)
+                    Shapes.or(SHAPE_FRAME, SHAPE_INSIDE).rotate(Direction.NORTH, pState.getValue(FACING))
+                else Shapes.or(SHAPE_FRAME, SHAPE_INSIDE)
+            }
         }
 
     @Deprecated("Deprecated in Java")

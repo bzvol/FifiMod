@@ -39,22 +39,10 @@ import software.bernie.geckolib3.core.manager.AnimationFactory
 
 class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : PathfinderMob(entityType, level),
     IAnimatable {
-
-    private var isSpawning = true
-    private var rotAnim = 0
-    private lateinit var spawnerPos: BlockPos
-
     private val factory: AnimationFactory = AnimationFactory(this)
     private val controller = AnimationController(this, "fifi_controller", 0f, this::predicate)
 
     private fun <E : IAnimatable> predicate(event: AnimationEvent<E>): PlayState {
-        if (this.isSpawning) {
-            event.controller.setAnimation(
-                AnimationBuilder().addAnimation("animation.fifi.spawn", false)
-            )
-            return PlayState.CONTINUE
-        }
-
         if (event.isMoving) {
             event.controller.setAnimation(
                 AnimationBuilder().addAnimation("animation.fifi.walk", true)
@@ -93,41 +81,6 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
         }
 
         return super.mobInteract(pPlayer, pHand)
-    }
-
-    override fun tick() {
-        if (this.isSpawning && this.level.isClientSide) {
-            ++this.rotAnim
-            if (this::spawnerPos.isInitialized)
-                this.setPos(spawnerPos.x.toDouble(), spawnerPos.y + 2.0, spawnerPos.z.toDouble())
-            if (this.rotAnim >= 360) stopSpawning()
-            FifiMod.LOGGER.debug("${this.uuid} is ${if (this.isSpawning) "" else "not "}spawning, rotAnim value is ${this.rotAnim}")
-        }
-
-    }
-
-    fun startSpawning(pPos: BlockPos) {
-        this.spawnerPos = pPos
-        this.isSpawning = true
-        // this.isNoAi = true
-        this.isInvulnerable = true
-    }
-
-    private fun stopSpawning() {
-        this.isSpawning = false
-        // this.isNoAi = false
-        this.isInvulnerable = false
-        this.rotAnim = -360
-
-        if (this::spawnerPos.isInitialized) {
-            this.level.explode(
-                null,
-                spawnerPos.x.toDouble(), spawnerPos.y.toDouble(), spawnerPos.z.toDouble(),
-                1f, false,
-                Explosion.BlockInteraction.NONE
-            )
-            this.level.destroyBlock(spawnerPos, false)
-        }
     }
 
     override fun getEatingSound(pStack: ItemStack): SoundEvent = SoundEvents.GENERIC_EAT

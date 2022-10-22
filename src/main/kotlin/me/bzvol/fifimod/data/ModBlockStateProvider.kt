@@ -47,6 +47,13 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                 .build()
         )
 
+        horizontalBlock(
+            ModBlocks.CARVED_POTATO_BLOCK,
+            ResourceLocation(FifiMod.MOD_ID, "block/potato_block"),
+            ResourceLocation(FifiMod.MOD_ID, "block/carved_potato_block"),
+            ResourceLocation(FifiMod.MOD_ID, "block/potato_block"),
+        )
+
         horizontalBlock(ModBlocks.BISMUTH_BLOCK, cubeAll(ModBlocks.BISMUTH_BLOCK))
 
         horizontalBlock(

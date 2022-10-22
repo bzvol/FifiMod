@@ -25,4 +25,9 @@ object ModTiers {
         3, 1100, 8f, 3f, 10,
         BlockTags.NEEDS_DIAMOND_TOOL
     ) { Ingredient.of(ModItems.PIG_IRON_INGOT) }
+
+    val UNIQUM: ForgeTier = ForgeTier(
+        4, 600, 9f, 4f, 15,
+        BlockTags.NEEDS_DIAMOND_TOOL
+    ) { Ingredient.of(Items.NETHERITE_INGOT) }
 }

@@ -171,16 +171,32 @@ object ModItems {
         HoeItem(ModTiers.PIG_IRON, -2, -1f, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
     }
     val PIG_IRON_HELMET by REGISTRY.registerObject("pig_iron_helmet") {
-        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+        ArmorItem(
+            ModArmorMaterials.PIG_IRON,
+            EquipmentSlot.HEAD,
+            Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)
+        )
     }
     val PIG_IRON_CHESTPLATE by REGISTRY.registerObject("pig_iron_chestplate") {
-        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+        ArmorItem(
+            ModArmorMaterials.PIG_IRON,
+            EquipmentSlot.CHEST,
+            Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)
+        )
     }
     val PIG_IRON_LEGGINGS by REGISTRY.registerObject("pig_iron_leggings") {
-        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.LEGS, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+        ArmorItem(
+            ModArmorMaterials.PIG_IRON,
+            EquipmentSlot.LEGS,
+            Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)
+        )
     }
     val PIG_IRON_BOOTS by REGISTRY.registerObject("pig_iron_boots") {
-        ArmorItem(ModArmorMaterials.PIG_IRON, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB))
+        ArmorItem(
+            ModArmorMaterials.PIG_IRON,
+            EquipmentSlot.FEET,
+            Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB)
+        )
     }
 
     val FIFHRANY_SEEDS by REGISTRY.registerObject("fifhrany_seeds") {
@@ -208,8 +224,14 @@ object ModItems {
     val FIFI_SWEATER by REGISTRY.registerObject("fifi_sweater") {
         ArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.CHEST, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
+    val FIFI_PANTS by REGISTRY.registerObject("fifi_pants") {
+        ArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.LEGS, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
+    val FIFI_SLIPPERS by REGISTRY.registerObject("fifi_slippers") {
+        ArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.FEET, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
+    }
     val FIFI_HAT by REGISTRY.registerObject("fifi_hat") {
-        FifiArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.HEAD, Item.Properties())
+        FifiArmorItem(ModArmorMaterials.FIFI, EquipmentSlot.HEAD, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB))
     }
 
     val SQUID_RINGS by REGISTRY.registerObject("squid_rings") {
@@ -226,15 +248,54 @@ object ModItems {
     }
 
     val MODERN_BOW by REGISTRY.registerObject("modern_bow") {
-        BowItem(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).durability(655))
+        ModernBowItem(Item.Properties().tab(ModCreativeModeTab.PETHINGS_TAB).durability(655))
     }
 
     val LITULY_SPAWN_EGG: Item by REGISTRY.registerObject("lituly_spawn_egg") {
         ForgeSpawnEggItem(
             ModEntityTypes::LITULY,
-            0xde2121,
-            0x292929,
+            0xcbe306,
+            0x6f8b31,
             Item.Properties().tab(ModCreativeModeTab.FIFI_TAB)
+        )
+    }
+
+    /*
+     * UNIQUM SWORDS
+     * - Betrayer
+     * - Exiled Sword
+     * - Potatonium Sword
+     * - Stormbringer
+     * - Suspender
+     */
+    val BETRAYER by REGISTRY.registerObject("betrayer") {
+        SwordItem(
+            ModTiers.UNIQUM, 2, -2.3f,
+            Item.Properties().rarity(Rarity.RARE).tab(ModCreativeModeTab.UNIQUM_SWORDS_TAB)
+        )
+    }
+    val EXILED_SWORD by REGISTRY.registerObject("exiled_sword") {
+        SwordItem(
+            ModTiers.UNIQUM, 3, -2.5f,
+            Item.Properties().rarity(Rarity.RARE).tab(ModCreativeModeTab.UNIQUM_SWORDS_TAB)
+        )
+    }
+    val POTATONIUM_SWORD by REGISTRY.registerObject("potatonium_sword") {
+        SwordItem(
+            ModTiers.UNIQUM, 4, -2.6f,
+            Item.Properties().rarity(Rarity.RARE).tab(ModCreativeModeTab.UNIQUM_SWORDS_TAB)
+        )
+    }
+    val STORMBRINGER by REGISTRY.registerObject("stormbringer") {
+        SwordItem(
+            ModTiers.UNIQUM, 5, -2.8f,
+            Item.Properties().rarity(Rarity.RARE).tab(ModCreativeModeTab.UNIQUM_SWORDS_TAB)
+        )
+    }
+    val SUSPENDER by REGISTRY.registerObject("suspender") {
+        SwordItem(
+            ModTiers.UNIQUM, 1, -2.1f,
+            Item.Properties().rarity(Rarity.RARE).tab(ModCreativeModeTab.UNIQUM_SWORDS_TAB)
         )
     }
 

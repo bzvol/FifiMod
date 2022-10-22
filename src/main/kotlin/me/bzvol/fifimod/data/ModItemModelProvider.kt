@@ -53,7 +53,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         simpleItem(ModItems.PIG_IRON_BOOTS)
         simpleItem(ModItems.FIFI_HOOD)
         simpleItem(ModItems.FIFI_SWEATER)
-        // simpleItem(ModItems.FIFI_HAT)
+        simpleItem(ModItems.FIFI_PANTS)
+        simpleItem(ModItems.FIFI_SLIPPERS)
+        simpleItem(ModItems.FIFI_HAT)
 
         handheldItem(ModItems.BRONZE_PICKAXE)
         handheldItem(ModItems.BRONZE_AXE)
@@ -75,6 +77,11 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.FIFI_SWORD)
         handheldItem(ModItems.FIFI_SHOVEL)
         handheldItem(ModItems.FIFI_HOE)
+        handheldItem(ModItems.BETRAYER)
+        handheldItem(ModItems.EXILED_SWORD)
+        scaledHandheldItem(ModItems.POTATONIUM_SWORD, 1.3f)
+        scaledHandheldItem(ModItems.STORMBRINGER, 1.3f)
+        scaledHandheldItem(ModItems.SUSPENDER, 1.4f)
 
         for (i in 0..2)
             getBuilder("modern_bow_pulling_$i")
@@ -125,6 +132,7 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         blockItem(ModBlocks.BURPBOX)
         blockItem(ModBlocks.FIFI_SPAWNER)
         blockItem(ModBlocks.POTATO_BLOCK)
+        blockItem(ModBlocks.CARVED_POTATO_BLOCK)
         blockItem(ModBlocks.TIN_ORE)
         blockItem(ModBlocks.TIN_BLOCK)
         blockItem(ModBlocks.BRONZE_BLOCK)
@@ -177,6 +185,25 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
             "layer0",
             ResourceLocation(FifiMod.MOD_ID, "item/" + item.registryName?.path)
         )
+
+    private fun scaledHandheldItem(item: Item, scale: Float): ItemModelBuilder =
+        withExistingParent(
+            item.registryName?.path,
+            ResourceLocation("item/handheld")
+        ).transforms()
+            .transform(ModelBuilder.Perspective.FIRSTPERSON_LEFT)
+            .scale(scale, scale, scale).end()
+            .transform(ModelBuilder.Perspective.FIRSTPERSON_RIGHT)
+            .scale(scale, scale, scale).end()
+            .transform(ModelBuilder.Perspective.THIRDPERSON_LEFT)
+            .scale(scale, scale, scale).end()
+            .transform(ModelBuilder.Perspective.THIRDPERSON_RIGHT)
+            .scale(scale, scale, scale).end()
+            .end()
+            .texture(
+                "layer0",
+                ResourceLocation(FifiMod.MOD_ID, "item/" + item.registryName?.path)
+            )
 
     private fun blockItem(block: Block): ItemModelBuilder =
         getBuilder(block.asItem().registryName?.path)

@@ -12,4 +12,8 @@ object ModCreativeModeTab {
     val PETHINGS_TAB: CreativeModeTab = object : CreativeModeTab("pethings_tab") {
         override fun makeIcon(): ItemStack = ItemStack(ModItems.PETI_ITEM)
     }
+
+    val UNIQUM_SWORDS_TAB: CreativeModeTab = object : CreativeModeTab("uniqum_swords_tab") {
+        override fun makeIcon(): ItemStack = ItemStack(ModItems.POTATONIUM_SWORD)
+    }
 }

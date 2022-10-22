@@ -53,12 +53,19 @@
   "item.fifimod.fifi_hoe": "Fifi Hoe",
   "item.fifimod.fifi_hood": "Fifi Hood",
   "item.fifimod.fifi_sweater": "Fifi Sweater",
+  "item.fifimod.fifi_pants": "Fifi Pants",
+  "item.fifimod.fifi_slippers": "Fifi Slippers",
   "item.fifimod.fifi_hat": "Fifi Hat",
-  "item.fifimod.squid_rings": "Squid Rings",
-  "item.fifimod.cooked_squid_rings": "Cooked Squid Rings",
+  "item.fifimod.squid_rings": "Squid Ring",
+  "item.fifimod.cooked_squid_rings": "Cooked Squid Ring",
   "item.fifimod.ash": "Ash",
   "item.fifimod.modern_bow": "Modern Bow",
   "item.fifimod.lituly_spawn_egg": "Lituly Spawn Egg",
+  "item.fifimod.betrayer": "Betrayer",
+  "item.fifimod.exiled_sword": "Exiled Sword",
+  "item.fifimod.potatonium_sword": "Potatonium Sword",
+  "item.fifimod.stormbringer": "Stormbringer",
+  "item.fifimod.suspender": "Suspender",
 
   "block.fifimod.bismuth_ore": "Bismuth Ore",
   "block.fifimod.deepslate_bismuth_ore": "Deepslate Bismuth Ore",
@@ -66,6 +73,7 @@
   "block.fifimod.burpbox": "Burpbox",
   "block.fifimod.fifi_spawner": "Fifi Spawner",
   "block.fifimod.potato_block": "Potato Block",
+  "block.fifimod.carved_potato_block": "Carved Potato Block",
   "block.fifimod.tin_ore": "Tin Ore",
   "block.fifimod.tin_block": "Tin Block",
   "block.fifimod.bronze_block": "Bronze Block",
@@ -87,6 +95,7 @@
 
   "itemGroup.fifi_tab": "Fifi Things",
   "itemGroup.pethings_tab": "Pethings",
+  "itemGroup.uniqum_swords_tab": "Uniqum Swords",
 
   "sounds.fifimod.burp": "Burp Sound",
 

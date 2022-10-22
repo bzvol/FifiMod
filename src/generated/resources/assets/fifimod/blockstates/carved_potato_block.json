@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "fifimod:block/carved_potato_block"
+    },
+    "facing=south": {
+      "model": "fifimod:block/carved_potato_block",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "fifimod:block/carved_potato_block",
+      "y": 270
+    },
+    "facing=east": {
+      "model": "fifimod:block/carved_potato_block",
+      "y": 90
+    }
+  }
+}

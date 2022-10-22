@@ -92,13 +92,11 @@ class FifiSpawnerBlock(properties: Properties) : Block(properties) {
     @Suppress("ControlFlowWithEmptyBody")
     fun light(pLevel: Level, pState: BlockState, pPos: BlockPos) {
         if (pState.getValue(LIT)) {
-            val mob = ModEntityTypes.FIFI.spawn(
-                pLevel as ServerLevel,
-                null, null, null,
-                pPos.above(2),
-                MobSpawnType.SPAWNER, false, false
-            )
-            mob?.startSpawning(pPos)
+            val mob = ModEntityTypes.FIFI.create(pLevel)
+            if (mob != null) {
+                pLevel.addFreshEntity(mob)
+                mob.moveTo(pPos.above(2), pState.getValue(FACING).toYRot(), 0f)
+            }
         }
     }
 

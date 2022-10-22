@@ -45,6 +45,7 @@ class ModBlockLoot : BlockLoot() {
         dropSelf(ModBlocks.FIFI_FENCE)
         dropSelf(ModBlocks.FIFI_FENCE_GATE)
         dropSelf(ModBlocks.FIFI_SAPLING)
+        dropSelf(ModBlocks.CARVED_POTATO_BLOCK)
 
         add(ModBlocks.AQUARIUM, noDrop())
 

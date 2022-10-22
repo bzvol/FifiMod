@@ -1,0 +1,34 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "fifimod:cooked_squid_rings_from_smelting_squid_rings"
+    ]
+  },
+  "criteria": {
+    "has_squid_rings": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "fifimod:squid_rings"
+            ]
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "fifimod:cooked_squid_rings_from_smelting_squid_rings"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_squid_rings",
+      "has_the_recipe"
+    ]
+  ]
+}

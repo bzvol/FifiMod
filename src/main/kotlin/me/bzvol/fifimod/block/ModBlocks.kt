@@ -1,29 +1,20 @@
+@file:Suppress("SameParameterValue")
+
 package me.bzvol.fifimod.block
 
-import com.ibm.icu.util.Region.RegionType
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.util.ModCreativeModeTab
 import me.bzvol.fifimod.world.feature.tree.FifiTreeGrower
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
-import net.minecraft.tags.BlockTags
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.item.BlockItem
 import net.minecraft.world.item.CreativeModeTab
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.Rarity
 import net.minecraft.world.level.BlockGetter
-import net.minecraft.world.level.block.Block
-import net.minecraft.world.level.block.Blocks
-import net.minecraft.world.level.block.FenceBlock
-import net.minecraft.world.level.block.FenceGateBlock
-import net.minecraft.world.level.block.LeavesBlock
-import net.minecraft.world.level.block.OreBlock
-import net.minecraft.world.level.block.SaplingBlock
-import net.minecraft.world.level.block.SlabBlock
-import net.minecraft.world.level.block.SoundType
-import net.minecraft.world.level.block.StairBlock
+import net.minecraft.world.level.block.*
 import net.minecraft.world.level.block.state.BlockBehaviour
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.material.Material
@@ -125,12 +116,16 @@ object ModBlocks {
     }) { BlockItem(it, Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).rarity(Rarity.EPIC)) }
 
     val POTATO_BLOCK: Block by registerBlock("potato_block", ModCreativeModeTab.PETHINGS_TAB) {
-        Block(
+        PotatoBlock(
             BlockBehaviour.Properties
                 .of(Material.VEGETABLE, MaterialColor.COLOR_BROWN)
                 .strength(1f)
                 .sound(SoundType.WOOD)
         )
+    }
+
+    val CARVED_POTATO_BLOCK: Block by registerBlock("carved_potato_block", ModCreativeModeTab.PETHINGS_TAB) {
+        CarvedPotatoBlock(BlockBehaviour.Properties.copy(POTATO_BLOCK))
     }
 
     val FIFI_LOG by registerBlock("fifi_log", ModCreativeModeTab.FIFI_TAB) {
@@ -217,7 +212,7 @@ object ModBlocks {
     val FIFI_SAPLING by registerBlock("fifi_sapling", ModCreativeModeTab.FIFI_TAB) {
         object : SaplingBlock(FifiTreeGrower(), Properties.copy(Blocks.DARK_OAK_SAPLING)) {
             override fun mayPlaceOn(pState: BlockState, pLevel: BlockGetter, pPos: BlockPos): Boolean =
-                pState.`is`(BlockTags.SAND)
+                pState.`is`(Blocks.SAND) || pState.`is`(Blocks.RED_SAND)
         }
     }
 
