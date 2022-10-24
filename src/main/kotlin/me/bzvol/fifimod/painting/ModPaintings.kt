@@ -37,6 +37,15 @@ object ModPaintings {
     val SHIBA_INU by REGISTRY.registerObject("shiba_inu") {
         Motive(32, 16)
     }
+    val OLTONYOS_FRENDEK by REGISTRY.registerObject("oltonyos_frendek") {
+        Motive(16, 32)
+    }
+    val OLTONYOS_GENG by REGISTRY.registerObject("oltonyos_geng") {
+        Motive(32, 16)
+    }
+    val ROLCSY_SUNSHINE by REGISTRY.registerObject("rolcsy_sunshine") {
+        Motive(16, 16)
+    }
 
 
     fun register(eventBus: IEventBus) {

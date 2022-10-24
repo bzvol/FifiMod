@@ -3,7 +3,6 @@ package me.bzvol.fifimod.event.loot
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.entity.client.armor.FifiArmorRenderer
 import me.bzvol.fifimod.item.FifiArmorItem
-import net.minecraft.client.renderer.entity.EntityRenderers
 import net.minecraftforge.api.distmarker.Dist
 import net.minecraftforge.client.event.EntityRenderersEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent

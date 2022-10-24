@@ -4,14 +4,12 @@ import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
 import me.bzvol.fifimod.util.ModTags
-import net.minecraft.advancements.critereon.InventoryChangeTrigger
+import me.bzvol.fifimod.util.ModUtil.registryName
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.data.DataGenerator
 import net.minecraft.data.recipes.*
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.tags.ItemTags
-import net.minecraft.tags.TagKey
-import net.minecraft.world.item.Item
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.crafting.Ingredient
 import net.minecraft.world.item.crafting.RecipeSerializer
@@ -134,9 +132,6 @@ class ModRecipeProvider(generator: DataGenerator) : RecipeProvider(generator) {
             )
         }
     }
-
-    private fun has(pTag: TagKey<Item>): InventoryChangeTrigger.TriggerInstance =
-        inventoryTrigger(ItemPredicate.Builder.item().of(pTag).build())
 
     companion object {
         private enum class CookingType(val pathName: String, val serializer: SimpleCookingSerializer<*>) {

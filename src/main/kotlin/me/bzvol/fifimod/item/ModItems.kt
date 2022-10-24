@@ -41,7 +41,8 @@ object ModItems {
         RecordItem(
             15,
             ModSounds::MUSIC_DISC_BIDIBODI,
-            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1).rarity(Rarity.RARE)
+            Item.Properties().tab(ModCreativeModeTab.FIFI_TAB).stacksTo(1).rarity(Rarity.RARE),
+            1220
         )
     }
 

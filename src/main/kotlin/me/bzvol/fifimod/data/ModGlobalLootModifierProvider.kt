@@ -1,7 +1,8 @@
 package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
-import me.bzvol.fifimod.data.loot.ModGLMSerializers
+import me.bzvol.fifimod.block.ModBlocks
+import me.bzvol.fifimod.event.loot.MultipleOrItemAdditionModifier
 import me.bzvol.fifimod.event.loot.OneItemAdditionModifier
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.data.DataGenerator
@@ -17,7 +18,6 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
     override fun start() {
         this.add(
             "squid_rings_from_squid_modifier",
-            ModGLMSerializers.ONE_ITEM_MODIFIER,
             OneItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("entities/squid")).build()),
                 ModItems.SQUID_RINGS,
@@ -31,7 +31,6 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
 
         this.add(
             "beans_from_village_modifier",
-            ModGLMSerializers.ONE_ITEM_MODIFIER,
             OneItemAdditionModifier(
                 arrayOf(
                     LootTableIdCondition.builder(ResourceLocation("chests/village/village_plains_house")).or(
@@ -44,6 +43,88 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
                 0.1f,
                 arrayOf(
                     SetItemCountFunction.setCount(UniformGenerator.between(1f, 5f)).build()
+                )
+            )
+        )
+
+        /*
+         * Uniqum swords:
+         * Abandoned mineshaft:
+         * - Exiled Sword
+         * Jungle:
+         * - Potatonium Sword
+         * Shipwreck:
+         * - Suspender
+         * Igloo:
+         * - Stormbringer
+         * Ruined portal:
+         * - Betrayer
+         */
+
+        this.add(
+            "uniqum_swords_from_abandoned_mineshaft_modifier",
+            MultipleOrItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/abandoned_mineshaft")).build()),
+                arrayOf(
+                    ModItems.EXILED_SWORD,
+                ),
+                0.03f,
+                null
+            )
+        )
+        this.add(
+            "uniqum_swords_from_jungle_temple_modifier",
+            MultipleOrItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/jungle_temple")).build()),
+                arrayOf(
+                    ModItems.POTATONIUM_SWORD,
+                ),
+                0.2f,
+                null
+            )
+        )
+        this.add(
+            "uniqum_swords_from_shipwreck_modifier",
+            MultipleOrItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/shipwreck_supply")).build()),
+                arrayOf(
+                    ModItems.SUSPENDER,
+                ),
+                0.1f,
+                null
+            )
+        )
+        this.add(
+            "uniqum_swords_from_igloo_modifier",
+            MultipleOrItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/igloo_chest")).build()),
+                arrayOf(
+                    ModItems.STORMBRINGER,
+                ),
+                0.3f,
+                null
+            )
+        )
+        this.add(
+            "uniqum_swords_from_ruined_portal_modifier",
+            MultipleOrItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/ruined_portal")).build()),
+                arrayOf(
+                    ModItems.BETRAYER,
+                ),
+                0.07f,
+                null
+            )
+        )
+
+        this.add(
+            "fifi_sapling_from_desert_house",
+            OneItemAdditionModifier(
+                arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/village/village_desert_house")).build()),
+                ModBlocks.FIFI_SAPLING.asItem(),
+                0.3f,
+                arrayOf(
+                    SetItemCountFunction.setCount(UniformGenerator.between(1f, 3f)).build()
                 )
             )
         )

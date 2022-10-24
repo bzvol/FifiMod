@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/jungle_temple"
+    }
+  ],
+  "additions": [
+    "fifimod:potatonium_sword"
+  ],
+  "chance": 0.2,
+  "type": "fifimod:multiple_or_item_modifier"
+}

@@ -1,0 +1,13 @@
+{
+  "conditions": [
+    {
+      "condition": "forge:loot_table_id",
+      "loot_table_id": "minecraft:chests/shipwreck_supply"
+    }
+  ],
+  "additions": [
+    "fifimod:suspender"
+  ],
+  "chance": 0.1,
+  "type": "fifimod:multiple_or_item_modifier"
+}

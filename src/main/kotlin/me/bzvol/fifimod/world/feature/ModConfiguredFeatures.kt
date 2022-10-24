@@ -4,7 +4,6 @@ import me.bzvol.fifimod.block.ModBlocks
 import net.minecraft.core.Holder
 import net.minecraft.data.worldgen.features.FeatureUtils
 import net.minecraft.data.worldgen.features.OreFeatures
-import net.minecraft.util.valueproviders.ConstantInt
 import net.minecraft.util.valueproviders.UniformInt
 import net.minecraft.world.level.block.Blocks
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
@@ -12,8 +11,6 @@ import net.minecraft.world.level.levelgen.feature.Feature
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration
 import net.minecraft.world.level.levelgen.feature.featuresize.ThreeLayersFeatureSize
-import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize
-import net.minecraft.world.level.levelgen.feature.foliageplacers.PineFoliagePlacer
 import net.minecraft.world.level.levelgen.feature.foliageplacers.SpruceFoliagePlacer
 import net.minecraft.world.level.levelgen.feature.stateproviders.BlockStateProvider
 import net.minecraft.world.level.levelgen.feature.trunkplacers.GiantTrunkPlacer

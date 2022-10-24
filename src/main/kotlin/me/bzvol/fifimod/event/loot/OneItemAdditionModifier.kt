@@ -1,18 +1,19 @@
 package me.bzvol.fifimod.event.loot
 
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
-import net.minecraft.resources.ResourceLocation
-import net.minecraft.util.GsonHelper
+import com.google.common.base.Suppliers
+import com.mojang.serialization.Codec
+import com.mojang.serialization.codecs.RecordCodecBuilder
+import it.unimi.dsi.fastutil.objects.ObjectArrayList
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.storage.loot.Deserializers
 import net.minecraft.world.level.storage.loot.LootContext
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction
+import net.minecraft.world.level.storage.loot.functions.LootItemFunctions
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer
+import net.minecraftforge.common.loot.IGlobalLootModifier
 import net.minecraftforge.common.loot.LootModifier
 import net.minecraftforge.registries.ForgeRegistries
+import java.util.function.Supplier
 
 class OneItemAdditionModifier(
     conditionsIn: Array<out LootItemCondition>,
@@ -21,57 +22,31 @@ class OneItemAdditionModifier(
     private val functions: Array<LootItemFunction>?
 ) :
     LootModifier(conditionsIn) {
+    companion object {
+        val CODEC: Supplier<Codec<OneItemAdditionModifier>> = Suppliers.memoize {
+            RecordCodecBuilder.create { inst ->
+                codecStart(inst)
+                    .and(ForgeRegistries.ITEMS.codec.fieldOf("addition").forGetter { it.addition })
+                    .and(Codec.FLOAT.optionalFieldOf("chance", 1f).forGetter { it.chance ?: 1f })
+                    .and(LootItemFunctions.SET_COUNT.)
+                    .apply(inst, ::OneItemAdditionModifier)
+            }
+        }
+    }
+    override fun codec(): Codec<out IGlobalLootModifier> = CODEC.get()
 
-    override fun doApply(generatedLoot: MutableList<ItemStack>, context: LootContext): MutableList<ItemStack> {
+    override fun doApply(generatedLoot: ObjectArrayList<ItemStack>, context: LootContext): ObjectArrayList<ItemStack> {
         val itemstack = ItemStack(addition)
 
         functions?.forEach { func ->
             func.apply(itemstack, context)
         }
 
-        if (chance != null)
+        if (chance != null) {
             if (context.random.nextFloat() <= chance)
                 generatedLoot.add(itemstack)
-            else generatedLoot.add(itemstack)
+        } else generatedLoot.add(itemstack)
 
         return generatedLoot
-    }
-
-    class Serializer : GlobalLootModifierSerializer<OneItemAdditionModifier>() {
-        override fun read(
-            location: ResourceLocation,
-            `object`: JsonObject,
-            conditionsIn: Array<out LootItemCondition>
-        ): OneItemAdditionModifier {
-            val addition = GsonHelper.getAsItem(`object`, "addition")
-
-            val chance = if (`object`.has("chance"))
-                `object`.getAsJsonPrimitive("chance").asFloat
-            else null
-
-            val functionsArray: JsonArray? = `object`.getAsJsonArray("functions")
-            var functions: Array<LootItemFunction>? = null
-            if (functionsArray != null) {
-                functions = Deserializers.createFunctionSerializer().create()
-                    .fromJson(functionsArray, Array<LootItemFunction>::class.java)
-            }
-
-            return OneItemAdditionModifier(conditionsIn, addition, chance, functions)
-        }
-
-        override fun write(instance: OneItemAdditionModifier): JsonObject {
-            val json = makeConditions(instance.conditions)
-
-            json.addProperty("addition", ForgeRegistries.ITEMS.getKey(instance.addition).toString())
-            if (instance.chance != null)
-                json.addProperty("chance", instance.chance)
-            if (instance.functions != null)
-                json.add(
-                    "functions",
-                    Deserializers.createFunctionSerializer().create().toJsonTree(instance.functions)
-                )
-
-            return json
-        }
     }
 }

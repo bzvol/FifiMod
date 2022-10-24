@@ -5,9 +5,10 @@ package me.bzvol.fifimod.block
 import me.bzvol.fifimod.entity.ModEntityTypes
 import net.minecraft.core.BlockPos
 import net.minecraft.server.level.ServerLevel
-import net.minecraft.world.entity.MobSpawnType
+import net.minecraft.util.RandomSource
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.BlockGetter
+import net.minecraft.world.level.Explosion
 import net.minecraft.world.level.Level
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Mirror
@@ -73,7 +74,7 @@ class FifiSpawnerBlock(properties: Properties) : Block(properties) {
     }
 
     @Deprecated("Deprecated in Java")
-    override fun tick(pState: BlockState, pLevel: ServerLevel, pPos: BlockPos, pRandom: Random) {
+    override fun tick(pState: BlockState, pLevel: ServerLevel, pPos: BlockPos, pRandom: RandomSource) {
         if (pState.getValue(LIT) && !pLevel.hasNeighborSignal(pPos))
             pLevel.setBlock(pPos, pState.cycle(LIT), 2)
     }
@@ -97,6 +98,13 @@ class FifiSpawnerBlock(properties: Properties) : Block(properties) {
                 pLevel.addFreshEntity(mob)
                 mob.moveTo(pPos.above(2), pState.getValue(FACING).toYRot(), 0f)
             }
+            pLevel.explode(
+                null,
+                pPos.x.toDouble(), pPos.y.toDouble(), pPos.z.toDouble(),
+                .1f, false,
+                Explosion.BlockInteraction.NONE
+            )
+            this.destroy(pLevel, pPos, pState)
         }
     }
 

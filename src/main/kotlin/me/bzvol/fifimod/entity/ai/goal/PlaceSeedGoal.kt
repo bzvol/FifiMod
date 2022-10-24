@@ -1,7 +1,5 @@
 package me.bzvol.fifimod.entity.ai.goal
 
-import me.bzvol.fifimod.block.FifhranyBlock
-import me.bzvol.fifimod.block.ModBlocks
 import net.minecraft.core.BlockPos
 import net.minecraft.world.entity.PathfinderMob
 import net.minecraft.world.entity.ai.goal.MoveToBlockGoal

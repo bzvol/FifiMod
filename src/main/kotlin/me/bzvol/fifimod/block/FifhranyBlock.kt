@@ -2,7 +2,6 @@ package me.bzvol.fifimod.block
 
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.core.BlockPos
-import net.minecraft.server.level.ServerLevel
 import net.minecraft.util.Mth
 import net.minecraft.world.level.BlockGetter
 import net.minecraft.world.level.ItemLike
@@ -27,11 +26,6 @@ class FifhranyBlock(pProperties: Properties) : CropBlock(pProperties) {
     override fun getMaxAge(): Int = MAX_AGE
 
     override fun getBaseSeedId(): ItemLike = ModItems.FIFHRANY_SEEDS
-
-    @Deprecated("Deprecated in Java")
-    override fun randomTick(pState: BlockState, pLevel: ServerLevel, pPos: BlockPos, pRandom: Random) {
-        super.randomTick(pState, pLevel, pPos, pRandom)
-    }
 
     override fun getBonemealAgeIncrease(pLevel: Level): Int = Mth.nextInt(pLevel.random, 0, 1)
 

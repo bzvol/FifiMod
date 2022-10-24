@@ -3,7 +3,6 @@ package me.bzvol.fifimod.world.feature.tree
 import me.bzvol.fifimod.world.feature.ModConfiguredFeatures
 import net.minecraft.core.Holder
 import net.minecraft.world.level.block.grower.AbstractMegaTreeGrower
-import net.minecraft.world.level.block.grower.AbstractTreeGrower
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
 import java.util.*
 

@@ -1,24 +1,18 @@
 package me.bzvol.fifimod.data.loot
 
-import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.FifhranyBlock
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
 import net.minecraft.advancements.critereon.ItemPredicate
 import net.minecraft.advancements.critereon.StatePropertiesPredicate
 import net.minecraft.data.loot.BlockLoot
-import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Items
 import net.minecraft.world.item.enchantment.Enchantments
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.storage.loot.LootPool
 import net.minecraft.world.level.storage.loot.LootTable
 import net.minecraft.world.level.storage.loot.entries.LootItem
-import net.minecraft.world.level.storage.loot.entries.LootPoolSingletonContainer
-import net.minecraft.world.level.storage.loot.entries.LootTableReference
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount
-import net.minecraft.world.level.storage.loot.functions.LootItemFunction
-import net.minecraft.world.level.storage.loot.functions.LootingEnchantFunction
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition
 import net.minecraft.world.level.storage.loot.predicates.MatchTool
@@ -46,8 +40,6 @@ class ModBlockLoot : BlockLoot() {
         dropSelf(ModBlocks.FIFI_FENCE_GATE)
         dropSelf(ModBlocks.FIFI_SAPLING)
         dropSelf(ModBlocks.CARVED_POTATO_BLOCK)
-
-        add(ModBlocks.AQUARIUM, noDrop())
 
         add(ModBlocks.BISMUTH_ORE) {
             createOreDrop(ModBlocks.BISMUTH_ORE, ModItems.BISMUTH)

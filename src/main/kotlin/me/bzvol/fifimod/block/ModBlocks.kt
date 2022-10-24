@@ -29,7 +29,7 @@ object ModBlocks {
     val REGISTRY: DeferredRegister<Block> = DeferredRegister.create(ForgeRegistries.BLOCKS, FifiMod.MOD_ID)
 
     val BISMUTH_ORE: Block by registerBlock("bismuth_ore", ModCreativeModeTab.FIFI_TAB) {
-        OreBlock(
+        DropExperienceBlock(
             BlockBehaviour.Properties
                 .of(Material.STONE)
                 .strength(5f, 3f)
@@ -39,7 +39,7 @@ object ModBlocks {
     }
 
     val DEEPSLATE_BISMUTH_ORE: Block by registerBlock("deepslate_bismuth_ore", ModCreativeModeTab.FIFI_TAB) {
-        OreBlock(
+        DropExperienceBlock(
             BlockBehaviour.Properties
                 .of(Material.STONE)
                 .strength(5f, 3f)
@@ -49,7 +49,7 @@ object ModBlocks {
     }
 
     val TIN_ORE by registerBlock("tin_ore", ModCreativeModeTab.PETHINGS_TAB) {
-        OreBlock(
+        DropExperienceBlock(
             BlockBehaviour.Properties
                 .of(Material.STONE)
                 .strength(3f)
@@ -232,6 +232,7 @@ object ModBlocks {
                 .strength(2f)
                 .sound(SoundType.GLASS)
                 .noOcclusion()
+                .noLootTable()
         )
     }
 

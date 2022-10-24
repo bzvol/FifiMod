@@ -8,6 +8,6 @@ import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer
 
 class LitulyRenderer(renderManager: EntityRendererProvider.Context) :
     GeoEntityRenderer<LitulyEntity>(renderManager, LitulyModel()) {
-    override fun getTextureLocation(instance: LitulyEntity): ResourceLocation =
-        ResourceLocation(FifiMod.MOD_ID, "textures/entity/lituly/lituly.png")
+    override fun getTextureResource(instance: LitulyEntity): ResourceLocation =
+        ResourceLocation(FifiMod.MOD_ID, "textures/entity/lituly/${instance.variant.textureName}.png")
 }

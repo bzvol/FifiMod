@@ -1,7 +1,13 @@
 {
   "replace": false,
   "entries": [
+    "fifimod:uniqum_swords_from_igloo_modifier",
+    "fifimod:uniqum_swords_from_abandoned_mineshaft_modifier",
     "fifimod:squid_rings_from_squid_modifier",
-    "fifimod:beans_from_village_modifier"
+    "fifimod:beans_from_village_modifier",
+    "fifimod:uniqum_swords_from_ruined_portal_modifier",
+    "fifimod:fifi_sapling_from_desert_house",
+    "fifimod:uniqum_swords_from_shipwreck_modifier",
+    "fifimod:uniqum_swords_from_jungle_temple_modifier"
   ]
 }

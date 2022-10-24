@@ -3,13 +3,14 @@ package me.bzvol.fifimod.data
 import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.ModBlocks
 import me.bzvol.fifimod.item.ModItems
+import me.bzvol.fifimod.util.ModUtil.registryName
+import net.minecraft.client.renderer.block.model.ItemTransforms
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.item.Item
 import net.minecraft.world.level.block.Block
 import net.minecraftforge.client.model.generators.ItemModelBuilder
 import net.minecraftforge.client.model.generators.ItemModelProvider
-import net.minecraftforge.client.model.generators.ModelBuilder
 import net.minecraftforge.client.model.generators.ModelFile
 import net.minecraftforge.common.data.ExistingFileHelper
 
@@ -79,9 +80,9 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
         handheldItem(ModItems.FIFI_HOE)
         handheldItem(ModItems.BETRAYER)
         handheldItem(ModItems.EXILED_SWORD)
-        scaledHandheldItem(ModItems.POTATONIUM_SWORD, 1.3f)
-        scaledHandheldItem(ModItems.STORMBRINGER, 1.3f)
-        scaledHandheldItem(ModItems.SUSPENDER, 1.4f)
+        scaledHandheldItem(ModItems.POTATONIUM_SWORD, 1.2f)
+        scaledHandheldItem(ModItems.STORMBRINGER, 1.2f)
+        scaledHandheldItem(ModItems.SUSPENDER, 1.2f)
 
         for (i in 0..2)
             getBuilder("modern_bow_pulling_$i")
@@ -90,16 +91,16 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
 
         withExistingParent("modern_bow", ResourceLocation("item/generated"))
             .transforms()
-            .transform(ModelBuilder.Perspective.THIRDPERSON_RIGHT)
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND)
             .rotation(-80f, 260f, -40f).translation(-1f, -2f, 2.5f)
             .scale(.9f, .9f, .9f).end()
-            .transform(ModelBuilder.Perspective.THIRDPERSON_LEFT)
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND)
             .rotation(-80f, 280f, 40f).translation(-1f, -2f, 2.5f)
             .scale(.9f, .9f, .9f).end()
-            .transform(ModelBuilder.Perspective.FIRSTPERSON_RIGHT)
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND)
             .rotation(0f, -90f, 25f).translation(1.13f, 3.2f, 1.13f)
             .scale(0.68f, 0.68f, 0.68f).end()
-            .transform(ModelBuilder.Perspective.FIRSTPERSON_LEFT)
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND)
             .rotation(0f, 90f, -25f).translation(1.13f, 3.2f, 1.13f)
             .scale(0.68f, 0.68f, 0.68f).end().end()
             .texture("layer0", ResourceLocation(FifiMod.MOD_ID, "item/modern_bow"))
@@ -189,16 +190,24 @@ class ModItemModelProvider(generator: DataGenerator, existingFileHelper: Existin
     private fun scaledHandheldItem(item: Item, scale: Float): ItemModelBuilder =
         withExistingParent(
             item.registryName?.path,
-            ResourceLocation("item/handheld")
+            ResourceLocation("item/generated")
         ).transforms()
-            .transform(ModelBuilder.Perspective.FIRSTPERSON_LEFT)
-            .scale(scale, scale, scale).end()
-            .transform(ModelBuilder.Perspective.FIRSTPERSON_RIGHT)
-            .scale(scale, scale, scale).end()
-            .transform(ModelBuilder.Perspective.THIRDPERSON_LEFT)
-            .scale(scale, scale, scale).end()
-            .transform(ModelBuilder.Perspective.THIRDPERSON_RIGHT)
-            .scale(scale, scale, scale).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_LEFT_HAND)
+            .rotation(0f, 90f, -25f)
+            .translation(1.13f, 3.12f, 1.13f)
+            .scale(scale).end()
+            .transform(ItemTransforms.TransformType.FIRST_PERSON_RIGHT_HAND)
+            .rotation(0f, -90f, 25f)
+            .translation(1.13f, 3.12f, 1.13f)
+            .scale(scale).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_LEFT_HAND)
+            .rotation(0f, 90f, -55f)
+            .translation(0f, 4f, .5f)
+            .scale(scale).end()
+            .transform(ItemTransforms.TransformType.THIRD_PERSON_RIGHT_HAND)
+            .rotation(0f, -90f, 55f)
+            .translation(0f, 4f, .5f)
+            .scale(scale).end()
             .end()
             .texture(
                 "layer0",

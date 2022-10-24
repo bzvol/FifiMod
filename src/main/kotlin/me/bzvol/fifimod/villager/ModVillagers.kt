@@ -7,15 +7,12 @@ import me.bzvol.fifimod.item.ModItems
 import net.minecraft.sounds.SoundEvents
 import net.minecraft.world.entity.ai.village.poi.PoiType
 import net.minecraft.world.entity.npc.VillagerProfession
-import net.minecraft.world.item.Item
-import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.Blocks
 import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.fml.util.ObfuscationReflectionHelper
 import net.minecraftforge.registries.DeferredRegister
 import net.minecraftforge.registries.ForgeRegistries
 import thedarkcolour.kotlinforforge.forge.registerObject
-import java.lang.reflect.InvocationTargetException
 
 object ModVillagers {
     private val POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, FifiMod.MOD_ID)

@@ -1,7 +1,7 @@
 package me.bzvol.fifimod.block
 
 import net.minecraft.core.BlockPos
-import net.minecraft.network.chat.TextComponent
+import net.minecraft.network.chat.Component
 import net.minecraft.world.item.Wearable
 import net.minecraft.world.item.context.BlockPlaceContext
 import net.minecraft.world.level.Level
@@ -38,7 +38,7 @@ class CarvedPotatoBlock(pProperties: Properties) : HorizontalDirectionalBlock(pP
         val blockpatternmatch = getOrCreatePattern()?.find(pLevel, pPos)
         if (this.potatoMonsterPattern != null && blockpatternmatch != null) {
             pLevel.players().forEach {
-                it.sendMessage(TextComponent("Ja. Itt majd kéne így spawnolnia egy krumpliszörnynek. Jeeee"), it.uuid)
+                it.sendSystemMessage(Component.literal("Ja. Itt majd kéne így spawnolnia egy krumpliszörnynek. Jeeee"))
             }
             /*for (i in 0 until this.potatoMonsterPattern!!.width) {
                 for (j in 0 until this.potatoMonsterPattern!!.height) {
