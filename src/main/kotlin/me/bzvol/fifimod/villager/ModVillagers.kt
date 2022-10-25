@@ -16,15 +16,16 @@ import thedarkcolour.kotlinforforge.forge.registerObject
 
 object ModVillagers {
     private val POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, FifiMod.MOD_ID)
-    private val PROFESSIONS = DeferredRegister.create(ForgeRegistries.PROFESSIONS, FifiMod.MOD_ID)
+    private val PROFESSIONS = DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, FifiMod.MOD_ID)
 
     private val PETI_POI by POI_TYPES.registerObject("peti_poi") {
-        PoiType("peti_poi", PoiType.getBlockStates(ModBlocks.POTATO_BLOCK), 1, 1)
+        PoiType(ModBlocks.POTATO_BLOCK.stateDefinition.possibleStates.toSet(), 1, 1)
     }
 
     val PETI_PROFESSION by PROFESSIONS.registerObject("peti") {
         VillagerProfession(
-            "peti", this.PETI_POI,
+            "peti",
+            { x -> x.get() == this.PETI_POI }, { x -> x.get() == this.PETI_POI },
             ImmutableSet.of(ModItems.PETI_ITEM), ImmutableSet.of(Blocks.FARMLAND),
             SoundEvents.VILLAGER_WORK_WEAPONSMITH
         )
