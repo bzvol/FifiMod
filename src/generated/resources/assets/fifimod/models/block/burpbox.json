@@ -1,8 +1,8 @@
 {
   "parent": "minecraft:block/orientable",
   "textures": {
-    "side": "fifimod:block/burpbox_side",
     "front": "fifimod:block/burpbox_front",
+    "side": "fifimod:block/burpbox_side",
     "top": "fifimod:block/burpbox_side"
   }
 }

@@ -12,11 +12,11 @@ object DataGenerators {
         val generator = event.generator
         val existingFileHelper = event.existingFileHelper
 
-        generator.addProvider(ModRecipeProvider(generator))
-        generator.addProvider(ModLootTableProvider(generator))
-        generator.addProvider(ModGlobalLootModifierProvider(generator))
+        generator.addProvider(true, ModRecipeProvider(generator))
+        generator.addProvider(true, ModLootTableProvider(generator))
+        generator.addProvider(true, ModGlobalLootModifierProvider(generator))
 
-        generator.addProvider(ModItemModelProvider(generator, existingFileHelper))
-        generator.addProvider(ModBlockStateProvider(generator, existingFileHelper))
+        generator.addProvider(true, ModItemModelProvider(generator, existingFileHelper))
+        generator.addProvider(true, ModBlockStateProvider(generator, existingFileHelper))
     }
 }

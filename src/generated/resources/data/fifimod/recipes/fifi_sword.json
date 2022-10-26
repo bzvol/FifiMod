@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " T ",
-    " A ",
-    " S "
-  ],
   "key": {
-    "T": {
-      "item": "fifimod:fifi"
-    },
     "A": {
       "item": "minecraft:amethyst_shard"
     },
     "S": {
       "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "fifimod:fifi"
     }
   },
+  "pattern": [
+    " T ",
+    " A ",
+    " S "
+  ],
   "result": {
     "item": "fifimod:fifi_sword"
   }

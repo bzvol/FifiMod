@@ -1,7 +1,7 @@
 {
   "parent": "minecraft:block/cube_column_horizontal",
   "textures": {
-    "side": "fifimod:block/stripped_fifi_log_side",
-    "end": "fifimod:block/stripped_fifi_log_end"
+    "end": "fifimod:block/stripped_fifi_log_end",
+    "side": "fifimod:block/stripped_fifi_log_side"
   }
 }

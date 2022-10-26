@@ -1,24 +1,24 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " P ",
-    "CPM",
-    " B "
-  ],
   "key": {
     "B": {
       "item": "minecraft:bowl"
     },
-    "M": {
-      "item": "minecraft:brown_mushroom"
-    },
     "C": {
       "item": "fifimod:cottage_cheese"
+    },
+    "M": {
+      "item": "minecraft:brown_mushroom"
     },
     "P": {
       "item": "fifimod:poppy_seeds"
     }
   },
+  "pattern": [
+    " P ",
+    "CPM",
+    " B "
+  ],
   "result": {
     "item": "fifimod:bowl_of_ccmps"
   }

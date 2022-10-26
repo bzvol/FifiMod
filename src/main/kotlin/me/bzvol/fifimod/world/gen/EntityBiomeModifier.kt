@@ -12,7 +12,7 @@ import net.minecraft.world.level.levelgen.placement.PlacedFeature
 import net.minecraftforge.common.world.BiomeModifier
 import net.minecraftforge.common.world.ModifiableBiomeInfo
 
-data class EntityBiomeModifier(val biomes: HolderSet<Biome>, val feature: Holder<PlacedFeature>) : BiomeModifier {
+data class EntityBiomeModifier(val biomes: HolderSet<Biome>, val spawner: MobSpawnSettings.SpawnerData) : BiomeModifier {
     override fun modify(
         biome: Holder<Biome>,
         phase: BiomeModifier.Phase,
@@ -20,7 +20,7 @@ data class EntityBiomeModifier(val biomes: HolderSet<Biome>, val feature: Holder
     ) {
         if (phase == BiomeModifier.Phase.ADD && biomes.contains(biome)) {
             val base = builder.mobSpawnSettings.getSpawner(MobCategory.CREATURE)
-            base.add(MobSpawnSettings.SpawnerData(ModEntityTypes.LITULY, 40, 5, 20))
+            base.add(spawner)
         }
     }
 

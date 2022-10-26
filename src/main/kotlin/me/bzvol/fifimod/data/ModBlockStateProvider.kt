@@ -30,7 +30,7 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
             ModBlocks.FIFI_SAPLING,
             models().withExistingParent("fifi_sapling", mcLoc("block/cross"))
                 .texture("cross", ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling"))
-                .renderType(RenderType.cutout().toString())
+                .renderType("cutout")
         )
 
         simpleBlock(
@@ -38,14 +38,14 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                 .modelFile(
                     models().withExistingParent("fifi_leaves", mcLoc("block/leaves"))
                         .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves"))
-                        .renderType(RenderType.cutout().toString())
+                        .renderType("cutout")
                 )
                 .weight(90)
                 .nextModel()
                 .modelFile(
                     models().withExistingParent("fifi_leaves_flower", mcLoc("block/leaves"))
                         .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves_flower"))
-                        .renderType(RenderType.cutout().toString())
+                        .renderType("cutout")
                 )
                 .weight(10)
                 .build()
@@ -97,7 +97,7 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                                 mcLoc("block/crop")
                             )
                             .texture("crop", ResourceLocation(FifiMod.MOD_ID, "block/fifhrany_stage$age"))
-                            .renderType(RenderType.cutout().toString())
+                            .renderType("cutout")
                     )
                     .build()
             }

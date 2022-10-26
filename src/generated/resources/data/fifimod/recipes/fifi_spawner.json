@@ -1,21 +1,21 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " F ",
-    "SBS",
-    "SSS"
-  ],
   "key": {
-    "S": {
-      "tag": "minecraft:stone_crafting_materials"
-    },
     "B": {
       "item": "fifimod:bismuth"
     },
     "F": {
       "item": "fifimod:the_fifher"
+    },
+    "S": {
+      "tag": "minecraft:stone_crafting_materials"
     }
   },
+  "pattern": [
+    " F ",
+    "SBS",
+    "SSS"
+  ],
   "result": {
     "item": "fifimod:fifi_spawner"
   }

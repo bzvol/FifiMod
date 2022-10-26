@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 10.0,
   "ingredient": {
     "item": "fifimod:bismuth_ore"
   },
-  "result": "fifimod:bismuth",
-  "experience": 10.0,
-  "cookingtime": 200
+  "result": "fifimod:bismuth"
 }

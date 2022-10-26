@@ -24,7 +24,7 @@ object ModConfiguredFeatures {
             ModBlocks.DEEPSLATE_BISMUTH_ORE.defaultBlockState()
         )
     )
-    val ORE_TIN_TARGET_LIST: List<OreConfiguration.TargetBlockState> =
+    private val ORE_TIN_TARGET_LIST: List<OreConfiguration.TargetBlockState> =
         listOf(OreConfiguration.target(OreFeatures.STONE_ORE_REPLACEABLES, ModBlocks.TIN_ORE.defaultBlockState()))
 
     val BISMUTH_ORE: Holder<ConfiguredFeature<OreConfiguration, *>> =
@@ -32,11 +32,9 @@ object ModConfiguredFeatures {
     val TIN_ORE: Holder<ConfiguredFeature<OreConfiguration, *>> =
         FeatureUtils.register("ore_tin", Feature.ORE, OreConfiguration(ORE_TIN_TARGET_LIST, 9))
 
-    val ASH_BLOCK: Holder<ConfiguredFeature<OreConfiguration, *>> =
-        FeatureUtils.register(
-            "ore_ash",
-            Feature.ORE,
-            OreConfiguration(OreFeatures.NETHERRACK, ModBlocks.ASH_BLOCK.defaultBlockState(), 25)
+    val ASH_ORE: Holder<ConfiguredFeature<OreConfiguration, *>> =
+        FeatureUtils.register("ore_ash", Feature.ORE,
+            OreConfiguration(OreFeatures.NETHERRACK, ModBlocks.ASH_BLOCK.defaultBlockState(), 13)
         )
 
     val FIFI_TREE: Holder<ConfiguredFeature<TreeConfiguration, *>> =

@@ -1,13 +1,13 @@
 {
   "variants": {
-    "type=top": {
-      "model": "fifimod:block/fifi_slab_top"
-    },
     "type=bottom": {
       "model": "fifimod:block/fifi_slab"
     },
     "type=double": {
       "model": "fifimod:block/fifi_planks"
+    },
+    "type=top": {
+      "model": "fifimod:block/fifi_slab_top"
     }
   }
 }

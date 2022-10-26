@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "#": {
+      "item": "fifimod:fifi"
+    },
+    "W": {
+      "item": "minecraft:pink_wool"
+    }
+  },
   "pattern": [
     "WWW",
     "W W",
     "# #"
   ],
-  "key": {
-    "W": {
-      "item": "minecraft:pink_wool"
-    },
-    "#": {
-      "item": "fifimod:fifi"
-    }
-  },
   "result": {
     "item": "fifimod:fifi_pants"
   }

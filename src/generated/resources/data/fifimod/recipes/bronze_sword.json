@@ -1,10 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " B ",
-    " B ",
-    " S "
-  ],
   "key": {
     "B": {
       "item": "fifimod:bronze_ingot"
@@ -13,6 +8,11 @@
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    " B ",
+    " B ",
+    " S "
+  ],
   "result": {
     "item": "fifimod:bronze_sword"
   }

@@ -2,7 +2,6 @@ package me.bzvol.fifimod.block
 
 import me.bzvol.fifimod.util.ModUtil.registryName
 import me.bzvol.fifimod.util.ModUtil.rotate
-import me.bzvol.fifimod.util.rotate
 import net.minecraft.core.BlockPos
 import net.minecraft.core.Direction
 import net.minecraft.sounds.SoundEvent

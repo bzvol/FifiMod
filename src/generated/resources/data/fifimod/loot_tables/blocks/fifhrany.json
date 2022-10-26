@@ -2,7 +2,6 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
@@ -12,8 +11,8 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
                   "block": "fifimod:fifhrany",
+                  "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "8"
                   }
@@ -21,13 +20,13 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 3.0,
-                    "max": 6.0
+                    "max": 6.0,
+                    "min": 3.0
                   },
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "fifimod:fifi"
@@ -36,8 +35,8 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
                   "block": "fifimod:fifhrany",
+                  "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "7"
                   }
@@ -45,13 +44,13 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 0.0,
-                    "max": 2.0
+                    "max": 2.0,
+                    "min": 0.0
                   },
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "fifimod:fifi"
@@ -60,8 +59,8 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
                   "block": "fifimod:fifhrany",
+                  "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "6"
                   }
@@ -69,13 +68,13 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 0.0,
-                    "max": 2.0
+                    "max": 2.0,
+                    "min": 0.0
                   },
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "fifimod:fifi"
@@ -84,8 +83,8 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
                   "block": "fifimod:fifhrany",
+                  "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "5"
                   }
@@ -93,13 +92,13 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 0.0,
-                    "max": 2.0
+                    "max": 2.0,
+                    "min": 0.0
                   },
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "fifimod:fifi"
@@ -108,8 +107,8 @@
               "type": "minecraft:item",
               "conditions": [
                 {
-                  "condition": "minecraft:block_state_property",
                   "block": "fifimod:fifhrany",
+                  "condition": "minecraft:block_state_property",
                   "properties": {
                     "age": "4"
                   }
@@ -117,20 +116,21 @@
               ],
               "functions": [
                 {
-                  "function": "minecraft:set_count",
+                  "add": false,
                   "count": {
                     "type": "minecraft:uniform",
-                    "min": 0.0,
-                    "max": 2.0
+                    "max": 2.0,
+                    "min": 0.0
                   },
-                  "add": false
+                  "function": "minecraft:set_count"
                 }
               ],
               "name": "fifimod:fifi"
             }
           ]
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

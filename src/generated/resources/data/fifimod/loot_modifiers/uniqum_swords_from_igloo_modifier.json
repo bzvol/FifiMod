@@ -1,13 +1,14 @@
 {
+  "type": "fifimod:multiple_or_item_modifier",
+  "addition": [
+    "fifimod:stormbringer"
+  ],
+  "chance": 0.3,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
       "loot_table_id": "minecraft:chests/igloo_chest"
     }
   ],
-  "additions": [
-    "fifimod:stormbringer"
-  ],
-  "chance": 0.3,
-  "type": "fifimod:multiple_or_item_modifier"
+  "functions": []
 }

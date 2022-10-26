@@ -2,25 +2,24 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "rolls": 1.0,
       "bonus_rolls": 0.0,
       "entries": [
         {
           "type": "minecraft:item",
           "functions": [
             {
-              "function": "minecraft:set_count",
+              "add": false,
               "count": {
                 "type": "minecraft:uniform",
-                "min": 3.0,
-                "max": 5.0
+                "max": 5.0,
+                "min": 3.0
               },
-              "add": false
+              "function": "minecraft:set_count"
             },
             {
-              "function": "minecraft:apply_bonus",
               "enchantment": "minecraft:fortune",
               "formula": "minecraft:uniform_bonus_count",
+              "function": "minecraft:apply_bonus",
               "parameters": {
                 "bonusMultiplier": 1
               }
@@ -28,7 +27,8 @@
           ],
           "name": "fifimod:ash"
         }
-      ]
+      ],
+      "rolls": 1.0
     }
   ]
 }

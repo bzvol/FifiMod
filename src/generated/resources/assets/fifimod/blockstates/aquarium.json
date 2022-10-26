@@ -1,64 +1,64 @@
 {
   "variants": {
-    "facing=north,fill=empty": {
-      "model": "fifimod:block/aquarium_empty"
-    },
-    "facing=south,fill=empty": {
-      "model": "fifimod:block/aquarium_empty",
-      "y": 180
-    },
-    "facing=west,fill=empty": {
-      "model": "fifimod:block/aquarium_empty",
-      "y": 270
+    "facing=east,fill=dirt": {
+      "model": "fifimod:block/aquarium_dirt",
+      "y": 90
     },
     "facing=east,fill=empty": {
       "model": "fifimod:block/aquarium_empty",
       "y": 90
     },
-    "facing=north,fill=sand": {
-      "model": "fifimod:block/aquarium_sand"
-    },
-    "facing=south,fill=sand": {
-      "model": "fifimod:block/aquarium_sand",
-      "y": 180
-    },
-    "facing=west,fill=sand": {
-      "model": "fifimod:block/aquarium_sand",
-      "y": 270
+    "facing=east,fill=red_sand": {
+      "model": "fifimod:block/aquarium_red_sand",
+      "y": 90
     },
     "facing=east,fill=sand": {
       "model": "fifimod:block/aquarium_sand",
       "y": 90
     },
+    "facing=north,fill=dirt": {
+      "model": "fifimod:block/aquarium_dirt"
+    },
+    "facing=north,fill=empty": {
+      "model": "fifimod:block/aquarium_empty"
+    },
     "facing=north,fill=red_sand": {
       "model": "fifimod:block/aquarium_red_sand"
+    },
+    "facing=north,fill=sand": {
+      "model": "fifimod:block/aquarium_sand"
+    },
+    "facing=south,fill=dirt": {
+      "model": "fifimod:block/aquarium_dirt",
+      "y": 180
+    },
+    "facing=south,fill=empty": {
+      "model": "fifimod:block/aquarium_empty",
+      "y": 180
     },
     "facing=south,fill=red_sand": {
       "model": "fifimod:block/aquarium_red_sand",
       "y": 180
     },
-    "facing=west,fill=red_sand": {
-      "model": "fifimod:block/aquarium_red_sand",
-      "y": 270
-    },
-    "facing=east,fill=red_sand": {
-      "model": "fifimod:block/aquarium_red_sand",
-      "y": 90
-    },
-    "facing=north,fill=dirt": {
-      "model": "fifimod:block/aquarium_dirt"
-    },
-    "facing=south,fill=dirt": {
-      "model": "fifimod:block/aquarium_dirt",
+    "facing=south,fill=sand": {
+      "model": "fifimod:block/aquarium_sand",
       "y": 180
     },
     "facing=west,fill=dirt": {
       "model": "fifimod:block/aquarium_dirt",
       "y": 270
     },
-    "facing=east,fill=dirt": {
-      "model": "fifimod:block/aquarium_dirt",
-      "y": 90
+    "facing=west,fill=empty": {
+      "model": "fifimod:block/aquarium_empty",
+      "y": 270
+    },
+    "facing=west,fill=red_sand": {
+      "model": "fifimod:block/aquarium_red_sand",
+      "y": 270
+    },
+    "facing=west,fill=sand": {
+      "model": "fifimod:block/aquarium_sand",
+      "y": 270
     }
   }
 }

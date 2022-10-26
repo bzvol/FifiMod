@@ -1,9 +1,5 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S#S",
-    "S#S"
-  ],
   "key": {
     "#": {
       "item": "fifimod:fifi_planks"
@@ -12,6 +8,10 @@
       "item": "minecraft:stick"
     }
   },
+  "pattern": [
+    "S#S",
+    "S#S"
+  ],
   "result": {
     "item": "fifimod:fifi_fence_gate"
   }

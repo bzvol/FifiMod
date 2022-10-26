@@ -1,0 +1,10 @@
+{
+  "type": "fifimod:entity",
+  "biomes": "#minecraft:is_jungle",
+  "spawner": {
+    "type": "fifimod:lituly",
+    "weight": 40,
+    "minCount": 5,
+    "maxCount": 20
+  }
+}

@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "fifimod:steel"
+    }
+  },
   "pattern": [
     "TT ",
     " S ",
     " S "
   ],
-  "key": {
-    "T": {
-      "item": "fifimod:steel"
-    },
-    "S": {
-      "item": "minecraft:stick"
-    }
-  },
   "result": {
     "item": "fifimod:steel_hoe"
   }

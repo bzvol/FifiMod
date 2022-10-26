@@ -1,18 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
+  "key": {
+    "C": {
+      "item": "minecraft:coal"
+    },
+    "I": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
   "pattern": [
     " C ",
     "CIC",
     " C "
   ],
-  "key": {
-    "I": {
-      "item": "minecraft:iron_ingot"
-    },
-    "C": {
-      "item": "minecraft:coal"
-    }
-  },
   "result": {
     "item": "fifimod:raw_steel"
   }

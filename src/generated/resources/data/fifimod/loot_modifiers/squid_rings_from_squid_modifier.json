@@ -1,30 +1,30 @@
 {
+  "type": "fifimod:one_item_modifier",
+  "addition": "fifimod:squid_rings",
+  "chance": 0.7,
   "conditions": [
     {
       "condition": "forge:loot_table_id",
       "loot_table_id": "minecraft:entities/squid"
     }
   ],
-  "addition": "fifimod:squid_rings",
-  "chance": 0.7,
   "functions": [
     {
-      "function": "minecraft:set_count",
+      "add": false,
       "count": {
         "type": "minecraft:uniform",
-        "min": 1.0,
-        "max": 2.0
+        "max": 2.0,
+        "min": 1.0
       },
-      "add": false
+      "function": "minecraft:set_count"
     },
     {
-      "function": "minecraft:apply_bonus",
       "enchantment": "minecraft:looting",
       "formula": "minecraft:uniform_bonus_count",
+      "function": "minecraft:apply_bonus",
       "parameters": {
         "bonusMultiplier": 1
       }
     }
-  ],
-  "type": "fifimod:one_item_modifier"
+  ]
 }

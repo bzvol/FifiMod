@@ -14,6 +14,7 @@ import me.bzvol.fifimod.sound.ModSounds
 import me.bzvol.fifimod.util.ModItemProperties
 import me.bzvol.fifimod.villager.ModVillagers
 import me.bzvol.fifimod.world.feature.ModOrePlacements
+import me.bzvol.fifimod.world.gen.ModBiomeModifiers
 import net.minecraft.client.Minecraft
 import net.minecraft.client.renderer.entity.EntityRenderers
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
@@ -47,6 +48,7 @@ object FifiMod {
         ModEnchantments.register(MOD_BUS)
         ModVillagers.register(MOD_BUS)
         ModOrePlacements.register(MOD_BUS)
+        ModBiomeModifiers.register(MOD_BUS)
 
         runForDist(
             clientTarget = {

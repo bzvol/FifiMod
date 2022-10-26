@@ -1,0 +1,5 @@
+{
+  "type": "fifimod:ore",
+  "biomes": "#minecraft:is_nether",
+  "feature": "fifimod:ore_ash"
+}

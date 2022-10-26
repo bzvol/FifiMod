@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 4.0,
   "ingredient": {
     "item": "fifimod:tin_ore"
   },
-  "result": "fifimod:tin_ingot",
-  "experience": 4.0,
-  "cookingtime": 200
+  "result": "fifimod:tin_ingot"
 }

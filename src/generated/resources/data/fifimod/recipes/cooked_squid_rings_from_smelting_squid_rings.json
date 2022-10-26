@@ -1,9 +1,9 @@
 {
   "type": "minecraft:smelting",
+  "cookingtime": 200,
+  "experience": 2.0,
   "ingredient": {
     "item": "fifimod:squid_rings"
   },
-  "result": "fifimod:cooked_squid_rings",
-  "experience": 2.0,
-  "cookingtime": 200
+  "result": "fifimod:cooked_squid_rings"
 }

@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " # ",
-    "###"
-  ],
   "key": {
     "#": {
       "item": "fifimod:fifi"
     }
   },
+  "pattern": [
+    " # ",
+    "###"
+  ],
   "result": {
     "item": "fifimod:fifi_hat"
   }

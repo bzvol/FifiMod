@@ -1,14 +1,14 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "S S",
-    "S S"
-  ],
   "key": {
     "S": {
       "item": "fifimod:steel"
     }
   },
+  "pattern": [
+    "S S",
+    "S S"
+  ],
   "result": {
     "item": "fifimod:steel_boots"
   }

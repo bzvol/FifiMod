@@ -32,15 +32,15 @@ class ModFlammableRotatedPillarBlock(properties: Properties) : RotatedPillarBloc
     ): Int = 5
 
     override fun getToolModifiedState(
-        state: BlockState?,
-        context: UseOnContext?,
-        toolAction: ToolAction?,
+        state: BlockState,
+        context: UseOnContext,
+        toolAction: ToolAction,
         simulate: Boolean
     ): BlockState? {
-        if (context.stack.item is AxeItem) {
-            if (state?.`is`(ModBlocks.FIFI_LOG))
+        if (context.itemInHand.item is AxeItem) {
+            if (state.`is`(ModBlocks.FIFI_LOG))
                 return ModBlocks.STRIPPED_FIFI_LOG.defaultBlockState().setValue(AXIS, state?.getValue(AXIS))
-            if (state?.`is`(ModBlocks.FIFI_WOOD))
+            if (state.`is`(ModBlocks.FIFI_WOOD))
                 return ModBlocks.STRIPPED_FIFI_WOOD.defaultBlockState().setValue(AXIS, state?.getValue(AXIS))
         }
 

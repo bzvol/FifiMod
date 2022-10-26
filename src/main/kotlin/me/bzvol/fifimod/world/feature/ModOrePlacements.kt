@@ -32,13 +32,11 @@ object ModOrePlacements {
             )
         )
     }
-
-    val ORE_ASH by REGISTRY.registerObject("ore_ash")
-    {
+    val ORE_ASH by REGISTRY.registerObject("ore_ash") {
         PlacedFeature(
-            ModConfiguredFeatures.ASH_BLOCK as Holder<ConfiguredFeature<*, *>>, commonOrePlacement(
-                100,
-                HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31))
+            ModConfiguredFeatures.ASH_ORE as Holder<ConfiguredFeature<*, *>>, commonOrePlacement(
+                15,
+                HeightRangePlacement.triangle(VerticalAnchor.aboveBottom(40), VerticalAnchor.absolute(100))
             )
         )
     }

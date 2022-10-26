@@ -1,16 +1,16 @@
 {
   "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "##",
-    "##"
-  ],
   "key": {
     "#": {
       "item": "fifimod:fifi_log"
     }
   },
+  "pattern": [
+    "##",
+    "##"
+  ],
   "result": {
-    "item": "fifimod:fifi_wood",
-    "count": 3
+    "count": 3,
+    "item": "fifimod:fifi_wood"
   }
 }
