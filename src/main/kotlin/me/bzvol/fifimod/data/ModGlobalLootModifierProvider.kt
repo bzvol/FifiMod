@@ -65,7 +65,7 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
             "uniqum_swords_from_abandoned_mineshaft_modifier",
             MultipleOrItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/abandoned_mineshaft")).build()),
-                arrayOf(
+                listOf(
                     ModItems.EXILED_SWORD,
                 ),
                 0.03f,
@@ -76,7 +76,7 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
             "uniqum_swords_from_jungle_temple_modifier",
             MultipleOrItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/jungle_temple")).build()),
-                arrayOf(
+                listOf(
                     ModItems.POTATONIUM_SWORD,
                 ),
                 0.2f,
@@ -87,7 +87,7 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
             "uniqum_swords_from_shipwreck_modifier",
             MultipleOrItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/shipwreck_supply")).build()),
-                arrayOf(
+                listOf(
                     ModItems.SUSPENDER,
                 ),
                 0.1f,
@@ -98,7 +98,7 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
             "uniqum_swords_from_igloo_modifier",
             MultipleOrItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/igloo_chest")).build()),
-                arrayOf(
+                listOf(
                     ModItems.STORMBRINGER,
                 ),
                 0.3f,
@@ -109,7 +109,7 @@ class ModGlobalLootModifierProvider(generator: DataGenerator) : GlobalLootModifi
             "uniqum_swords_from_ruined_portal_modifier",
             MultipleOrItemAdditionModifier(
                 arrayOf(LootTableIdCondition.builder(ResourceLocation("chests/ruined_portal")).build()),
-                arrayOf(
+                listOf(
                     ModItems.BETRAYER,
                 ),
                 0.07f,

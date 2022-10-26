@@ -5,6 +5,7 @@
 		"0": "fifimod:block/fifi_spawner",
 		"particle": "block/stone"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"name": "bottom_cube",

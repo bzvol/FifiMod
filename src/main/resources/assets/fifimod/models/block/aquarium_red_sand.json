@@ -4,6 +4,7 @@
 		"0": "fifimod:block/aquarium_red_sand",
 		"particle": "block/glass"
 	},
+	"render_type": "cutout",
 	"elements": [
 		{
 			"name": "cubeNEU",

@@ -1,28 +1,42 @@
 package me.bzvol.fifimod.event.loot
 
-import com.google.gson.JsonArray
-import com.google.gson.JsonObject
+import com.google.common.base.Suppliers
+import com.mojang.serialization.Codec
+import com.mojang.serialization.codecs.RecordCodecBuilder
+import it.unimi.dsi.fastutil.objects.ObjectArrayList
+import me.bzvol.fifimod.util.ModUtil.LOOT_FUNCTIONS_CODEC
 import net.minecraft.Util
-import net.minecraft.resources.ResourceLocation
-import net.minecraft.util.GsonHelper
 import net.minecraft.world.item.Item
 import net.minecraft.world.item.ItemStack
-import net.minecraft.world.level.storage.loot.Deserializers
 import net.minecraft.world.level.storage.loot.LootContext
 import net.minecraft.world.level.storage.loot.functions.LootItemFunction
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition
-import net.minecraftforge.common.loot.GlobalLootModifierSerializer
+import net.minecraftforge.common.loot.IGlobalLootModifier
 import net.minecraftforge.common.loot.LootModifier
 import net.minecraftforge.registries.ForgeRegistries
+import java.util.function.Supplier
 
 class MultipleOrItemAdditionModifier(
     conditionsIn: Array<out LootItemCondition>,
-    private val additionList: Array<Item>,
+    private val additionList: List<Item>,
     private val chance: Float?,
     private val functions: Array<LootItemFunction>?
 ) : LootModifier(conditionsIn) {
+    companion object {
+        val CODEC: Supplier<Codec<MultipleOrItemAdditionModifier>> = Suppliers.memoize {
+            RecordCodecBuilder.create { inst ->
+                codecStart(inst)
+                    .and(ForgeRegistries.ITEMS.codec.listOf().fieldOf("addition").forGetter { it.additionList })
+                    .and(Codec.floatRange(0f, 1f).optionalFieldOf("chance", 1f).forGetter { it.chance ?: 1f })
+                    .and(
+                        LOOT_FUNCTIONS_CODEC.optionalFieldOf("functions", arrayOf())
+                            .forGetter { it.functions ?: arrayOf() })
+                    .apply(inst, ::MultipleOrItemAdditionModifier)
+            }
+        }
+    }
 
-    override fun doApply(generatedLoot: MutableList<ItemStack>, context: LootContext): MutableList<ItemStack> {
+    override fun doApply(generatedLoot: ObjectArrayList<ItemStack>, context: LootContext): ObjectArrayList<ItemStack> {
         val addition = Util.getRandom(additionList, context.random)
         val itemstack = ItemStack(addition)
 
@@ -31,58 +45,11 @@ class MultipleOrItemAdditionModifier(
         }
 
         if (chance != null) {
-            if (context.random.nextFloat() <= chance)
-                generatedLoot.add(itemstack)
+            if (context.random.nextFloat() <= chance) generatedLoot.add(itemstack)
         } else generatedLoot.add(itemstack)
 
         return generatedLoot
     }
 
-    class Serializer : GlobalLootModifierSerializer<MultipleOrItemAdditionModifier>() {
-        override fun read(
-            location: ResourceLocation,
-            `object`: JsonObject,
-            conditionsIn: Array<out LootItemCondition>
-        ): MultipleOrItemAdditionModifier {
-            val additionsJson = GsonHelper.getAsJsonArray(`object`, "additions")
-            val additions = additionsJson.map {
-                GsonHelper.convertToItem(it, "addition")
-            }.toTypedArray()
-
-            val chance = if (`object`.has("chance"))
-                `object`.getAsJsonPrimitive("chance").asFloat
-            else null
-
-            val functionsArray: JsonArray? = `object`.getAsJsonArray("functions")
-            var functions: Array<LootItemFunction>? = null
-            if (functionsArray != null) {
-                functions = Deserializers.createFunctionSerializer().create()
-                    .fromJson(functionsArray, Array<LootItemFunction>::class.java)
-            }
-
-            return MultipleOrItemAdditionModifier(conditionsIn, additions, chance, functions)
-        }
-
-        override fun write(instance: MultipleOrItemAdditionModifier): JsonObject {
-            val json = makeConditions(instance.conditions)
-
-            val additionsJson = JsonArray(instance.additionList.size)
-            instance.additionList.forEach { item ->
-                additionsJson.add(ForgeRegistries.ITEMS.getKey(item).toString())
-            }
-
-            json.add("additions", additionsJson)
-            if (instance.chance != null)
-                json.addProperty("chance", instance.chance)
-            if (instance.functions != null)
-                json.add(
-                    "functions",
-                    Deserializers.createFunctionSerializer().create().toJsonTree(instance.functions)
-                )
-
-            return json
-        }
-
-    }
-
+    override fun codec(): Codec<out IGlobalLootModifier> = CODEC.get()
 }

@@ -4,6 +4,7 @@ import me.bzvol.fifimod.FifiMod
 import me.bzvol.fifimod.block.AquariumBlock
 import me.bzvol.fifimod.block.FifhranyBlock
 import me.bzvol.fifimod.block.ModBlocks
+import net.minecraft.client.renderer.RenderType
 import net.minecraft.data.DataGenerator
 import net.minecraft.resources.ResourceLocation
 import net.minecraft.world.level.block.state.properties.BlockStateProperties
@@ -27,7 +28,9 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
 
         simpleBlock(
             ModBlocks.FIFI_SAPLING,
-            models().cross("fifi_sapling", ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling"))
+            models().withExistingParent("fifi_sapling", mcLoc("block/cross"))
+                .texture("cross", ResourceLocation(FifiMod.MOD_ID, "block/fifi_sapling"))
+                .renderType(RenderType.cutout().toString())
         )
 
         simpleBlock(
@@ -35,12 +38,14 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                 .modelFile(
                     models().withExistingParent("fifi_leaves", mcLoc("block/leaves"))
                         .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves"))
+                        .renderType(RenderType.cutout().toString())
                 )
                 .weight(90)
                 .nextModel()
                 .modelFile(
                     models().withExistingParent("fifi_leaves_flower", mcLoc("block/leaves"))
                         .texture("all", ResourceLocation(FifiMod.MOD_ID, "block/fifi_leaves_flower"))
+                        .renderType(RenderType.cutout().toString())
                 )
                 .weight(10)
                 .build()
@@ -86,10 +91,13 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                 val age = state.getValue(FifhranyBlock.AGE)
                 ConfiguredModel.builder()
                     .modelFile(
-                        models().crop(
-                            "fifhrany_stage$age",
-                            ResourceLocation(FifiMod.MOD_ID, "block/fifhrany_stage$age")
-                        )
+                        models()
+                            .withExistingParent(
+                                "fifhrany_stage$age",
+                                mcLoc("block/crop")
+                            )
+                            .texture("crop", ResourceLocation(FifiMod.MOD_ID, "block/fifhrany_stage$age"))
+                            .renderType(RenderType.cutout().toString())
                     )
                     .build()
             }
@@ -99,9 +107,11 @@ class ModBlockStateProvider(generator: DataGenerator, private val existingFileHe
                 val facing = state.getValue(BlockStateProperties.HORIZONTAL_FACING)
                 val fill = state.getValue(AquariumBlock.FILL)
                 ConfiguredModel.builder()
-                    .modelFile(ModelFile.UncheckedModelFile(
-                        ResourceLocation(FifiMod.MOD_ID, "block/aquarium_${fill.modelName}"),
-                    ))
+                    .modelFile(
+                        ModelFile.UncheckedModelFile(
+                            ResourceLocation(FifiMod.MOD_ID, "block/aquarium_${fill.modelName}"),
+                        )
+                    )
                     .rotationY(((facing.toYRot() + 180) % 360).toInt())
                     .build()
             }

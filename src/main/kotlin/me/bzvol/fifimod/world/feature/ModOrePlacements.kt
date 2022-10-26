@@ -8,6 +8,7 @@ import net.minecraft.core.Registry
 import net.minecraft.world.level.levelgen.VerticalAnchor
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature
 import net.minecraft.world.level.levelgen.placement.*
+import net.minecraftforge.eventbus.api.IEventBus
 import net.minecraftforge.registries.DeferredRegister
 import thedarkcolour.kotlinforforge.forge.registerObject
 
@@ -40,6 +41,10 @@ object ModOrePlacements {
                 HeightRangePlacement.uniform(VerticalAnchor.bottom(), VerticalAnchor.absolute(31))
             )
         )
+    }
+
+    fun register(eventBus: IEventBus) {
+        REGISTRY.register(eventBus)
     }
 
     private fun orePlacement(modifier1: PlacementModifier, modifier2: PlacementModifier): List<PlacementModifier> =

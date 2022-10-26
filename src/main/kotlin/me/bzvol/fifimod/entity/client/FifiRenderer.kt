@@ -12,6 +12,6 @@ class FifiRenderer(renderManager: EntityRendererProvider.Context) :
         this.shadowRadius = 0.5f
     }
 
-    override fun getTextureResource(instance: FifiEntity): ResourceLocation =
+    override fun getTextureLocation(instance: FifiEntity): ResourceLocation =
         ResourceLocation(FifiMod.MOD_ID, "textures/entity/fifi/fifi.png")
 }

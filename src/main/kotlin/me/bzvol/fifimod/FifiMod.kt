@@ -13,9 +13,8 @@ import me.bzvol.fifimod.painting.ModPaintings
 import me.bzvol.fifimod.sound.ModSounds
 import me.bzvol.fifimod.util.ModItemProperties
 import me.bzvol.fifimod.villager.ModVillagers
+import me.bzvol.fifimod.world.feature.ModOrePlacements
 import net.minecraft.client.Minecraft
-import net.minecraft.client.renderer.ItemBlockRenderTypes
-import net.minecraft.client.renderer.RenderType
 import net.minecraft.client.renderer.entity.EntityRenderers
 import net.minecraft.client.renderer.entity.ThrownItemRenderer
 import net.minecraft.world.entity.PathfinderMob
@@ -47,6 +46,7 @@ object FifiMod {
         ModGLMSerializers.register(MOD_BUS)
         ModEnchantments.register(MOD_BUS)
         ModVillagers.register(MOD_BUS)
+        ModOrePlacements.register(MOD_BUS)
 
         runForDist(
             clientTarget = {
@@ -76,12 +76,6 @@ object FifiMod {
 
     private fun onClientSetup(event: FMLClientSetupEvent) {
         LOGGER.log(Level.INFO, "Initializing client...")
-
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SPAWNER, RenderType.cutout())
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_LEAVES, RenderType.cutout())
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFI_SAPLING, RenderType.cutout())
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.FIFHRANY, RenderType.cutout())
-        ItemBlockRenderTypes.setRenderLayer(ModBlocks.AQUARIUM, RenderType.cutout())
 
         EntityRenderers.register(ModEntityTypes.FIFI, ::FifiRenderer)
         EntityRenderers.register(ModEntityTypes.LITULY, ::LitulyRenderer)

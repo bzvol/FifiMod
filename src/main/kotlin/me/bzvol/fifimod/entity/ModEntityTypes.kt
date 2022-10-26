@@ -12,7 +12,7 @@ import thedarkcolour.kotlinforforge.forge.registerObject
 
 object ModEntityTypes {
     val REGISTRY: DeferredRegister<EntityType<*>> =
-        DeferredRegister.create(ForgeRegistries.ENTITIES, FifiMod.MOD_ID)
+        DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, FifiMod.MOD_ID)
 
     val FIFI: EntityType<FifiEntity> by REGISTRY.registerObject("fifi") {
         EntityType.Builder.of(::FifiEntity, MobCategory.CREATURE)

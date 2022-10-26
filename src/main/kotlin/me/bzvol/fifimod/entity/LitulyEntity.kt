@@ -21,6 +21,7 @@ import net.minecraft.world.level.ServerLevelAccessor
 import software.bernie.geckolib3.core.IAnimatable
 import software.bernie.geckolib3.core.PlayState
 import software.bernie.geckolib3.core.builder.AnimationBuilder
+import software.bernie.geckolib3.core.builder.ILoopType
 import software.bernie.geckolib3.core.controller.AnimationController
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent
 import software.bernie.geckolib3.core.manager.AnimationData
@@ -41,7 +42,7 @@ class LitulyEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Pa
     private fun <E : IAnimatable> predicate(event: AnimationEvent<E>): PlayState {
         if (event.isMoving) {
             event.controller.setAnimation(
-                AnimationBuilder().addAnimation("animation.lituly.move", true)
+                AnimationBuilder().addAnimation("animation.lituly.move", ILoopType.EDefaultLoopTypes.LOOP)
             )
             return PlayState.CONTINUE
         }

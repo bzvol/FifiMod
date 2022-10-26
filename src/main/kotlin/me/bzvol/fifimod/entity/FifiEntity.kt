@@ -20,6 +20,7 @@ import net.minecraft.world.level.Level
 import software.bernie.geckolib3.core.IAnimatable
 import software.bernie.geckolib3.core.PlayState
 import software.bernie.geckolib3.core.builder.AnimationBuilder
+import software.bernie.geckolib3.core.builder.ILoopType
 import software.bernie.geckolib3.core.controller.AnimationController
 import software.bernie.geckolib3.core.event.predicate.AnimationEvent
 import software.bernie.geckolib3.core.manager.AnimationData
@@ -33,7 +34,7 @@ class FifiEntity(entityType: EntityType<out PathfinderMob>, level: Level) : Path
     private fun <E : IAnimatable> predicate(event: AnimationEvent<E>): PlayState {
         if (event.isMoving) {
             event.controller.setAnimation(
-                AnimationBuilder().addAnimation("animation.fifi.walk", true)
+                AnimationBuilder().addAnimation("animation.fifi.walk", ILoopType.EDefaultLoopTypes.LOOP)
             )
             return PlayState.CONTINUE
         }

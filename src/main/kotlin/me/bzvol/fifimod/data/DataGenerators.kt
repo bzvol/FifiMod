@@ -1,9 +1,9 @@
 package me.bzvol.fifimod.data
 
 import me.bzvol.fifimod.FifiMod
+import net.minecraftforge.data.event.GatherDataEvent
 import net.minecraftforge.eventbus.api.SubscribeEvent
 import net.minecraftforge.fml.common.Mod
-import net.minecraftforge.forge.event.lifecycle.GatherDataEvent
 
 @Mod.EventBusSubscriber(modid = FifiMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 object DataGenerators {
